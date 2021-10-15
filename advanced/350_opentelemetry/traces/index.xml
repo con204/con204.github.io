@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tracing on Amazon EKS Workshop</title>
+    <link>/advanced/350_opentelemetry/traces/</link>
+    <description>Recent content in Tracing on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/advanced/350_opentelemetry/traces/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding trace Configuration</title>
+      <link>/advanced/350_opentelemetry/traces/adding_trace_configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/traces/adding_trace_configuration/</guid>
+      <description>Let’s update our Collector’s Manifest to collect traces and export them to x-ray. This involves un-commenting a few sections in kubernetes/adot/otel-container-insights-infra.yaml. The below sections will walk through the commented out sections and provide CLI commands to un-comment them out.
+Thrift Service First let’s head to the end of the manifest and un-comment the Thrift service. This stands up an API endpoint to recieve thrift traffic over the Thrift Binary protocol on port 6832, HTTP-TCP on TCP port 14268, and gRPC on TCP 14250.</description>
+    </item>
+    
+    <item>
+      <title>Generating Traces</title>
+      <link>/advanced/350_opentelemetry/traces/generating_traces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/traces/generating_traces/</guid>
+      <description>By default microservice demo is not configured to send tracing data to the ADOT collector. Run the following commands to enable it:
+sed -i &amp;#39;s/#//&amp;#39; kubernetes/backend/*.yaml Then we apply these changes to our deployments
+kubectl apply -f kubernetes/backend/ Adding a new Employee Now that traces are enabled, let’s head back to our application and add a new employee. Let’s get our front-end URL:
+echo http://${SERVICE_IP}/ Open that URL in your web browser, and create a new employee.</description>
+    </item>
+    
+    <item>
+      <title>Viewing Traces in X-Ray &amp; CloudWatch</title>
+      <link>/advanced/350_opentelemetry/traces/viewing_traces_in_xray/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/traces/viewing_traces_in_xray/</guid>
+      <description>X-Ray Now let’s head to the AWS X-Ray console and open the Service Map menu. We can get the URL for X-Ray Service Map by running the following command:
+echo &amp;#34;https://${AWS_REGION}.console.aws.amazon.com/xray/home?region=${AWS_REGION}#/service-map&amp;#34; Selecting Trace on the left-hand menu in the AWS X-Ray console, we can view traces the Collector received and exported to X-Ray for our Create Employee API Call.
+Note, X-Ray by default is set to show traces from the Last 5 minutes, if the Employee was created more than 5 minutes ago, increase the window-size (top right).</description>
+    </item>
+    
+  </channel>
+</rss>

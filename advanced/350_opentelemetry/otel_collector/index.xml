@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OTEL Collector on Amazon EKS Workshop</title>
+    <link>/advanced/350_opentelemetry/otel_collector/</link>
+    <description>Recent content in OTEL Collector on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/advanced/350_opentelemetry/otel_collector/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IAM Setup</title>
+      <link>/advanced/350_opentelemetry/otel_collector/iam-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/otel_collector/iam-setup/</guid>
+      <description>Creating IAM permissions for OTEL Collector Enable the IAM OIDC provider on our EKS Cluster
+eksctl utils associate-iam-oidc-provider --region=$AWS_REGION \  --cluster=$CLUSTER_NAME \  --approve export OIDC_PROVIDER=$(aws eks describe-cluster --name $CLUSTER_NAME --region=$AWS_REGION \  --query &amp;#34;cluster.identity.oidc.issuer&amp;#34; --output text | sed -e &amp;#34;s/^https:\/\///&amp;#34;) echo -e &amp;#34;OIDC_PROVIDER: $OIDC_PROVIDER&amp;#34; Create IAM policy for the collector:
+cat &amp;lt;&amp;lt; EOF &amp;gt; AWSDistroOpenTelemetryPolicy.json { &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;logs:PutLogEvents&amp;#34;, &amp;#34;logs:CreateLogGroup&amp;#34;, &amp;#34;logs:CreateLogStream&amp;#34;, &amp;#34;logs:DescribeLogStreams&amp;#34;, &amp;#34;logs:DescribeLogGroups&amp;#34;, &amp;#34;xray:PutTraceSegments&amp;#34;, &amp;#34;xray:PutTelemetryRecords&amp;#34;, &amp;#34;xray:GetSamplingRules&amp;#34;, &amp;#34;xray:GetSamplingTargets&amp;#34;, &amp;#34;xray:GetSamplingStatisticSummaries&amp;#34;, &amp;#34;cloudwatch:PutMetricData&amp;#34;, &amp;#34;ec2:DescribeVolumes&amp;#34;, &amp;#34;ec2:DescribeTags&amp;#34;, &amp;#34;ssm:GetParameters&amp;#34; ], &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ] } EOF aws iam create-policy --region=${AWS_REGION} \  --policy-name AWSDistroOpenTelemetryPolicy \  --policy-document file://AWSDistroOpenTelemetryPolicy.</description>
+    </item>
+    
+    <item>
+      <title>Collector Manifest</title>
+      <link>/advanced/350_opentelemetry/otel_collector/collector-manifest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/otel_collector/collector-manifest/</guid>
+      <description>Configuring AWS Distro for Open Telemetry Collector Kubernetes manifest Open $ vim kubernetes/adot/otel-container-insights-infra.yaml. Inside you’ll notice an annotation for the AWSDistroOpenTelemetryRole in the ServiceAccount resource. --- # create cwagent service account and role binding apiVersion: v1 kind: ServiceAccount metadata: name: aws-otel-sa namespace: aws-otel-eks annotations: eks.amazonaws.com/role-arn: arn:aws:iam::${ACCOUNT_ID}:role/AWSDistroOpenTelemetryRole  Also take a look at the ConfigMap outlining the OTEL receivers, processors, and exporters: data: otel-agent-config: | extensions: health_check: receivers: awscontainerinsightreceiver: processors: batch/metrics: timeout: 60s exporters: awsemf: namespace: ContainerInsights .</description>
+    </item>
+    
+    <item>
+      <title>Deploying the Collector</title>
+      <link>/advanced/350_opentelemetry/otel_collector/deploying-collector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/otel_collector/deploying-collector/</guid>
+      <description>Deploying Open Telemetry Collector Set variables in the OTEL collector&amp;rsquo;s kubernetes manifest file:
+envsubst &amp;lt; kubernetes/adot/otel-container-insights-infra.yaml | sponge kubernetes/adot/otel-container-insights-infra.yaml Install the OTEL collector to the EKS Cluster as a DaemonSet:
+kubectl apply -f kubernetes/adot/otel-container-insights-infra.yaml Check to see that the OTEL collector’s DaemonSet is running on each node: $ kubectl get nodes NAME STATUS ROLES AGE VERSION ip-192-168-29-122.us-west-2.compute.internal Ready &amp;lt;none&amp;gt; 2d6h v1.21.2-eks-55daa9d ip-192-168-43-204.us-west-2.compute.internal Ready &amp;lt;none&amp;gt; 2d6h v1.21.2-eks-55daa9d ip-192-168-70-26.us-west-2.compute.internal Ready &amp;lt;none&amp;gt; 2d6h v1.</description>
+    </item>
+    
+  </channel>
+</rss>

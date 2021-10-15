@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Canary Deployment using Flagger in AWS App Mesh on Amazon EKS Workshop</title>
+    <link>/advanced/340_appmesh_flagger/</link>
+    <description>Recent content in Canary Deployment using Flagger in AWS App Mesh on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 -0500</lastBuildDate><atom:link href="/advanced/340_appmesh_flagger/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install AWS App Mesh Controller</title>
+      <link>/advanced/340_appmesh_flagger/install_appmesh/</link>
+      <pubDate>Mon, 27 Apr 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/install_appmesh/</guid>
+      <description>Prerequisites We assume that we have already have the following setup before we start this chapter.
+ [Required] An existing EKS Cluster eksworkshop-eksctl and Nodegroup created from EKS Workshop [Optional] increased the disk size on your Cloud9 instance.  Install App Mesh Helm Chart Check that Helm is installed.
+helm list This command should either return a list of helm charts that have already been deployed or nothing.
+If you get an error message, see installing helm for instructions.</description>
+    </item>
+    
+    <item>
+      <title>Flagger Set Up</title>
+      <link>/advanced/340_appmesh_flagger/flagger_setup/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/flagger_setup/</guid>
+      <description>Install App Mesh Prometheus Helm Chart helm upgrade -i appmesh-prometheus eks/appmesh-prometheus \ 	--namespace appmesh-system \ 	--set serviceAccount.create=false \ 	--set serviceAccount.name=appmesh-controller Release &amp;#34;appmesh-prometheus&amp;#34; does not exist. Installing it now. NAME: appmesh-prometheus LAST DEPLOYED: Sat Mar 13 20:59:29 2021 NAMESPACE: appmesh-system STATUS: deployed REVISION: 1 TEST SUITE: None NOTES: AWS App Mesh Prometheus installed!  Install Flagger Add Flagger Helm repository:
+helm repo add flagger https://flagger.app &amp;#34;flagger&amp;#34; has been added to your repositories  Install Flagger&amp;rsquo;s Canary CRD:</description>
+    </item>
+    
+    <item>
+      <title>About Canary Analysis</title>
+      <link>/advanced/340_appmesh_flagger/canary_analysis/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/canary_analysis/</guid>
+      <description>Before we start the canary deployment setup, lets learn more about the canary analysis and how it works in Flagger.
+Canary Resource Flagger can be configured to automate the release process for Kubernetes workloads with a custom resource named canary which we installed in the previous chapter. The canary custom resource defines the release process of an application running on Kubernetes.
+We have defined the canary release with progressive traffic shifting for the deployment of backend service detail here.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Canary Set Up</title>
+      <link>/advanced/340_appmesh_flagger/canary_deploy/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/canary_deploy/</guid>
+      <description>Clone the repository cd ~/environment git clone https://github.com/aws-containers/eks-microservice-demo.git cd eks-microservice-demo Create a namespace and a mesh kubectl apply -f flagger/mesh.yaml namespace/flagger created mesh.appmesh.k8s.aws/flagger created  Create a deployment and a horizontal pod autoscaler export APP_VERSION=1.0 envsubst &amp;lt; ./flagger/flagger-app.yaml | kubectl apply -f - horizontalpodautoscaler.autoscaling/detail created deployment.apps/detail created  Create IAM policy and Role for flagger-loadtester # Create an IAM policy called AWSAppMeshK8sControllerIAMPolicy aws iam create-policy \  --policy-name FlaggerEnvoyNamespaceIAMPolicy \  --policy-document file://envoy-iam-policy.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Frontend/VirtualGateway</title>
+      <link>/advanced/340_appmesh_flagger/fronend_vg_setup/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/fronend_vg_setup/</guid>
+      <description>Deploy the Frontend Service Since we want to visualize the automated canary deployment, we need an UI for which, we will use frontend service. This frontend service will call the backend service detail to get the vendor information. In order to expose the frontend service outside the mesh we will use AWS AppMesh VirtualGateway affiliated with Network Load Balancer. Lets deploy the frontend service.
+export APP_VERSION=1.0 envsubst &amp;lt; flagger/frontend.yaml | kubectl apply -f - deployment.</description>
+    </item>
+    
+    <item>
+      <title>Testing Canary Deployment</title>
+      <link>/advanced/340_appmesh_flagger/testing/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/testing/</guid>
+      <description>Automated Canary Promotion According to the Flagger documentation, canary deployment is triggered by changes in any of the following objects:
+ Deployment PodSpec (container image, command, ports, env, resources, etc). ConfigMaps and Secrets mounted as volumes or mapped to environment variables  We will trigger a canary deployment by updating the container image of detail service to version 2. Flagger will detect changes to the target deployment and will perform a canary analysis before promoting the new version as primary.</description>
+    </item>
+    
+    <item>
+      <title>Conclusion</title>
+      <link>/advanced/340_appmesh_flagger/conclusion/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/conclusion/</guid>
+      <description>Congratulations on using Flagger in AWS App Mesh to automate the deployment of a new version of the detail service!
+In this workshop, we have gone through:
+ Installing AppMesh in EKS cluster Setting up Flagger for AppMesh in EKS cluster Flagger Canary setup for backend service detail We exposed frontend service via AppMesh VirtualGateway, frontend service calls the backend service detail We did automated canary promotion from version 1 to version 2 We also created a scenario by injecting error for automated canary rollback while deploying version 3 And lastly we redeployed the version 3 using automated canary promotion  </description>
+    </item>
+    
+    <item>
+      <title>Cleanup</title>
+      <link>/advanced/340_appmesh_flagger/cleanup/</link>
+      <pubDate>Wed, 27 Jan 2021 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/340_appmesh_flagger/cleanup/</guid>
+      <description>Delete Flagger Resources kubectl delete canary detail -n flagger helm uninstall flagger-loadtester -n flagger kubectl delete HorizontalPodAutoscaler detail -n flagger kubectl delete deployment detail -n flagger Delete Flagger Namespace Namespace deletion may take few minutes, please wait till the process completes.
+ kubectl delete namespace flagger Delete the Mesh kubectl delete meshes flagger Delete Policies and Service Accounts for flagger namespace aws iam delete-policy --policy-arn arn:aws:iam::$ACCOUNT_ID:policy/FlaggerEnvoyNamespaceIAMPolicy eksctl delete iamserviceaccount --cluster eksworkshop-eksctl --namespace flagger --name flagger-envoy-proxies Uninstall the Flagger Helm Charts helm -n appmesh-system delete flagger Delete Flagger CRDs for i in $(kubectl get crd | grep flagger | cut -d&amp;#34; &amp;#34; -f1) ; do kubectl delete crd $i done Uninstall Prometheus Helm Charts helm -n appmesh-system delete appmesh-prometheus Uninstall Metric Server kubectl delete -f https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

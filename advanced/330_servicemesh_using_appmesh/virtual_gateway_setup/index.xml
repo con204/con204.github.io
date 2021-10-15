@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VirtualGateway Setup on Amazon EKS Workshop</title>
+    <link>/advanced/330_servicemesh_using_appmesh/virtual_gateway_setup/</link>
+    <description>Recent content in VirtualGateway Setup on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2020 08:30:11 -0700</lastBuildDate><atom:link href="/advanced/330_servicemesh_using_appmesh/virtual_gateway_setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add VirtualGateway</title>
+      <link>/advanced/330_servicemesh_using_appmesh/virtual_gateway_setup/add_virtual_gateway/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/virtual_gateway_setup/add_virtual_gateway/</guid>
+      <description>Adding App Mesh VirtualGateway Until now we have verified the communication between services is routed through envoy proxy, lets expose the frontend service frontend-node using AWS App Mesh VirtualGateway.
+Create VirtualGateway components uisng the virtual_gateway.yaml as shown below. This will create the kubernetes service as Type Load Balancer and will use the AWS Network Load balancer for routing the external internet traffic.
+kubectl apply -f deployment/virtual_gateway.yaml virtualgateway.appmesh.k8s.aws/ingress-gw created gatewayroute.appmesh.k8s.aws/gateway-route-frontend created service/ingress-gw created deployment.</description>
+    </item>
+    
+    <item>
+      <title>Testing Virtual Gateway</title>
+      <link>/advanced/330_servicemesh_using_appmesh/virtual_gateway_setup/testing_virtualgateway/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/virtual_gateway_setup/testing_virtualgateway/</guid>
+      <description>Now it&amp;rsquo;s time to test. Get the Loadbalancer endpoint that Virtual Gateway is exposed.
+It takes 3 to 5 minutes to set up the Load Balancer. You can go to Console and Go to Load Balancer and check if the state is Active. Do not proceed to next step until Load Balancer is Active.
+ export LB_NAME=$(kubectl get svc ingress-gw -n prodcatalog-ns -o jsonpath=&amp;#34;{.status.loadBalancer.ingress[*].hostname}&amp;#34;) curl -v --silent ${LB_NAME} | grep x-envoy echo $LB_NAME Check if the request to the Ingress Gateway is going from envoy by curl to the above Loadbalancer url &amp;gt; GET / HTTP/1.</description>
+    </item>
+    
+  </channel>
+</rss>

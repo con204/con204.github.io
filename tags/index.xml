@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Amazon EKS Workshop</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Oct 2021 13:38:20 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>advanced</title>
+      <link>/tags/advanced/</link>
+      <pubDate>Tue, 12 Oct 2021 13:38:20 +0000</pubDate>
+      
+      <guid>/tags/advanced/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS Distro for Open Telemetry</title>
+      <link>/tags/aws-distro-for-open-telemetry/</link>
+      <pubDate>Tue, 12 Oct 2021 13:38:20 +0000</pubDate>
+      
+      <guid>/tags/aws-distro-for-open-telemetry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metrics</title>
+      <link>/tags/metrics/</link>
+      <pubDate>Tue, 12 Oct 2021 13:38:20 +0000</pubDate>
+      
+      <guid>/tags/metrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>observability</title>
+      <link>/tags/observability/</link>
+      <pubDate>Tue, 12 Oct 2021 13:38:20 +0000</pubDate>
+      
+      <guid>/tags/observability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>traces</title>
+      <link>/tags/traces/</link>
+      <pubDate>Tue, 12 Oct 2021 13:38:20 +0000</pubDate>
+      
+      <guid>/tags/traces/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CON205</title>
+      <link>/tags/con205/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 -0300</pubDate>
+      
+      <guid>/tags/con205/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>intermediate</title>
+      <link>/tags/intermediate/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 -0300</pubDate>
+      
+      <guid>/tags/intermediate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beginner</title>
+      <link>/tags/beginner/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 -0300</pubDate>
+      
+      <guid>/tags/beginner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CON206</title>
+      <link>/tags/con206/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 -0300</pubDate>
+      
+      <guid>/tags/con206/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emr on eks</title>
+      <link>/tags/emr-on-eks/</link>
+      <pubDate>Mon, 15 Mar 2021 12:30:45 -0400</pubDate>
+      
+      <guid>/tags/emr-on-eks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spark</title>
+      <link>/tags/spark/</link>
+      <pubDate>Mon, 15 Mar 2021 12:30:45 -0400</pubDate>
+      
+      <guid>/tags/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CON203</title>
+      <link>/tags/con203/</link>
+      <pubDate>Wed, 08 Jul 2020 09:36:58 -0400</pubDate>
+      
+      <guid>/tags/con203/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>appmesh</title>
+      <link>/tags/appmesh/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/tags/appmesh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fargate</title>
+      <link>/tags/fargate/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/tags/fargate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operations</title>
+      <link>/tags/operations/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/tags/operations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>servicemesh</title>
+      <link>/tags/servicemesh/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/tags/servicemesh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automatedcanary</title>
+      <link>/tags/automatedcanary/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/automatedcanary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>batch</title>
+      <link>/tags/batch/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/batch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flagger</title>
+      <link>/tags/flagger/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/flagger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Amazon Managed Service for Grafana</title>
+      <link>/tags/amazon-managed-service-for-grafana/</link>
+      <pubDate>Sun, 14 Oct 2018 09:27:46 -0400</pubDate>
+      
+      <guid>/tags/amazon-managed-service-for-grafana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Amazon Managed Service for Prometheus</title>
+      <link>/tags/amazon-managed-service-for-prometheus/</link>
+      <pubDate>Sun, 14 Oct 2018 09:27:46 -0400</pubDate>
+      
+      <guid>/tags/amazon-managed-service-for-prometheus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AMG</title>
+      <link>/tags/amg/</link>
+      <pubDate>Sun, 14 Oct 2018 09:27:46 -0400</pubDate>
+      
+      <guid>/tags/amg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AMP</title>
+      <link>/tags/amp/</link>
+      <pubDate>Sun, 14 Oct 2018 09:27:46 -0400</pubDate>
+      
+      <guid>/tags/amp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monitoring</title>
+      <link>/tags/monitoring/</link>
+      <pubDate>Sun, 14 Oct 2018 09:27:46 -0400</pubDate>
+      
+      <guid>/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd</title>
+      <link>/tags/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci/cd</title>
+      <link>/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cis eks benchmark</title>
+      <link>/tags/cis-eks-benchmark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cis-eks-benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crd</title>
+      <link>/tags/crd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/crd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debugging</title>
+      <link>/tags/debugging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/debugging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>/tags/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitops</title>
+      <link>/tags/gitops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gitops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kube-bench</title>
+      <link>/tags/kube-bench/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/kube-bench/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubeflow</title>
+      <link>/tags/kubeflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/kubeflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logging</title>
+      <link>/tags/logging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ml</title>
+      <link>/tags/ml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opa</title>
+      <link>/tags/opa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/opa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open policy agent</title>
+      <link>/tags/open-policy-agent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/open-policy-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OPN401</title>
+      <link>/tags/opn401/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/opn401/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spinnnaker</title>
+      <link>/tags/spinnnaker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spinnnaker/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

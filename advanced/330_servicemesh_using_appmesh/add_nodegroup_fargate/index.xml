@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EKS Fargate and Observability setup on Amazon EKS Workshop</title>
+    <link>/advanced/330_servicemesh_using_appmesh/add_nodegroup_fargate/</link>
+    <description>Recent content in EKS Fargate and Observability setup on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2020 08:30:11 -0700</lastBuildDate><atom:link href="/advanced/330_servicemesh_using_appmesh/add_nodegroup_fargate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Fargate Profile</title>
+      <link>/advanced/330_servicemesh_using_appmesh/add_nodegroup_fargate/create_fargate/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/add_nodegroup_fargate/create_fargate/</guid>
+      <description>Create IAM OIDC provider First, we will have to set up an OIDC provider with the cluster. The IAM OIDC Provider is not enabled by default, you can use the following command to enable it.
+eksctl utils associate-iam-oidc-provider \  --region ${AWS_REGION} \  --cluster eksworkshop-eksctl \  --approve 2021-05-02 17:37:05 [ℹ] eksctl version 0.45.0 2021-05-02 17:37:05 [ℹ] using region $AWS_REGION 2021-05-02 17:37:05 [ℹ] will create IAM Open ID Connect provider for cluster &amp;#34;eksworkshop-eksctl&amp;#34; in &amp;#34;$AWS_REGION&amp;#34; 2021-05-02 17:37:05 [✔] created IAM Open ID Connect provider for cluster &amp;#34;eksworkshop-eksctl&amp;#34; in &amp;#34;$AWS_REGION&amp;#34;  Create the Namespace and IAM Role and ServiceAccount We will create the prodcatalog-ns and the IRSA for this namespace which will give permission to X-Ray, AppMesh and Cloudwatch Logs policies.</description>
+    </item>
+    
+    <item>
+      <title>Observability Setup</title>
+      <link>/advanced/330_servicemesh_using_appmesh/add_nodegroup_fargate/cloudwatch_setup/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/add_nodegroup_fargate/cloudwatch_setup/</guid>
+      <description>Enable Amazon Cloudwatch Container Insights Create an IAM role for the cloudwatch-agent service account
+eksctl create iamserviceaccount \  --cluster eksworkshop-eksctl \  --namespace amazon-cloudwatch \  --name cloudwatch-agent \  --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy \  --override-existing-serviceaccounts \  --approve 2021-05-02 17:52:36 [ℹ] eksctl version 0.45.0 2021-05-02 17:52:36 [ℹ] using region $AWS_REGION 2021-05-02 17:52:36 [ℹ] 1 existing iamserviceaccount(s) (prodcatalog-ns/prodcatalog-envoy-proxies) will be excluded 2021-05-02 17:52:36 [ℹ] 1 iamserviceaccount (amazon-cloudwatch/cloudwatch-agent) was included (based on the include/exclude rules) 2021-05-02 17:52:36 [!</description>
+    </item>
+    
+  </channel>
+</rss>

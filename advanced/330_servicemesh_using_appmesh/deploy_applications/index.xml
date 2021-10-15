@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deploy Product Catalog app on Amazon EKS Workshop</title>
+    <link>/advanced/330_servicemesh_using_appmesh/deploy_applications/</link>
+    <description>Recent content in Deploy Product Catalog app on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Nov 2018 16:32:30 +0900</lastBuildDate><atom:link href="/advanced/330_servicemesh_using_appmesh/deploy_applications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Product Catalog Application</title>
+      <link>/advanced/330_servicemesh_using_appmesh/deploy_applications/about_the_k8s_app/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/deploy_applications/about_the_k8s_app/</guid>
+      <description>Application Architecture The example application architecture we&amp;rsquo;ll walk you through creating on App Mesh is called Product Catalog and is used in any eCommerce Application. We have attempted to pick different technology framework for building applications to include the polyglot nature of microservices-based applications.
+This application is composed of three microservices:
+ Frontend  Frontend service frontend-node shows the UI for the Product Catalog functionality Developed in Nodejs with ejs templating Deployed to EKS Managed Nodegroup   Product Catalog Backend  Backend service prodcatalog is a Rest API Service that performs following operations:  Add a Product into Product Catalog Get the Product from the Product Catalog Calls Catalog Detail backend service proddetail to get Product Catalog Detail information like vendors Get all the products from the Product Catalog /products { &amp;#34;products&amp;#34;: { &amp;#34;1&amp;#34;: &amp;#34;Table&amp;#34;, &amp;#34;2&amp;#34;: &amp;#34;Chair&amp;#34; }, &amp;#34;details&amp;#34;: { &amp;#34;version&amp;#34;: &amp;#34;2&amp;#34;, &amp;#34;vendors&amp;#34;: [ &amp;#34;ABC.</description>
+    </item>
+    
+    <item>
+      <title>Create Product Catalog Application</title>
+      <link>/advanced/330_servicemesh_using_appmesh/deploy_applications/create_the_app/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/deploy_applications/create_the_app/</guid>
+      <description>Let&amp;rsquo;s create the Product Catalog Application!
+Build Application Services Build and Push the Container images to ECR for all the three services
+cd eks-app-mesh-polyglot-demo aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com PROJECT_NAME=eks-app-mesh-demo export APP_VERSION=1.0 for app in catalog_detail product_catalog frontend_node; do aws ecr describe-repositories --repository-name $PROJECT_NAME/$app &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || \  aws ecr create-repository --repository-name $PROJECT_NAME/$app &amp;gt;/dev/null TARGET=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$PROJECT_NAME/$app:$APP_VERSION docker build -t $TARGET apps/$app docker push $TARGET done  Building/Pushing Container images first time to ECR may take around 3-5 minutes</description>
+    </item>
+    
+    <item>
+      <title>Test the Application</title>
+      <link>/advanced/330_servicemesh_using_appmesh/deploy_applications/test_the_app/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/deploy_applications/test_the_app/</guid>
+      <description>Testing the Connectivity between Fargate and Nodegroup pods To test if our ported Product Catalog App is working as expected, we&amp;rsquo;ll first exec into the frontend-node container.
+export FE_POD_NAME=$(kubectl get pods -n prodcatalog-ns -l app=frontend-node -o jsonpath=&amp;#39;{.items[].metadata.name}&amp;#39;) kubectl -n prodcatalog-ns exec -it ${FE_POD_NAME} -c frontend-node bash You will see a prompt from within the frontend-node container.
+root@frontend-node-9d46cb55-XXX:/usr/src/app#  curl to Fargate prodcatalog backend endpoint and you should see the below response</description>
+    </item>
+    
+  </channel>
+</rss>

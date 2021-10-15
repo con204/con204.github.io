@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EMR on EKS on Amazon EKS Workshop</title>
+    <link>/advanced/430_emr_on_eks/</link>
+    <description>Recent content in EMR on EKS on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Mar 2021 12:30:45 -0400</lastBuildDate><atom:link href="/advanced/430_emr_on_eks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prerequisites</title>
+      <link>/advanced/430_emr_on_eks/prereqs/</link>
+      <pubDate>Mon, 15 Mar 2021 16:24:50 -0400</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/prereqs/</guid>
+      <description>In this chapter, we will prepare your EKS cluster so that it is integrated with EMR on EKS. If you don&amp;rsquo;t have EKS cluster, please review instructions from start the workshop and launch using eksctl modules
+Create namespace and RBAC permissions Let&amp;rsquo;s create a namespace &amp;lsquo;spark&amp;rsquo; in our EKS cluster. After this, we will use the automation powered by eksctl for creating RBAC permissions and for adding EMR on EKS service-linked role into aws-auth configmap</description>
+    </item>
+    
+    <item>
+      <title>Run sample workload</title>
+      <link>/advanced/430_emr_on_eks/sample_workload/</link>
+      <pubDate>Thu, 08 Apr 2021 03:21:44 -0700</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/sample_workload/</guid>
+      <description>Now let&amp;rsquo;s run a sample workload using one of the inbuilt example scripts that calculates the value of pi.
+First get the virtual EMR clusters id and arn of the role that EMR uses for job execution.
+export VIRTUAL_CLUSTER_ID=$(aws emr-containers list-virtual-clusters --query &amp;#34;virtualClusters[?state==&amp;#39;RUNNING&amp;#39;].id&amp;#34; --output text) export EMR_ROLE_ARN=$(aws iam get-role --role-name EMRContainers-JobExecutionRole --query Role.Arn --output text) Lets start a sample spark job.
+aws emr-containers start-job-run \  --virtual-cluster-id=$VIRTUAL_CLUSTER_ID \  --name=pi-2 \  --execution-role-arn=$EMR_ROLE_ARN \  --release-label=emr-6.</description>
+    </item>
+    
+    <item>
+      <title>Monitoring and logging Part 1 - Setup</title>
+      <link>/advanced/430_emr_on_eks/monitoring_and_logging_0/</link>
+      <pubDate>Thu, 08 Apr 2021 04:25:46 -0700</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/monitoring_and_logging_0/</guid>
+      <description>Logs from the EMR jobs can be sent to cloudwatch and s3. In the last section of running sample job, we did not configure logging
+We will run the job again now, only this time we will send the logs to s3 and cloudwatch.
+Let&amp;rsquo;s create a cloudwatch log group before we can start sending the logs.
+aws logs create-log-group --log-group-name=/emr-on-eks/eksworkshop-eksctl Let&amp;rsquo;s make sure that we have the variables set for the S3 bucket, virtual EMR clusters id, and the ARN of the role that EMR uses for job execution.</description>
+    </item>
+    
+    <item>
+      <title>Monitoring and logging Part 2 - Cloudwatch &amp; S3</title>
+      <link>/advanced/430_emr_on_eks/monitoring_and_logging_1/</link>
+      <pubDate>Thu, 08 Apr 2021 04:25:46 -0700</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/monitoring_and_logging_1/</guid>
+      <description>Let&amp;rsquo;s head over to cloudwatch logs.
+open the log group /emr-on-eks/eksworkshop-eksctl and filter stream by driver/stdout:
+Now click on the log stream and you will be able to see the output of the job.
+You can also go to the s3 bucket that we configured for logging and see the logs.
+Download the stdout.gz file and extract it.
+You should be able to find its contents similar as below:
+ Pi is roughly 3.</description>
+    </item>
+    
+    <item>
+      <title>Monitoring and logging  Part 3 - Spark History server</title>
+      <link>/advanced/430_emr_on_eks/monitoring_and_logging_2/</link>
+      <pubDate>Thu, 08 Apr 2021 04:25:46 -0700</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/monitoring_and_logging_2/</guid>
+      <description>You can visit the spark history server from EMR console and look the execution details.
+Navigate to the EMR console.
+Click on View logs
+Click on App ID link
+From here you can navigate the spark history server to look at various metrics and details of the job.</description>
+    </item>
+    
+    <item>
+      <title>Monitoring and logging  Part 4 - Prometheus and Grafana</title>
+      <link>/advanced/430_emr_on_eks/monitoring_and_logging_3/</link>
+      <pubDate>Thu, 08 Apr 2021 04:25:46 -0700</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/monitoring_and_logging_3/</guid>
+      <description>You will need to have prometheus and grafana installed before you can proceed with this section.
+You can follow the Prometheus and Grafana sections to get the steps to install both of these.
+You can also use Amazon Managed Service for Prometheus and Amazon Managed Service for Grafana. In order to get started with these, follow the official docs for AMP and AMG.
+Once you have Prometheus and Grafana installed, head over to Grafana, and import the dashboard 11674.</description>
+    </item>
+    
+    <item>
+      <title>Configure Autoscaling</title>
+      <link>/advanced/430_emr_on_eks/autoscaling/</link>
+      <pubDate>Thu, 08 Apr 2021 01:29:46 -0700</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/autoscaling/</guid>
+      <description>EKS Cluster Autoscaler Cluster autoscaling in EKS is achieved using Cluster Autoscaler. The Kubernetes Cluster Autoscaler automatically adjusts the number of nodes in your cluster based on the resources required and execute the jobs.
+Cluster Autoscaler for AWS provides integration with Auto Scaling groups.
+Configure the ASG Lets configure the size of the Auto Scaling group of the newly deployed EKS managed nodegroup.
+# we need the ASG name export ASG_NAME=$(aws eks describe-nodegroup --cluster-name eksworkshop-eksctl --nodegroup-name emrnodegroup --query &amp;#34;nodegroup.</description>
+    </item>
+    
+    <item>
+      <title>Using Spot Instances Part 1 - Setup</title>
+      <link>/advanced/430_emr_on_eks/spot_instances_1/</link>
+      <pubDate>Tue, 11 May 2021 13:38:18 +0800</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/spot_instances_1/</guid>
+      <description>EC2 Spot Instances Amazon EC2 Spot Instances let you take advantage of unused EC2 capacity in the AWS cloud. Spot Instances are available at up to a 90% discount compared to On-Demand prices. You can use Spot Instances for various stateless, fault-tolerant, or flexible applications such as big data, containerized workloads, CI/CD, web servers, high-performance computing (HPC), and test &amp;amp; development workloads. Click here to know more about Spot Instances.</description>
+    </item>
+    
+    <item>
+      <title>Using Spot Instances Part 2 - Run Sample Workload</title>
+      <link>/advanced/430_emr_on_eks/spot_instances_2/</link>
+      <pubDate>Tue, 11 May 2021 13:38:18 +0800</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/spot_instances_2/</guid>
+      <description>Spark Pod Template With Amazon EMR versions 5.33.0 and later, Amazon EMR on EKS supports pod template feature in Spark. Pod templates are specifications that determine how to run each pod. You can use pod template files to define the driver or executor pod’s configurations that Spark configurations do not support.
+For more information about the pod templates support in EMR on EKS, see Pod Templates.
+ To reduce costs, you can schedule Spark driver tasks to run on On-Demand instances while scheduling Spark executor tasks to run on Spot instances.</description>
+    </item>
+    
+    <item>
+      <title>Serverless EMR job Part 1 - Setup</title>
+      <link>/advanced/430_emr_on_eks/fargate_1/</link>
+      <pubDate>Wed, 19 May 2021 04:02:10 +1000</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/fargate_1/</guid>
+      <description>Running applications on the serverless compute engine AWS Fargate, makes it easy for you to focus on deliverying business values, as it removes the need to provision, configure autoscaling, and manage the server.
+Before we schedule a serverless EMR job on Amazon EKS, a Fargate profile is needed, that specifies which of your Spark pods should use Fargate when they are launched. For more information, see AWS Fargate profile and our previous lab Creating a Fargate Profile.</description>
+    </item>
+    
+    <item>
+      <title>Serverless EMR job Part 2 - Monitor &amp; Troubleshoot</title>
+      <link>/advanced/430_emr_on_eks/fargate_2/</link>
+      <pubDate>Wed, 19 May 2021 04:02:10 +1000</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/fargate_2/</guid>
+      <description>Monitoring job status With zero manual effort, the number of Fargate instances change dynamically and distribute across mutliple availability zones. You can again open up couple of terminals and use watch command to see this change.
+Watch pod status:
+watch kubectl get pod -n spark Watch node scaling activities:
+watch kubectl get node \ --label-columns=eks.amazonaws.com/capacityType,topology.kubernetes.io/zone Navigate to SparkUI to view job status:
+echo -e &amp;#34;\nNavigate to EMR virtual cluster console:\n\nhttps://console.aws.amazon.com/elasticmapreduce/home?&amp;#34;region=${AWS_REGION}&amp;#34;#virtual-cluster-jobs:&amp;#34;${VIRTUAL_CLUSTER_ID}&amp;#34;\n&amp;#34; View output in S3, once it&amp;rsquo;s done (~ 10min):</description>
+    </item>
+    
+    <item>
+      <title>Using Node Selectors</title>
+      <link>/advanced/430_emr_on_eks/eks_emr_using_node_selectors/</link>
+      <pubDate>Wed, 19 May 2021 10:30:14 -0400</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/eks_emr_using_node_selectors/</guid>
+      <description>AWS EKS clusters can span multiple AZs in a VPC. A Spark application whose driver and executor pods are distributed across multiple AZs can incur inter-AZ data transfer costs. To minimize or eliminate inter-AZ data transfer costs, you can configure the application to only run on the nodes within a single AZ. In this example, we use the kubernetes node selector &amp;ldquo;topology.kubernetes.io/zone&amp;rdquo; to specify which AZ should the job run on.</description>
+    </item>
+    
+    <item>
+      <title>Cleanup</title>
+      <link>/advanced/430_emr_on_eks/cleanup/</link>
+      <pubDate>Tue, 11 May 2021 13:38:18 +0800</pubDate>
+      
+      <guid>/advanced/430_emr_on_eks/cleanup/</guid>
+      <description>For more hands-on experience, see the dedicated EMR on EKS Workshop.
+Empty and delete S3 buckets aws s3 rm $s3DemoBucket --recursive aws s3 rb $s3DemoBucket --force Delete IAM Role and policiess aws iam delete-role-policy --role-name EMRContainers-JobExecutionRole --policy-name review-data-access aws iam delete-role-policy --role-name EMRContainers-JobExecutionRole --policy-name EMR-Containers-Job-Execution aws iam delete-role --role-name EMRContainers-JobExecutionRole Delete Virtual Cluster Cluster cannot be deleted unless the pods in pending state are cleaned up. Lets find out running jobs and cancel them.</description>
+    </item>
+    
+  </channel>
+</rss>

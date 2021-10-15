@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Observability on Amazon EKS Workshop</title>
+    <link>/advanced/330_servicemesh_using_appmesh/integrate_observability/</link>
+    <description>Recent content in Observability on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2020 08:30:11 -0700</lastBuildDate><atom:link href="/advanced/330_servicemesh_using_appmesh/integrate_observability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Container Insights</title>
+      <link>/advanced/330_servicemesh_using_appmesh/integrate_observability/container_insights/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/integrate_observability/container_insights/</guid>
+      <description>Container Insights CloudWatch Container Insights is a fully managed service that collects, aggregates, and summarizes Amazon EKS metrics and logs. The CloudWatch Container Insights dashboard gives you access to the following information:
+ CPU and memory utilization Task and service counts Read/write storage Network Rx/Tx Container instance counts for clusters, services, and tasks  Log into console, navigate to Cloudwatch -&amp;gt; Container Insights -&amp;gt; Performance monitoring, you can see the EKS Cluster insight You can change the dropdown to EKS Nodes to see the Nodes insight </description>
+    </item>
+    
+    <item>
+      <title>Cloudwatch Logs</title>
+      <link>/advanced/330_servicemesh_using_appmesh/integrate_observability/cloudwatch_logs/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/integrate_observability/cloudwatch_logs/</guid>
+      <description>Cloudwatch Console Logs are collected by the fluentd daemonset running in the EKS nodes and also by Fluentbit daemonset that collect logs from Fargate and send them to Cloudwatch.
+The following CloudWatch log groups are created by default when Container Insights is setup:
+ /aws/containerinsights/cluster-name/application /aws/containerinsights/cluster-name/dataplane /aws/containerinsights/cluster-name/hostNodegroup Container Logs /aws/containerinsights/cluster-name/performance /aws/eks/eksworkshop-eksctl/cluster fluent-bit-cloudwatch  Log into console, navigate to Cloudwatch -&amp;gt; LogGroups, you should see below log groups Nodegroup Container Logs Click on the application LogGroup, and click on Search All Now, Type Catalog Detail Version in the Search box and Click enter, you should see the below logs from proddetail backend service Fargate Container Logs Log into console, navigate to Cloudwatch -&amp;gt; LogGroups -&amp;gt; Click on fluent-bit-cloudwatch LogGroup -&amp;gt; Click on Search All and type Get Request succeeded in the search box and enter, you should see below logs (Optional) Control Plane Logging If you want to enable control plane logging, follow this link</description>
+    </item>
+    
+    <item>
+      <title>Prometheus Metrics</title>
+      <link>/advanced/330_servicemesh_using_appmesh/integrate_observability/prometheus_metrics/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/integrate_observability/prometheus_metrics/</guid>
+      <description>CloudWatch Container Insights monitoring for Prometheus automates the discovery of Prometheus metrics from containerized systems and workloads. Prometheus is an open-source systems monitoring and alerting toolkit.
+Prometheus Metrics Logs The CloudWatch agent supports the standard Prometheus scrape configurations as documented in scrape_config in the Prometheus documentation. The CloudWatch agent YAML that we set up in the chapter enable-prometheus-metrics-in-cloudwatch have jobs configured that are scraped, and the metrics are sent to CloudWatch.</description>
+    </item>
+    
+    <item>
+      <title>XRay Trace</title>
+      <link>/advanced/330_servicemesh_using_appmesh/integrate_observability/xray_trace/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/integrate_observability/xray_trace/</guid>
+      <description>XRay Trace AWS X-Ray helps developers and DevOps engineers quickly understand how an application and its underlying services are performing. When it’s integrated with AWS App Mesh, the combination makes for a powerful analytical tool.
+To instrument your application code, use the X-Ray SDK. The SDK records data about incoming and outgoing requests and sends it to the X-Ray daemon, which relays the data in batches to X-Ray. See the examples in the code below for our Product Catalog demo application.</description>
+    </item>
+    
+  </channel>
+</rss>

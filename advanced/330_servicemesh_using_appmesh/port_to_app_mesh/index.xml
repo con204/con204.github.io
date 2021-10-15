@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Porting Product Catalog to App Mesh on Amazon EKS Workshop</title>
+    <link>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/</link>
+    <description>Recent content in Porting Product Catalog to App Mesh on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2020 08:30:11 -0700</lastBuildDate><atom:link href="/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mesh Resources and Design</title>
+      <link>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/mesh_resources_overview/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/mesh_resources_overview/</guid>
+      <description>App Mesh Design In the image above you see all the services in Product Catalog Application are running within App Mesh. Each of the services has a VirtualNode defined (frontend-node, prodcatalog, and proddetail-v1), as well as VirtualService (fontend-node, prodcatalog and proddetail). These VirtualServices send traffic to VirtualRouters within the mesh, which in turn specify routing rules. This drives traffic to their respective VirtualNodes and ultimately to the service endpoints within Kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>Create the Meshed Application</title>
+      <link>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/create_meshed_app/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/create_meshed_app/</guid>
+      <description>Create Mesh Object Configure namespace with App Mesh Labels and deploy Mesh Object
+kubectl apply -f deployment/mesh.yaml namespace/prodcatalog-ns configured mesh.appmesh.k8s.aws/prodcatalog-mesh created  Confirm the Mesh object and Namespace are created
+kubectl describe namespace prodcatalog-ns Name: prodcatalog-ns Labels: appmesh.k8s.aws/sidecarInjectorWebhook=enabled gateway=ingress-gw mesh=prodcatalog-mesh Annotations: Status: Active  kubectl describe mesh prodcatalog-mesh Status: Conditions: Last Transition Time: 2020-11-02T16:43:03Z Status: True Type: MeshActive  Create App Mesh Resources for the services kubectl apply -f deployment/meshed_app.yaml virtualnode.</description>
+    </item>
+    
+    <item>
+      <title>Sidecar Injection</title>
+      <link>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/trigger_sidecar_injection/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/trigger_sidecar_injection/</guid>
+      <description>For a pod in your application to join a mesh, it must have an Envoy proxy container running sidecar within the pod. This establishes the data plane that AWS App Mesh controls. So we must run an Envoy container within each pod of the Product Catalog App deployment. For example:
+This can be accomplished a few different ways:
+  Before installing the application, you can modify the Product Catalog App Deployment container specs to include App Mesh sidecar containers and set a few required configuration elements and environment variables.</description>
+    </item>
+    
+    <item>
+      <title>Testing the Application</title>
+      <link>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/testing_v1/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/port_to_app_mesh/testing_v1/</guid>
+      <description>Now it&amp;rsquo;s time to test. To test if our ported Product Catalog App is working as expected, we&amp;rsquo;ll first exec into the frontend-node container.
+export FE_POD_NAME=$(kubectl get pods -n prodcatalog-ns -l app=frontend-node -o jsonpath=&amp;#39;{.items[].metadata.name}&amp;#39;) kubectl -n prodcatalog-ns exec -it ${FE_POD_NAME} -c frontend-node bash You will see a prompt from within the frontend-node container.
+root@frontend-node-9d46cb55-XXX:/usr/src/app#  Test the confiuration by issuing a curl request to the virtual service prodcatalog on port 5000, simulating what would happen if code running in the same pod made a request to the prodcatalog backend:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Canary Release on Amazon EKS Workshop</title>
+    <link>/advanced/330_servicemesh_using_appmesh/canary_deployment/</link>
+    <description>Recent content in Canary Release on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2020 08:30:11 -0700</lastBuildDate><atom:link href="/advanced/330_servicemesh_using_appmesh/canary_deployment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Canary Deployment</title>
+      <link>/advanced/330_servicemesh_using_appmesh/canary_deployment/deploy_canary/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/canary_deployment/deploy_canary/</guid>
+      <description>Now lets deploy a new version (version 2) of Catalog Product Detail backend service. And change the proddetail VirtualRouter to route traffic 90% to proddetail-v1 version 1 and 10% to proddetail-v2 version 2. And as we gain confidence in the proddetail-v2, we can increase the % in a linear fashion. Build Catalog Detail Version 2 service aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com PROJECT_NAME=eks-app-mesh-demo export APP_VERSION_2=2.</description>
+    </item>
+    
+    <item>
+      <title>Testing Canary</title>
+      <link>/advanced/330_servicemesh_using_appmesh/canary_deployment/testing_v2/</link>
+      <pubDate>Mon, 27 Jan 2020 08:30:11 -0700</pubDate>
+      
+      <guid>/advanced/330_servicemesh_using_appmesh/canary_deployment/testing_v2/</guid>
+      <description>Get the Loadbalancer endpoint
+export LB_NAME=$(kubectl get svc ingress-gw -n prodcatalog-ns -o jsonpath=&amp;#34;{.status.loadBalancer.ingress[*].hostname}&amp;#34;) echo $LB_NAME Now, back in your browser, you should see below screen which shows that Catalog Detail proddetail-v1 Version 1 is being used.
+Now click on the button Canary Deployment few times as we set the route weight as 10% to proddetail V2 and 90% to proddetail V1, you should see information coming from Product Catalog proddetail-v2 V2 after few clicks.</description>
+    </item>
+    
+  </channel>
+</rss>

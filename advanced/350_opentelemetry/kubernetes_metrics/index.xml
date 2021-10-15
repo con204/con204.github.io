@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes Metrics on Amazon EKS Workshop</title>
+    <link>/advanced/350_opentelemetry/kubernetes_metrics/</link>
+    <description>Recent content in Kubernetes Metrics on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/advanced/350_opentelemetry/kubernetes_metrics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Receiver</title>
+      <link>/advanced/350_opentelemetry/kubernetes_metrics/receiver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/kubernetes_metrics/receiver/</guid>
+      <description>Deploying the Prometheus Metrics Scraper Let&amp;rsquo;s deploy a single OpenTelemetry Collector which scrapes prometheus metrics from the EKS Control Plane and sends them to CloudWatch.
+First let&amp;rsquo;s create a temporary environment variable place holder.
+export WORKSPACE_ID=&amp;#39;${WORKSPACE_ID}&amp;#39; Now we&amp;rsquo;ll update the manifest for this Prometheus metric scraper with our environment variables, and deploy the singleton collector.
+envsubst &amp;lt; kubernetes/adot/otel-prometheus.yaml | sponge kubernetes/adot/otel-prometheus.yaml kubectl apply -f kubernetes/adot/otel-prometheus.yaml Let&amp;rsquo;s check that the scraper is deployed and running.</description>
+    </item>
+    
+    <item>
+      <title>Export to AMP</title>
+      <link>/advanced/350_opentelemetry/kubernetes_metrics/export_to_amp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/kubernetes_metrics/export_to_amp/</guid>
+      <description>In previous section we learned how to receive metrics from the Kubernetes Control Plane and export them to CloudWatch using the OpenTelemetry collector. In this section we are going to demonstrate a core benefit of the OpenTelemetry Collector pattern, by configuring it to send the Kubernetes Control Plane metrics to an additional destination, AWS Managed Service for Prometheus (AMP).
+Let&amp;rsquo;s create an AMP workspace:
+aws amp create-workspace --alias eks-workshop --region $AWS_REGION IAM Policy &amp;amp; IAM Role Now we create a new IAM Policy (AWSManagedPrometheusWriteAccessPolicy) which grants AMP read and write permission:</description>
+    </item>
+    
+    <item>
+      <title>Setup Grafana </title>
+      <link>/advanced/350_opentelemetry/kubernetes_metrics/setup_grafana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/kubernetes_metrics/setup_grafana/</guid>
+      <description>In the previous section we exported Kubernetes Control Plane metrics to our AMP workspace. Now let&amp;rsquo;s visualize this data using Grafana. This workshop uses open source Grafana. This is due to a limitation on the AWS EventEngine tool not yet supporting AWS Managed Grafana (AMG). If you are doing this lab on your own account, you can use AWS Managed Grafana.
+ Deploying Grafana First install Helm
+curl -fsSL -o /tmp/get_helm.</description>
+    </item>
+    
+    <item>
+      <title>Vizualizing with Grafana</title>
+      <link>/advanced/350_opentelemetry/kubernetes_metrics/visualizing_with_grafana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/kubernetes_metrics/visualizing_with_grafana/</guid>
+      <description>Now that Grafana is setup to read metrics from Prometheus, let&amp;rsquo;s create a dashboard on our Kubernetes Cluster&amp;rsquo;s health.
+End to End test AMP &amp;amp; Grafana In the Grafana web-console, let&amp;rsquo;s head to Explore Let&amp;rsquo;s run a test PromQL query against our AMP workspace. In the query bar type in etcd_object_counts, then click the Run Query button on the top right. If this query returns data, we can confirm that we are 1) Ingesting Kubernetes Control Plane metrics to our AMP workspace.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Batch Processing with Argo Workflow on Amazon EKS Workshop</title>
+    <link>/advanced/410_batch/</link>
+    <description>Recent content in Batch Processing with Argo Workflow on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 -0500</lastBuildDate><atom:link href="/advanced/410_batch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>/advanced/410_batch/introduction/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/introduction/</guid>
+      <description>Batch processing refers to performing units of work, referred to as a job in a repetitive and unattended fashion. Jobs are typically grouped together and processed in batches (hence the name).
+Kubernetes includes native support for running Jobs. Jobs can run multiple pods in parallel until receiving a set number of completions. Each pod can contain multiple containers as a single unit of work.
+Argo enhances the batch processing experience by introducing a number of features:</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Jobs</title>
+      <link>/advanced/410_batch/jobs/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/jobs/</guid>
+      <description>Kubernetes Jobs A job creates one or more pods and ensures that a specified number of them successfully terminate. As pods successfully complete, the job tracks the successful completions. When a specified number of successful completions is reached, the job itself is complete. Deleting a Job will cleanup the pods it created.
+Let&amp;rsquo;s start by creating the job-whalesay.yaml manifest using this command
+mkdir ~/environment/batch_policy/ cat &amp;lt;&amp;lt;EoF &amp;gt; ~/environment/batch_policy/job-whalesay.yaml apiVersion: batch/v1 kind: Job metadata: name: whalesay spec: template: spec: containers: - name: whalesay image: docker/whalesay command: [&amp;#34;cowsay&amp;#34;, &amp;#34;This is a Kubernetes Job!</description>
+    </item>
+    
+    <item>
+      <title>Install Argo CLI</title>
+      <link>/advanced/410_batch/install/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/install/</guid>
+      <description>Install Argo CLI Before we can get started configuring argo we&amp;rsquo;ll need to first install the command line tools that you will interact with. To do this run the following.
+# set argo version export ARGO_VERSION=&amp;#34;v2.12.13&amp;#34; # Download the binary curl -sLO https://github.com/argoproj/argo-workflows/releases/download/${ARGO_VERSION}/argo-linux-amd64.gz # Unzip gunzip argo-linux-amd64.gz # Make binary executable chmod +x argo-linux-amd64 # Move binary to path sudo mv ./argo-linux-amd64 /usr/local/bin/argo # Test installation argo version --short output argo: v2.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Argo</title>
+      <link>/advanced/410_batch/deploy/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/deploy/</guid>
+      <description>Deploy Argo Controller Argo run in its own namespace and deploys as a CustomResourceDefinition.
+Deploy the Controller and UI.
+kubectl create namespace argo kubectl apply -n argo -f https://raw.githubusercontent.com/argoproj/argo-workflows/${ARGO_VERSION}/manifests/install.yaml customresourcedefinition.apiextensions.k8s.io/clusterworkflowtemplates.argoproj.io created customresourcedefinition.apiextensions.k8s.io/cronworkflows.argoproj.io created customresourcedefinition.apiextensions.k8s.io/workflows.argoproj.io created customresourcedefinition.apiextensions.k8s.io/workflowtemplates.argoproj.io created serviceaccount/argo created serviceaccount/argo-server created role.rbac.authorization.k8s.io/argo-role created clusterrole.rbac.authorization.k8s.io/argo-aggregate-to-admin created clusterrole.rbac.authorization.k8s.io/argo-aggregate-to-edit created clusterrole.rbac.authorization.k8s.io/argo-aggregate-to-view created clusterrole.rbac.authorization.k8s.io/argo-cluster-role created clusterrole.rbac.authorization.k8s.io/argo-server-cluster-role created rolebinding.rbac.authorization.k8s.io/argo-binding created clusterrolebinding.rbac.authorization.k8s.io/argo-binding created clusterrolebinding.rbac.authorization.k8s.io/argo-server-binding created configmap/workflow-controller-configmap created service/argo-server created service/workflow-controller-metrics created deployment.apps/argo-server created deployment.apps/workflow-controller created  Configure the service account to run Workflows In order for Argo to support features such as artifacts, outputs, access to secrets, etc.</description>
+    </item>
+    
+    <item>
+      <title>Configure Artifact Repository</title>
+      <link>/advanced/410_batch/artifact/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/artifact/</guid>
+      <description>Configure Artifact Repository Argo uses an artifact repository to pass data between jobs in a workflow, known as artifacts. Amazon S3 can be used as an artifact repository.
+Let&amp;rsquo;s create a S3 bucket using the AWS CLI.
+aws s3 mb s3://batch-artifact-repository-${ACCOUNT_ID}/ Next, we will add this bucket as an argo artifactRepository in the configmap workflow-controller-configmap
+Create the patch
+cat &amp;lt;&amp;lt;EoF &amp;gt; ~/environment/batch_policy/argo-patch.yaml data: config: | artifactRepository: s3: bucket: batch-artifact-repository-${ACCOUNT_ID} endpoint: s3.</description>
+    </item>
+    
+    <item>
+      <title>Simple Batch Workflow</title>
+      <link>/advanced/410_batch/workflow-simple/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/workflow-simple/</guid>
+      <description>Simple Batch Workflow Create the manifest workflow-whalesay.yaml and let&amp;rsquo;s deploy the whalesay example from before using Argo.
+cat &amp;lt;&amp;lt;EoF &amp;gt; ~/environment/batch_policy/workflow-whalesay.yaml apiVersion: argoproj.io/v1alpha1 kind: Workflow metadata: generateName: whalesay- spec: entrypoint: whalesay templates: - name: whalesay container: image: docker/whalesay command: [cowsay] args: [&amp;#34;This is an Argo Workflow!&amp;#34;] EoF Now deploy the workflow using the argo CLI.
+You can also run workflow specs directly using kubectl but the argo CLI provides syntax checking, nicer output, and requires less typing.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Batch Workflow</title>
+      <link>/advanced/410_batch/workflow-advanced/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/workflow-advanced/</guid>
+      <description>Advanced Batch Workflow Let&amp;rsquo;s take a look at a more complex workflow, involving passing artifacts between jobs, multiple dependencies, etc.
+Create teardrop.yaml using the command below:
+cat &amp;lt;&amp;lt;EoF &amp;gt; ~/environment/batch_policy/teardrop.yaml apiVersion: argoproj.io/v1alpha1 kind: Workflow metadata: generateName: teardrop- spec: entrypoint: teardrop templates: - name: create-chain container: image: alpine:latest command: [&amp;#34;sh&amp;#34;, &amp;#34;-c&amp;#34;] args: [&amp;#34;echo &amp;#39;&amp;#39; &amp;gt;&amp;gt; /tmp/message&amp;#34;] outputs: artifacts: - name: chain path: /tmp/message - name: whalesay inputs: parameters: - name: message artifacts: - name: chain path: /tmp/message container: image: docker/whalesay command: [&amp;#34;sh&amp;#34;, &amp;#34;-c&amp;#34;] args: [&amp;#34;echo Chain: ; cat /tmp/message* | sort | uniq | tee /tmp/message; cowsay This is Job {{inputs.</description>
+    </item>
+    
+    <item>
+      <title>Argo Dashboard</title>
+      <link>/advanced/410_batch/dashboard/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/dashboard/</guid>
+      <description>Argo Dashboard Since V2.5, Argo UI has been replace by Argo Server. The new UI is not read-only — it also comes with the ability to create and update data directly in your browser. Click here for more information
+ Access the Argo Server To access the dashboard we will expose the argo-server service by adding a LoadBalancer.
+kubectl -n argo patch svc argo-server \  -p &amp;#39;{&amp;#34;spec&amp;#34;: {&amp;#34;type&amp;#34;: &amp;#34;LoadBalancer&amp;#34;}}&amp;#39;  It will take several minutes for the ELB to become healthy and start passing traffic to the pods.</description>
+    </item>
+    
+    <item>
+      <title>Cleanup</title>
+      <link>/advanced/410_batch/cleanup/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/advanced/410_batch/cleanup/</guid>
+      <description>Cleanup Delete all workflows argo -n argo delete --all Remove Artifact Repository Bucket aws s3 rb s3://batch-artifact-repository-${ACCOUNT_ID}/ --force Undeploy Argo kubectl delete -n argo -f https://raw.githubusercontent.com/argoproj/argo-workflows/${ARGO_VERSION}/manifests/install.yaml kubectl delete namespace argo Cleanup Kubernetes Job kubectl delete job/whalesay delete the inline policy aws iam delete-role-policy --role-name $ROLE_NAME --policy-name S3-Policy-For-Worker delete the folder and all the files in it rm -rf ~/environment/batch_policy </description>
+    </item>
+    
+  </channel>
+</rss>

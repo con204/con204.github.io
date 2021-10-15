@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logging on Amazon EKS Workshop</title>
+    <link>/tags/logging/</link>
+    <description>Recent content in logging on Amazon EKS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/tags/logging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logging with Elasticsearch, Fluent Bit, and Kibana (EFK)</title>
+      <link>/intermediate/230_logging/</link>
+      <pubDate>Tue, 21 Jul 2020 22:23:34 -0400</pubDate>
+      
+      <guid>/intermediate/230_logging/</guid>
+      <description>Implement Logging with EFK In this Chapter, we will deploy a common Kubernetes logging pattern which consists of the following:
+  Fluent Bit: an open source and multi-platform Log Processor and Forwarder which allows you to collect data/logs from different sources, unify and send them to multiple destinations. It&amp;rsquo;s fully compatible with Docker and Kubernetes environments.
+  Amazon Elasticsearch Service: a fully managed service that makes it easy for you to deploy, secure, and run Elasticsearch cost effectively at scale.</description>
+    </item>
+    
+  </channel>
+</rss>
