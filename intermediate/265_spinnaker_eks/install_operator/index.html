@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Install Spinnaker Operator :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326733" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326733" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326733" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326733" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326733" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326733" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326733"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326733" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326733" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326733"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326733"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10696,7 +10734,7 @@ The Operator unlocks the scalability of a GitOps workflow by defining Spinnaker 
 <p>Ensure you are getting the IAM role that you have attached to Cloud9 IDE when you execute the below command</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws sts get-caller-identity
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws sts get-caller-identity
 </code></pre></div><pre><output class="bash">
 {
 	&#34;Account&#34;: &#34;XXXXXXX&#34;, 
@@ -10708,7 +10746,7 @@ The Operator unlocks the scalability of a GitOps workflow by defining Spinnaker 
 <ul>
 <li>Check if AWS_REGION and ACCOUNT_ID are set correctly</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">test -n <span style="color:#e6db74">&#34;</span>$AWS_REGION<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo AWS_REGION is <span style="color:#e6db74">&#34;</span>$AWS_REGION<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> echo AWS_REGION is not set
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">test -n <span style="color:#e6db74">&#34;</span>$AWS_REGION<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo AWS_REGION is <span style="color:#e6db74">&#34;</span>$AWS_REGION<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> echo AWS_REGION is not set
 test -n <span style="color:#e6db74">&#34;</span>$ACCOUNT_ID<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo ACCOUNT_ID is <span style="color:#e6db74">&#34;</span>$ACCOUNT_ID<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> echo ACCOUNT_ID is not set
 </code></pre></div><p>If not, export the ACCOUNT_ID and AWS_REGION to ENV
 <pre><output class="bash">
@@ -10722,7 +10760,7 @@ export AWS_REGION=&lt;your_aws_region&gt;
 <div class="notices info" ><p>We are also deleting the existng nodegroup <code>nodegroup</code> that was created as part of cluster creation as we need Spinnaker Operator to create the services in the new nodegroup <code>spinnaker</code></p>
 </div>
 </p>
-<pre tabindex="0"><code>cat &lt;&lt; EOF &gt; spinnakerworkshop.yaml
+<pre><code>cat &lt;&lt; EOF &gt; spinnakerworkshop.yaml
 ---
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
@@ -10764,7 +10802,7 @@ eksctl delete nodegroup --cluster=eksworkshop-eksctl --name=nodegroup
 </output></pre>
 
 <p>Confirm the setup</p>
-<pre tabindex="0"><code>kubectl get nodes
+<pre><code>kubectl get nodes
 </code></pre><pre><output class="bash">
 NAME                                           STATUS   ROLES    AGE     VERSION
 ip-192-y-x-184.${AWS_REGION}.compute.internal   Ready    &lt;none&gt;   4m45s   v1.17.12-eks-7684af
@@ -10774,7 +10812,7 @@ ip-192-y-x-105.${AWS_REGION}.compute.internal    Ready    &lt;none&gt;   4m47s  
 
 <h4 id="install-spinnaker-crds">Install Spinnaker CRDs</h4>
 <p>Pick a release from <a href="https://github.com/armory/spinnaker-operator/releases">https://github.com/armory/spinnaker-operator/releases</a> and export that version. Below we are using the latest release of Spinnaker Operator when this workshop was written,</p>
-<pre tabindex="0"><code>export VERSION=1.2.4
+<pre><code>export VERSION=1.2.4
 echo $VERSION
 
 mkdir -p spinnaker-operator &amp;&amp; cd spinnaker-operator
@@ -10792,7 +10830,7 @@ customresourcedefinition.apiextensions.k8s.io/spinnakerservices.spinnaker.io cre
 
 <h4 id="install-spinnaker-operator">Install Spinnaker Operator</h4>
 <p>Install operator in namespace <code>spinnaker-operator</code>. We have used <code>Cluster mode</code> for the operator that works across namespaces and requires a ClusterRole to perform validation.</p>
-<pre tabindex="0"><code>kubectl create ns spinnaker-operator
+<pre><code>kubectl create ns spinnaker-operator
 kubectl -n spinnaker-operator apply -f deploy/operator/cluster
 </code></pre><pre><output class="bash">
 namespace/spinnaker-operator created
@@ -10807,7 +10845,7 @@ serviceaccount/spinnaker-operator created
 <div class="notices info" ><p>This may take couple of minutes</p>
 </div>
 </p>
-<pre tabindex="0"><code>kubectl get pod -n spinnaker-operator
+<pre><code>kubectl get pod -n spinnaker-operator
 </code></pre><pre><output class="bash">
 NAME                                  READY   STATUS    RESTARTS   AGE
 spinnaker-operator-6d95f9b567-tcq4w   2/2     Running   0          82s
@@ -16651,6 +16689,38 @@ spinnaker-operator-6d95f9b567-tcq4w   2/2     Running   0          82s
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18241,19 +18311,19 @@ spinnaker-operator-6d95f9b567-tcq4w   2/2     Running   0          82s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326733"></script>
-    <script src="../../../js/jquery.sticky.js?1634326733"></script>
-    <script src="../../../js/featherlight.min.js?1634326733"></script>
-    <script src="../../../js/highlight.pack.js?1634326733"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326733"></script>
-    <script src="../../../js/learn.js?1634326733"></script>
-    <script src="../../../js/hugo-learn.js?1634326733"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326733" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

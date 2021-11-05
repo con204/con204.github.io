@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Configure IRSA for Fluent Bit :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10671,13 +10709,13 @@
 <p>With IAM roles for service accounts on Amazon EKS clusters, you can associate an IAM role with a Kubernetes service account. This service account can then provide AWS permissions to the containers in any pod that uses that service account. With this feature, you no longer need to provide extended permissions to the node IAM role so that pods on that node can call AWS APIs.</p>
 <h4 id="enabling-iam-roles-for-service-accounts-on-your-cluster">Enabling IAM roles for service accounts on your cluster</h4>
 <p>To use IAM roles for service accounts in your cluster, we will first create an OIDC identity provider</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl utils associate-iam-oidc-provider <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl utils associate-iam-oidc-provider <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --approve
 </code></pre></div><h4 id="creating-an-iam-role-and-policy-for-your-service-account">Creating an IAM role and policy for your service account</h4>
 <p>Next, we will create an IAM policy that limits the permissions needed by the Fluent Bit containers to connect to the Elasticsearch cluster.
 We will also create an IAM role for your Kubernetes service accounts to use before you associate it with a service account.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/environment/logging/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/environment/logging/
 
 export ES_DOMAIN_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eksworkshop-logging&#34;</span>
 
@@ -10701,7 +10739,7 @@ aws iam create-policy   <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --policy-document file://~/environment/logging/fluent-bit-policy.json
 </code></pre></div><h4 id="create-an-iam-role">Create an IAM role</h4>
 <p>Finally, create an IAM role for the fluent-bit Service Account in the logging namespace.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace logging
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace logging
 
 eksctl create iamserviceaccount <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name fluent-bit <span style="color:#ae81ff">\
@@ -10711,7 +10749,7 @@ eksctl create iamserviceaccount <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --approve <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --override-existing-serviceaccounts
 </code></pre></div><h4 id="make-sure-your-service-account-with-the-arn-of-the-iam-role-is-annotated">Make sure your service account with the ARN of the IAM role is annotated</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n logging describe sa fluent-bit
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n logging describe sa fluent-bit
 </code></pre></div><p>Output</p>
 <pre><output class="bash">
 Name:                fluent-bit
@@ -16559,6 +16597,38 @@ Events:              &lt;none&gt;
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18149,19 +18219,19 @@ Events:              &lt;none&gt;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

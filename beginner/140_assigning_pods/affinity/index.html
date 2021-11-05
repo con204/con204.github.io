@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Affinity and anti-affinity :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10682,12 +10720,12 @@
 <p>Node affinity is specified as field nodeAffinity of field affinity in the PodSpec.</p>
 <p>Let&rsquo;s see an example of a pod that uses node affinity:</p>
 <p>We are going to create another label on the same node as in the last example.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># export the first node name as a variable</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># export the first node name as a variable</span>
 export FIRST_NODE_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get nodes -o json | jq -r <span style="color:#e6db74">&#39;.items[0].metadata.name&#39;</span><span style="color:#66d9ef">)</span>
 
 kubectl label nodes <span style="color:#e6db74">${</span>FIRST_NODE_NAME<span style="color:#e6db74">}</span> azname<span style="color:#f92672">=</span>az1
 </code></pre></div><p>And create an affinity:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EoF &gt; ~/environment/pod-with-node-affinity.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EoF &gt; ~/environment/pod-with-node-affinity.yaml
 </span><span style="color:#e6db74">apiVersion: v1
 </span><span style="color:#e6db74">kind: Pod
 </span><span style="color:#e6db74">metadata:
@@ -10717,9 +10755,9 @@ kubectl label nodes <span style="color:#e6db74">${</span>FIRST_NODE_NAME<span st
 </span><span style="color:#e6db74">EoF</span>
 </code></pre></div><p>This node affinity rule says the pod can only be placed on a node with a label whose key is <code>azname</code> and whose value is either <code>az1</code> or <code>az2</code>. In addition, among nodes that meet that criteria, nodes with a label whose key is <code>another-node-label-key</code> and whose value is <code>another-node-label-value</code> should be preferred.</p>
 <p>Let&rsquo;s apply this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f ~/environment/pod-with-node-affinity.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f ~/environment/pod-with-node-affinity.yaml
 </code></pre></div><p>And check if it worked with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o wide
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o wide
 </code></pre></div><pre><output class="bash">
 NAME                 READY   STATUS    RESTARTS   AGE   IP                NODE                                           NOMINATED NODE   READINESS GATES
 nginx                1/1     Running   0          93s   192.168.155.38    ip-192-168-155-36.us-east-2.compute.internal   &lt;none&gt;           &lt;none&gt;
@@ -10727,16 +10765,16 @@ with-node-affinity   1/1     Running   0          6s    192.168.156.139   ip-192
 </output></pre>
 
 <p>We are going to apply the label to a different node. So first, let&rsquo;s clean the label and delete the Pod.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete -f ~/environment/pod-with-node-affinity.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete -f ~/environment/pod-with-node-affinity.yaml
 
 kubectl label nodes <span style="color:#e6db74">${</span>FIRST_NODE_NAME<span style="color:#e6db74">}</span> azname-
 </code></pre></div><p>We are applying the label to second node now:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export SECOND_NODE_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get nodes -o json | jq -r <span style="color:#e6db74">&#39;.items[1].metadata.name&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export SECOND_NODE_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get nodes -o json | jq -r <span style="color:#e6db74">&#39;.items[1].metadata.name&#39;</span><span style="color:#66d9ef">)</span>
 
 kubectl label nodes <span style="color:#e6db74">${</span>SECOND_NODE_NAME<span style="color:#e6db74">}</span> azname<span style="color:#f92672">=</span>az1
 kubectl apply -f ~/environment/pod-with-node-affinity.yaml
 </code></pre></div><p>And check if it works with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o wide
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -o wide
 </code></pre></div><pre><output class="bash">
 NAME                 READY   STATUS    RESTARTS   AGE     IP                NODE                                            NOMINATED NODE   READINESS GATES
 nginx                1/1     Running   0          2m14s   192.168.155.38    ip-192-168-155-36.us-east-2.compute.internal    &lt;none&gt;           &lt;none&gt;
@@ -10751,7 +10789,7 @@ with-node-affinity   1/1     Running   0          11s     192.168.166.141   ip-1
 <p>If you remove or change the label of the node where the pod is scheduled, the pod won’t be removed. In other words, the affinity selection works only at the time of scheduling the pod.</p>
 <p>The weight field in <code>preferredDuringSchedulingIgnoredDuringExecution</code> is in the range 1-100. For each node that meets all of the scheduling requirements (resource requests, RequiredDuringScheduling affinity expressions, etc.), the scheduler will compute a sum by iterating through the elements of this field and adding “weight” to the sum if the node matches the corresponding MatchExpressions. This score is then combined with the scores of other priority functions for the node. The node(s) with the highest total score are the most preferred.</p>
 <p>We are now ready to delete both pods</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete -f ~/environment/pod-nginx.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl delete -f ~/environment/pod-nginx.yaml
 kubectl delete -f ~/environment/pod-with-node-affinity.yaml
 </code></pre></div>
 
@@ -16591,6 +16629,38 @@ kubectl delete -f ~/environment/pod-with-node-affinity.yaml
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18181,19 +18251,19 @@ kubectl delete -f ~/environment/pod-with-node-affinity.yaml
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

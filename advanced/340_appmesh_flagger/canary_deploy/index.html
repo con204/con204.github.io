@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Deploy Canary Set Up :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10665,18 +10703,18 @@
 
 
 <h4 id="clone-the-repository">Clone the repository</h4>
-<pre tabindex="0"><code>cd ~/environment
+<pre><code>cd ~/environment
 git clone https://github.com/aws-containers/eks-microservice-demo.git
 cd eks-microservice-demo
 </code></pre><h4 id="create-a-namespace-and-a-mesh">Create a namespace and a mesh</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f flagger/mesh.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f flagger/mesh.yaml
 </code></pre></div><pre><output class="bash">  
 namespace/flagger created
 mesh.appmesh.k8s.aws/flagger created
 </output></pre>
 
 <h4 id="create-a-deployment-and-a-horizontal-pod-autoscaler">Create a deployment and a horizontal pod autoscaler</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export APP_VERSION<span style="color:#f92672">=</span>1.0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export APP_VERSION<span style="color:#f92672">=</span>1.0
 envsubst &lt; ./flagger/flagger-app.yaml | kubectl apply -f -
 </code></pre></div><pre><output class="bash">  
 horizontalpodautoscaler.autoscaling/detail created
@@ -10684,7 +10722,7 @@ deployment.apps/detail created
 </output></pre>
 
 <h4 id="create-iam-policy-and-role-for-flagger-loadtester">Create IAM policy and Role for flagger-loadtester</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create an IAM policy called AWSAppMeshK8sControllerIAMPolicy</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create an IAM policy called AWSAppMeshK8sControllerIAMPolicy</span>
 aws iam create-policy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --policy-name FlaggerEnvoyNamespaceIAMPolicy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --policy-document file://envoy-iam-policy.json
@@ -10697,7 +10735,7 @@ aws iam create-policy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --override-existing-serviceaccounts <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --approve 
 </code></pre></div><h4 id="deploy-the-load-testing-service-to-generate-traffic-during-the-canary-analysis">Deploy the load testing service to generate traffic during the canary analysis</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm upgrade -i flagger-loadtester flagger/loadtester <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm upgrade -i flagger-loadtester flagger/loadtester <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --namespace<span style="color:#f92672">=</span>flagger <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --set appmesh.enabled<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --set <span style="color:#e6db74">&#34;appmesh.backends[0]=detail&#34;</span> <span style="color:#ae81ff">\
@@ -10715,13 +10753,13 @@ Flagger&#39;s load testing service is available at http://flagger-loadtester.fla
 
 <h4 id="create-a-canary-definition">Create a canary definition</h4>
 <p>Now lets deploy the Flagger canary definition file for <code>detail</code> service</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f flagger/flagger-canary.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f flagger/flagger-canary.yaml
 </code></pre></div><pre><output class="bash">  
 canary.flagger.app/detail created
 </output></pre>
 
 <p>You can see the below objects being created by flagger</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n appmesh-system logs deploy/flagger --tail <span style="color:#ae81ff">15</span>  -f | jq .msg 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n appmesh-system logs deploy/flagger --tail <span style="color:#ae81ff">15</span>  -f | jq .msg 
 </code></pre></div><pre><output class="bash"> 
 &#34;Service detail-primary.flagger created&#34;
 &#34;all the metrics providers are available!&#34;
@@ -10741,7 +10779,7 @@ canary.flagger.app/detail created
 </output></pre>
 
 <p>You should see the below event from canary</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n flagger describe canary/detail
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n flagger describe canary/detail
 </code></pre></div><pre><output class="bash">  
 Events:                                                                                                                                             Type     Reason  Age                  From     Message                                                                                            ----     ------  ----                 ----     -------                                                                                          
   Warning  Synced  2m24s                flagger  detail-primary.flagger not ready: waiting for rollout to finish: observed deployment generation less then desired generation                                                                                                         
@@ -10754,7 +10792,7 @@ Events:                                                                         
 <li>Traffic to <code>detail.flagger</code> will be routed to the primary pods.</li>
 <li>AppMesh resources like virtualnode, virtualservice, virtualrouter has been created for the <code>detail</code> service</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pod,deployment,svc,virtualnode,virtualservice,virtualrouter -n flagger
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pod,deployment,svc,virtualnode,virtualservice,virtualrouter -n flagger
 </code></pre></div><pre><output class="bash">
 NAME                                      READY   STATUS    RESTARTS   AGE
 pod/detail-primary-5f4cb44b79-xxxx      3/3     Running   0          3m58s
@@ -10788,7 +10826,7 @@ virtualrouter.appmesh.k8s.aws/detail-canary   arn:aws:appmesh:us-east-2:$ACCOUNT
 
 <h4 id="testing-the-setup">Testing the setup</h4>
 <p>Exec into flagger-loadtester pod</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl exec deploy/flagger-loadtester -n flagger -it bash
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl exec deploy/flagger-loadtester -n flagger -it bash
 </code></pre></div><pre><output class="bash">  
 Defaulting container name to loadtester.
 Use &#39;kubectl describe pod/flagger-loadtester-5bdf76cfb7-wl59d -n flagger&#39; to see all of the containers in this pod.
@@ -10796,7 +10834,7 @@ bash-5.0$
 </output></pre>
 
 <p>Curl to <code>detail</code> service to confirm if you get response from the deployed service</p>
-<pre tabindex="0"><code>curl http://detail.flagger:3000/catalogDetail
+<pre><code>curl http://detail.flagger:3000/catalogDetail
 </code></pre><pre><output class="bash">  
 {&#34;version&#34;:&#34;1&#34;,&#34;vendors&#34;:[&#34;ABC.com&#34;]}
 </output></pre>
@@ -16632,6 +16670,38 @@ bash-5.0$
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18230,19 +18300,19 @@ bash-5.0$
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../js/learn.js?1636111204"></script>
+    <script src="../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

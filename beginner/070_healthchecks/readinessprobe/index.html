@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Configure Readiness Probe :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111205" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111205" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111205" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111205" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111205" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111205" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111205"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111205" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111205"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111205"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111205"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111205"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111205"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10666,7 +10704,7 @@
 
 <h4 id="configure-the-probe">Configure the Probe</h4>
 <p>Run the following code block to populate <strong>~/environment/healthchecks/readiness-deployment.yaml</strong>. The readinessProbe definition explains how a linux command can be configured as healthcheck. We create an empty file <strong>/tmp/healthy</strong> to configure readiness probe and use the same to understand how kubelet helps to update a deployment with only healthy pods.</p>
-<pre tabindex="0"><code>cat &lt;&lt;EoF &gt; ~/environment/healthchecks/readiness-deployment.yaml
+<pre><code>cat &lt;&lt;EoF &gt; ~/environment/healthchecks/readiness-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -10694,9 +10732,9 @@ spec:
           periodSeconds: 3
 EoF
 </code></pre><p>We will now create a deployment to test readiness probe:</p>
-<pre tabindex="0"><code>kubectl apply -f ~/environment/healthchecks/readiness-deployment.yaml
+<pre><code>kubectl apply -f ~/environment/healthchecks/readiness-deployment.yaml
 </code></pre><p>The above command creates a deployment with 3 replicas and readiness probe as described in the beginning.</p>
-<pre tabindex="0"><code>kubectl get pods -l app=readiness-deployment
+<pre><code>kubectl get pods -l app=readiness-deployment
 </code></pre><p>The output looks similar to below:</p>
 <pre><output class="bash">
 
@@ -10707,7 +10745,7 @@ readiness-deployment-7869b5d679-vxb6g   1/1       Running   0          31s
 </output></pre>
 
 <p>Let us also confirm that all the replicas are available to serve traffic when a service is pointed to this deployment.</p>
-<pre tabindex="0"><code>kubectl describe deployment readiness-deployment | grep Replicas:
+<pre><code>kubectl describe deployment readiness-deployment | grep Replicas:
 </code></pre><p>The output looks like below:</p>
 <pre><output class="bash">
 Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
@@ -10715,9 +10753,9 @@ Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavai
 
 <h4 id="introduce-a-failure">Introduce a Failure</h4>
 <p>Pick one of the pods from above 3 and issue a command as below to delete the <strong>/tmp/healthy</strong> file which makes the readiness probe fail.</p>
-<pre tabindex="0"><code>kubectl exec -it &lt;YOUR-READINESS-POD-NAME&gt; -- rm /tmp/healthy
+<pre><code>kubectl exec -it &lt;YOUR-READINESS-POD-NAME&gt; -- rm /tmp/healthy
 </code></pre><p><strong>readiness-deployment-7869b5d679-922mx</strong> was picked in our example cluster. The <strong>/tmp/healthy</strong> file was deleted. This file must be present for the readiness check to pass. Below is the status after issuing the command.</p>
-<pre tabindex="0"><code>kubectl get pods -l app=readiness-deployment
+<pre><code>kubectl get pods -l app=readiness-deployment
 </code></pre><p>The output looks similar to below:
 <pre><output class="bash">
 NAME                                    READY     STATUS    RESTARTS   AGE
@@ -10728,7 +10766,7 @@ readiness-deployment-7869b5d679-vxb6g   1/1       Running   0          4m
 
 Traffic will not be routed to the first pod in the above deployment. The ready column confirms that the readiness probe for this pod did not pass and hence was marked as not ready.</p>
 <p>We will now check for the replicas that are available to serve traffic when a service is pointed to this deployment.</p>
-<pre tabindex="0"><code>kubectl describe deployment readiness-deployment | grep Replicas:
+<pre><code>kubectl describe deployment readiness-deployment | grep Replicas:
 </code></pre><p>The output looks like below:</p>
 <pre><output class="bash">
 Replicas:               3 desired | 3 updated | 3 total | 2 available | 1 unavailable
@@ -10750,8 +10788,8 @@ Replicas:               3 desired | 3 updated | 3 total | 2 available | 1 unavai
     </div>
     <div class="expand-content" style="display: none;">
         <p>Run the below command with the name of the pod to recreate the <strong>/tmp/healthy</strong> file. Once the pod passes the probe, it gets marked as ready and will begin to receive traffic again.</p>
-<pre tabindex="0"><code>kubectl exec -it &lt;YOUR-READINESS-POD-NAME&gt; -- touch /tmp/healthy
-</code></pre><pre tabindex="0"><code>kubectl get pods -l app=readiness-deployment
+<pre><code>kubectl exec -it &lt;YOUR-READINESS-POD-NAME&gt; -- touch /tmp/healthy
+</code></pre><pre><code>kubectl get pods -l app=readiness-deployment
 </code></pre>
     </div>
 </div></p>
@@ -16593,6 +16631,38 @@ Replicas:               3 desired | 3 updated | 3 total | 2 available | 1 unavai
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18183,19 +18253,19 @@ Replicas:               3 desired | 3 updated | 3 total | 2 available | 1 unavai
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

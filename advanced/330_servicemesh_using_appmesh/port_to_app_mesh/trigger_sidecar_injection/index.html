@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Sidecar Injection :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10685,7 +10723,7 @@
 </li>
 </ul>
 <p>In this tutorial, we will use the third option and enable automatic sidecar injection for our meshed pods. We have enabled automatic sidecar injection by adding label <code>Labels: appmesh.k8s.aws/sidecarInjectorWebhook=enabled</code> on the <code>prodcatalog-ns</code> namespace when we created the mesh resources in <a href="../../../../advanced/330_servicemesh_using_appmesh/port_to_app_mesh/create_meshed_app/">previous chapter</a>, but this was done after initial pod creation. Currently, our pods each have one container running.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n prodcatalog-ns -o wide
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n prodcatalog-ns -o wide
 </code></pre></div><pre><output class="bash">
 NAME                                 READY   STATUS    RESTARTS   AGE   IP               NODE                                                   NOMINATED NODE   READINESS GATES
 pod/frontend-node-77d64585d4-xxxx   1/1     Running   0          13h   192.168.X.6     ip-192-168-X-X.us-west-2.compute.internal           &lt;none&gt;           &lt;none&gt;
@@ -10694,7 +10732,7 @@ pod/proddetail-5b558df99d-xxxxx      1/1     Running   0          18h   192.168.
 </output></pre>
 
 <p>To inject sidecar proxies for these pods, simply restart the deployments. The controller will handle the rest.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n prodcatalog-ns rollout restart deployment prodcatalog
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n prodcatalog-ns rollout restart deployment prodcatalog
 
 kubectl -n prodcatalog-ns rollout restart deployment proddetail 
 
@@ -10704,7 +10742,7 @@ kubectl -n prodcatalog-ns rollout restart deployment frontend-node
 <div class="notices info" ><p>It takes 4 to 6 minutes to restart the Fargate Pod</p>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n prodcatalog-ns -o wide
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n prodcatalog-ns -o wide
 </code></pre></div><pre><output class="bash">
 NAME                                 READY   STATUS    RESTARTS   AGE   IP               NODE                                                   NOMINATED NODE   READINESS GATES
 pod/frontend-node-77d64585d4-xxxx   3/3     Running   0          13h   192.168.X.6     ip-192-168-X-X.us-west-2.compute.internal           &lt;none&gt;           &lt;none&gt;
@@ -10714,7 +10752,7 @@ pod/proddetail-5b558df99d-xxxxx      3/3     Running   0          18h   192.168.
 
 <h4 id="get-running-containers-from-pod">Get Running containers from pod</h4>
 <p>We can see that there are two sidecar containers <code>envoy</code> and <code>xray-daemon</code> along with application container <code>frontend-node</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">POD<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n prodcatalog-ns get pods -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">POD<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n prodcatalog-ns get pods -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
 kubectl -n prodcatalog-ns get pods <span style="color:#e6db74">${</span>POD<span style="color:#e6db74">}</span> -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.containers[*].name}&#39;</span>; echo
 </code></pre></div><pre><output class="bash">
 frontend-node envoy xray-daemon
@@ -16550,6 +16588,38 @@ frontend-node envoy xray-daemon
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18152,19 +18222,19 @@ frontend-node envoy xray-daemon
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../../js/learn.js?1634326731"></script>
-    <script src="../../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../../js/learn.js?1636111204"></script>
+    <script src="../../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

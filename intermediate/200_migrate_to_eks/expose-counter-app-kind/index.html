@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Expose counter app from kind :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10661,9 +10699,9 @@ We&rsquo;ll manually create a load balancer to expose the app.</p>
 <p>The first thing you need to do is get your <strong>local computer&rsquo;s public ip address</strong>.
 Open a new browser tab and to <a href="http://icanhazip.com/">icanhasip.com</a> and copy the IP address.</p>
 <p>Go back to the Cloud9 shell and save that IP address as an environment variable</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PUBLIC_IP<span style="color:#f92672">=</span><span style="color:#75715e">#YOUR PUBLIC IP</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PUBLIC_IP<span style="color:#f92672">=</span><span style="color:#75715e">#YOUR PUBLIC IP</span>
 </code></pre></div><p>Now allow your IP address to access port 80 of your Cloud9 instance&rsquo;s security group and allow traffic on the security group for a load balancer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ec2 authorize-security-group-ingress <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ec2 authorize-security-group-ingress <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --group-id $SECURITY_GROUP <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --protocol tcp <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --port <span style="color:#ae81ff">80</span> <span style="color:#ae81ff">\
@@ -10675,7 +10713,7 @@ aws ec2 authorize-security-group-ingress <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --source-group $SECURITY_GROUP
 </code></pre></div><p>Create an Application Load Balancer (ALB) in the same security group and subnet.
 An ALB needs to be spread across a minimum of two subnets.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ALB_ARN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 create-load-balancer <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ALB_ARN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 create-load-balancer <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name counter <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --subnets <span style="color:#66d9ef">$(</span>aws ec2 describe-subnets <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        --filters <span style="color:#e6db74">&#34;Name=vpc-id,Values=</span>$VPC<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
@@ -10685,17 +10723,17 @@ An ALB needs to be spread across a minimum of two subnets.</p>
 </span><span style="color:#ae81ff"></span>    --query <span style="color:#e6db74">&#39;LoadBalancers[0].LoadBalancerArn&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --output text<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Create a target group</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export TG_ARN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 create-target-group <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export TG_ARN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 create-target-group <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name counter-target --protocol HTTP <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --port <span style="color:#ae81ff">30000</span> --target-type instance <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --vpc-id <span style="color:#e6db74">${</span>VPC<span style="color:#e6db74">}</span> --query <span style="color:#e6db74">&#39;TargetGroups[0].TargetGroupArn&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --output text<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Register our node to the TG</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elbv2 register-targets <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elbv2 register-targets <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --target-group-arn <span style="color:#e6db74">${</span>TG_ARN<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --targets Id<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>INSTANCE_ID<span style="color:#e6db74">}</span>
 </code></pre></div><p>Create a listener and default action</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elbv2 wait load-balancer-available <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elbv2 wait load-balancer-available <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --load-balancer-arns $ALB_ARN <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> export ALB_LISTENER<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 create-listener <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --load-balancer-arn <span style="color:#e6db74">${</span>ALB_ARN<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
@@ -10704,7 +10742,7 @@ An ALB needs to be spread across a minimum of two subnets.</p>
 </span><span style="color:#ae81ff"></span>    --query <span style="color:#e6db74">&#39;Listeners[0].ListenerArn&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --output text<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Our local counter app should now be exposed from the ALB</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;http://&#34;</span><span style="color:#66d9ef">$(</span>aws elbv2 describe-load-balancers <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;http://&#34;</span><span style="color:#66d9ef">$(</span>aws elbv2 describe-load-balancers <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --load-balancer-arns $ALB_ARN <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --query <span style="color:#e6db74">&#39;LoadBalancers[0].DNSName&#39;</span> --output text<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Make sure you click the button a lot because that&rsquo;s the important data we&rsquo;re going to migrate to EKS later.</p>
@@ -16544,6 +16582,38 @@ An ALB needs to be spread across a minimum of two subnets.</p>
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18134,19 +18204,19 @@ An ALB needs to be spread across a minimum of two subnets.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

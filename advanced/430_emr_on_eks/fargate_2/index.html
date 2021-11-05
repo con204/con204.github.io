@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Serverless EMR job Part 2 - Monitor &amp; Troubleshoot :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111205" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111205" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111205" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111205" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111205" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111205" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111205"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111205" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111205"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111205"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111205"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111205"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111205"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10667,20 +10705,20 @@
 <h4 id="monitoring-job-status">Monitoring job status</h4>
 <p>With zero manual effort, the number of Fargate instances change dynamically and distribute across mutliple availability zones. You can again open up couple of terminals and use watch command to see this change.</p>
 <p>Watch pod status:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get pod -n spark
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get pod -n spark
 </code></pre></div><p>Watch node scaling activities:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get node <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get node <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--label-columns<span style="color:#f92672">=</span>eks.amazonaws.com/capacityType,topology.kubernetes.io/zone
 </code></pre></div><p><img src="../../../images/emr-on-eks/fargate_autoscaling.png" alt="fargate_autoscale"></p>
 <p>Navigate to SparkUI to view job status:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo -e <span style="color:#e6db74">&#34;\nNavigate to EMR virtual cluster console:\n\nhttps://console.aws.amazon.com/elasticmapreduce/home?&#34;</span>region<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;#virtual-cluster-jobs:&#34;</span><span style="color:#e6db74">${</span>VIRTUAL_CLUSTER_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;\n&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo -e <span style="color:#e6db74">&#34;\nNavigate to EMR virtual cluster console:\n\nhttps://console.aws.amazon.com/elasticmapreduce/home?&#34;</span>region<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;#virtual-cluster-jobs:&#34;</span><span style="color:#e6db74">${</span>VIRTUAL_CLUSTER_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;\n&#34;</span>
 </code></pre></div><p><img src="../../../images/emr-on-eks/spark_log.png" alt="spark_log"></p>
 <p>View output in S3, once it&rsquo;s done (~ 10min):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws s3 ls <span style="color:#e6db74">${</span>s3DemoBucket<span style="color:#e6db74">}</span>/output/ --summarize --human-readable --recursive
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws s3 ls <span style="color:#e6db74">${</span>s3DemoBucket<span style="color:#e6db74">}</span>/output/ --summarize --human-readable --recursive
 </code></pre></div><h4 id="troubleshooting">Troubleshooting</h4>
 <p>Fargate has flexible configuration options to run your workloads. However, it supports up to 4 vCPU and 30 GB Memory per compute instance. It applies to each of your Spark executors or the driver. Check out the current supported configurations and limits <a href="https://aws.amazon.com/fargate/pricing/">here</a>.</p>
 <p>Let&rsquo;s submit the same job with 5 vCPUs that is over the limit to force the failure.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws emr-containers start-job-run <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws emr-containers start-job-run <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --virtual-cluster-id $VIRTUAL_CLUSTER_ID <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name word_count <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --execution-role-arn $EMR_ROLE_ARN <span style="color:#ae81ff">\
@@ -10693,21 +10731,21 @@
 </span><span style="color:#e6db74">    }
 </span><span style="color:#e6db74">  }&#39;</span>
 </code></pre></div><p>Problem - the job is stuck with pending status.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get pod -n spark
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get pod -n spark
 </code></pre></div><p>Wait for about 2 minutes. Press ctl+c to exit, as soon as the Spark driver is running.
 <img src="../../../images/emr-on-eks/job_hang.png" alt=""></p>
 <p>Check the driver’s log:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">driver_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pod -n spark | grep <span style="color:#e6db74">&#34;driver&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">driver_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pod -n spark | grep <span style="color:#e6db74">&#34;driver&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
 kubectl logs <span style="color:#e6db74">${</span>driver_name<span style="color:#e6db74">}</span> -n spark -c spark-kubernetes-driver
 </code></pre></div><p>The job is not accepted by any resources:
 <img src="../../../images/emr-on-eks/not_enough_vcpu.png" alt="not_resource"></p>
 <p>Investigate a hanging executor pod:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">exec_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pod -n spark | grep <span style="color:#e6db74">&#34;exec-1&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">exec_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pod -n spark | grep <span style="color:#e6db74">&#34;exec-1&#34;</span> | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span>
 kubectl describe pod <span style="color:#e6db74">${</span>exec_name<span style="color:#e6db74">}</span> -n spark
 </code></pre></div><p>Congratulations! You found the root cause:
 <img src="../../../images/emr-on-eks/executor_log.png" alt=""></p>
 <p>Delete the driver pod to stop the hanging job:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl delete pod <span style="color:#e6db74">${</span>driver_name<span style="color:#e6db74">}</span> -n spark
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl delete pod <span style="color:#e6db74">${</span>driver_name<span style="color:#e6db74">}</span> -n spark
 
 <span style="color:#75715e"># check job status</span>
 kubectl get pod -n spark
@@ -16542,6 +16580,38 @@ kubectl get pod -n spark
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18140,19 +18210,19 @@ kubectl get pod -n spark
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

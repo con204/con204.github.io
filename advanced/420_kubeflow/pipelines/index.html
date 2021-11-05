@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Kubeflow pipeline :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10682,14 +10720,14 @@
 <h4 id="assign-iam-permissions">Assign IAM permissions</h4>
 <p>In order to run this exercise, we need three levels of IAM permissions. 1) create Kubernetes secrets <strong>aws-secret</strong> with Sagemaker policies. We&rsquo;ll use this during pipeline execution to make calls to AWS API&rsquo;s. 2) create an IAM execution role for Sagemaker so that the job can assume this role in order to perform Sagemaker actions. Typically in a production environment, you would assign fine-grained permissions depending on the nature of actions you take and leverage tools like <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IAM Role for Service Account</a> for securing access to AWS resources but for simplicity we will assign AmazonSageMakerFullAccess IAM policy to both. You can read more about granular policies <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">here</a>. 3) Assign sagemaker:InvokeEndpoint permission to Worker node IAM role so that we can use this to make predictions once Sagemaker creates the endpoint</p>
 <p>Run this command from your Cloud9 to create these IAM permissions</p>
-<pre tabindex="0"><code>aws iam create-user --user-name sagemakeruser
+<pre><code>aws iam create-user --user-name sagemakeruser
 aws iam attach-user-policy --user-name sagemakeruser --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
 aws iam create-access-key --user-name sagemakeruser &gt; /tmp/create_output.json
 </code></pre><p>Next, record the new user&rsquo;s credentials into environment variables:</p>
-<pre tabindex="0"><code>export AWS_ACCESS_KEY_ID_VALUE=$(jq -j .AccessKey.AccessKeyId /tmp/create_output.json | base64)
+<pre><code>export AWS_ACCESS_KEY_ID_VALUE=$(jq -j .AccessKey.AccessKeyId /tmp/create_output.json | base64)
 export AWS_SECRET_ACCESS_KEY_VALUE=$(jq -j .AccessKey.SecretAccessKey /tmp/create_output.json | base64)
 </code></pre><p>Apply to EKS cluster:</p>
-<pre tabindex="0"><code>cat &lt;&lt;EOF | kubectl apply -f -
+<pre><code>cat &lt;&lt;EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
@@ -10701,7 +10739,7 @@ data:
   AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_VALUE
 EOF
 </code></pre><p>Run this command to create <strong>Sagemaker execution role</strong></p>
-<pre tabindex="0"><code>TRUST=&quot;{ \&quot;Version\&quot;: \&quot;2012-10-17\&quot;, \&quot;Statement\&quot;: [ { \&quot;Effect\&quot;: \&quot;Allow\&quot;, \&quot;Principal\&quot;: { \&quot;Service\&quot;: \&quot;sagemaker.amazonaws.com\&quot; }, \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot; } ] }&quot;
+<pre><code>TRUST=&quot;{ \&quot;Version\&quot;: \&quot;2012-10-17\&quot;, \&quot;Statement\&quot;: [ { \&quot;Effect\&quot;: \&quot;Allow\&quot;, \&quot;Principal\&quot;: { \&quot;Service\&quot;: \&quot;sagemaker.amazonaws.com\&quot; }, \&quot;Action\&quot;: \&quot;sts:AssumeRole\&quot; } ] }&quot;
 aws iam create-role --role-name eksworkshop-sagemaker-kfp-role --assume-role-policy-document &quot;$TRUST&quot;
 aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
 aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
@@ -10714,7 +10752,7 @@ arn:aws:iam::371348455981:role/eksworkshop-sagemaker-kfp-role
 </output></pre>
 
 Lastly, let&rsquo;s assign sagemaker:InvokeEndpoint permission to Worker node IAM role</p>
-<pre tabindex="0"><code>cat &lt;&lt;EoF &gt; ~/environment/sagemaker-invoke.json
+<pre><code>cat &lt;&lt;EoF &gt; ~/environment/sagemaker-invoke.json
 {
     &quot;Version&quot;: &quot;2012-10-17&quot;,
     &quot;Statement&quot;: [
@@ -16588,6 +16626,38 @@ aws iam put-role-policy --role-name $ROLE_NAME --policy-name sagemaker-invoke-fo
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18186,19 +18256,19 @@ aws iam put-role-policy --role-name $ROLE_NAME --policy-name sagemaker-invoke-fo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

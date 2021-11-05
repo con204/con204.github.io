@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Prereqs :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10676,14 +10714,14 @@
 <h3 id="add-a-node-group">Add a node group</h3>
 <p>To accommodate the pods deployed by Pixie and the microservices demo application, we will add a managed node group to scale the <code>eksworkshop-eksctl</code> cluster.</p>
 <p>Curl the node group config file and use <code>eksctl</code> to create the new <code>pixie-demo-ng</code> node group:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://raw.githubusercontent.com/pixie-labs/pixie-demos/main/eks-workshop/clusterconfig.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://raw.githubusercontent.com/pixie-labs/pixie-demos/main/eks-workshop/clusterconfig.yaml
 envsubst &lt; clusterconfig.yaml | eksctl create nodegroup -f -
 </code></pre></div>
 <div class="notices info" ><p>The creation of the node group will take about 3 - 5 minutes.</p>
 </div>
 
 <p>Confirm that the new nodes joined the cluster correctly. You should see 3 nodes added to the cluster.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get nodes --sort-by<span style="color:#f92672">=</span>.metadata.creationTimestamp
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get nodes --sort-by<span style="color:#f92672">=</span>.metadata.creationTimestamp
 </code></pre></div><pre><output class="bash">
 NAME                                           STATUS   ROLES    AGE     VERSION
 ip-192-168-4-73.us-west-2.compute.internal     Ready    &lt;none&gt;   6m24s   v1.17.12-eks-7684af
@@ -10697,14 +10735,14 @@ ip-192-168-26-175.us-west-2.compute.internal   Ready    &lt;none&gt;   103s    v
 <h3 id="deploy-the-demo-microservices-app">Deploy the demo microservices app</h3>
 <p>To test out Pixie, we will deploy a modified version of <a href="https://microservices-demo.github.io/">Weavework’s Sock Shop</a> microservices application. This demo app does not contain any manual instrumentation. Minimal modifications were made to set pod resource limits and create a bug in one of the services.</p>
 <p>Curl the config file and deploy the demo using <code>kubectl</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://raw.githubusercontent.com/pixie-labs/pixie-demos/main/eks-workshop/complete-demo.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -O https://raw.githubusercontent.com/pixie-labs/pixie-demos/main/eks-workshop/complete-demo.yaml
 kubectl apply -f complete-demo.yaml
 </code></pre></div>
 <div class="notices info" ><p>Deploying the microservices demo will take about 3-5 minutes.</p>
 </div>
 
 <p>Confirm that the application components have been deployed to the <code>px-sock-shop</code> namespace:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n px-sock-shop
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n px-sock-shop
 </code></pre></div><p>You should see output similar to that below. All pods should be ready and available before proceeding.</p>
 <pre><output class="bash">
 NAME                           READY   STATUS    RESTARTS   AGE
@@ -10726,7 +10764,7 @@ user-db-794cfdf85b-4f6rq       1/1     Running   0          35m
 
 <h3 id="visit-the-sock-shop-application">Visit the Sock Shop application</h3>
 <p>The Sock Shop&rsquo;s <code>front-end</code> service is exposed onto an external IP address using a <code>LoadBalancer</code>.  Grab the Load Balancer address using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export SERVICE_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n px-sock-shop get svc front-end --template <span style="color:#e6db74">&#34;{{ range (index .status.loadBalancer.ingress 0) }}{{ . }}{{ end }}&#34;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export SERVICE_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n px-sock-shop get svc front-end --template <span style="color:#e6db74">&#34;{{ range (index .status.loadBalancer.ingress 0) }}{{ . }}{{ end }}&#34;</span><span style="color:#66d9ef">)</span>
 
 echo http://$SERVICE_IP/
 </code></pre></div><p>You should see output similar to that below.</p>
@@ -16590,6 +16628,38 @@ http://a22bf691105874cf0a5468a2ddce7f19-2030728129.us-west-2.elb.amazonaws.com/
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18180,19 +18250,19 @@ http://a22bf691105874cf0a5468a2ddce7f19-2030728129.us-west-2.elb.amazonaws.com/
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

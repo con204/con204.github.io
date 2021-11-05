@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Sealing Your Secrets :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10657,7 +10695,7 @@
 
 
 <p>First, let&rsquo;s delete the <strong>database-credentials</strong> Secret and Pod resources that was created earlier in this module and deployed to the <em>octank</em> namespace in the cluster. After this operation, the only Secret that should exist in that namespace will be that of the token generated by Kubernetes for the default service account associated with the <em>octank</em> namespace.</p>
-<pre tabindex="0"><code>kubectl delete pod pod-variable pod-volume -n octank 
+<pre><code>kubectl delete pod pod-variable pod-volume -n octank 
 kubectl delete secret database-credentials -n octank
 kubectl get secret -n octank
 </code></pre><p>Output:
@@ -10667,13 +10705,13 @@ default-token-gv8nr   kubernetes.io/service-account-token   3      2d23h
 </output></pre>
 </p>
 <p>Now, let&rsquo;s reuse the Secret created previously to create SealedSecret YAML manifests with <em>kubeseal</em>.</p>
-<pre tabindex="0"><code>cd ~/environment/secrets
+<pre><code>cd ~/environment/secrets
 kubeseal --format=yaml &lt; secret.yaml &gt; sealed-secret.yaml
 </code></pre><p>An alternative approach is to fetch the public key from the controller and use it offline to seal your Secrets</p>
-<pre tabindex="0"><code>kubeseal --fetch-cert &gt; public-key-cert.pem
+<pre><code>kubeseal --fetch-cert &gt; public-key-cert.pem
 kubeseal --cert=public-key-cert.pem --format=yaml &lt; secret.yaml &gt; sealed-secret.yaml
 </code></pre><p>View the contents of the regular Secret and the corresponding SealedSecret with the following commands:</p>
-<pre tabindex="0"><code>cat secret.yaml 
+<pre><code>cat secret.yaml 
 cat sealed-secret.yaml 
 </code></pre><p>Output of secret.yaml :
 <pre><output class="bash">
@@ -10711,9 +10749,9 @@ spec:
 </p>
 <p>Note that the keys in the original Secret, namely, <em>username</em> and <em>password</em>, are not encrypted in the SealedSecret; only their values. You may change the names of these keys, if necessary, in the SealedSecret YAML file and still be able to deploy it successfully to the cluster. However, you cannot change the name and namespace of the SealedSecret. The SealedSecret and Secret <strong>must have the same namespace and name</strong>.</p>
 <p>Now, deploy the SealedSecret to your cluster:</p>
-<pre tabindex="0"><code>kubectl apply -f sealed-secret.yaml 
+<pre><code>kubectl apply -f sealed-secret.yaml 
 </code></pre><p>Looking at the logs of the contoller, you can see that it picks up the SealedSecret custom resource that was just deployed, unseals it to create a regular Secret.</p>
-<pre tabindex="0"><code>kubectl logs -n kube-system sealed-secrets-controller-7bdbc75d47-5wxvf
+<pre><code>kubectl logs -n kube-system sealed-secrets-controller-7bdbc75d47-5wxvf
 </code></pre><p>Output:
 <pre><output class="bash">
 (...)
@@ -10723,7 +10761,7 @@ spec:
 </output></pre>
 </p>
 <p>Verfiy that the <strong>database-credentials</strong> Secret unsealed from the SealedSecret was deployed by the controller to the <em>octank</em> namespace.</p>
-<pre tabindex="0"><code>kubectl get secret -n octank database-credentials
+<pre><code>kubectl get secret -n octank database-credentials
 </code></pre><p>Output:
 <pre><output class="bash">
 NAME                   TYPE     DATA   AGE
@@ -10731,7 +10769,7 @@ database-credentials   Opaque   2      90s
 </output></pre>
 </p>
 <p>Redeploy the pod that reads from the above Secret and verify that the keys have been exposed as environment variables with the correct literal values.</p>
-<pre tabindex="0"><code>kubectl apply -f pod-variable.yaml
+<pre><code>kubectl apply -f pod-variable.yaml
 kubectl wait -n octank pod/pod-variable --for=condition=Ready
 kubectl logs -n octank pod-variable
 </code></pre><p>Output:
@@ -16581,6 +16619,38 @@ DATABASE_PASSWROD = Tru5tN0!
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18171,19 +18241,19 @@ DATABASE_PASSWROD = Tru5tN0!
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

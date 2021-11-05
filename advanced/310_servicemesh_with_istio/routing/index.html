@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Traffic Management :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326730" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326730" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326730" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326730" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326730" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326730" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326730" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326730" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326730" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326730" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326730"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326730" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326730" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326730"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326730"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326730"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326730"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326730"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10668,16 +10706,16 @@
 <p>Deploying a microservice-based application in an Istio service mesh allows one to externally control service monitoring and tracing, request (version) routing, resiliency testing, security and policy enforcement, and more in a consistent manner across the services, and the application.</p>
 <p>Before you can use Istio to control the Bookinfo version routing, you&rsquo;ll need to define the available versions, called <a href="https://istio.io/docs/reference/config/networking/destination-rule/#Subset"><strong>subsets</strong></a>.</p>
 <p>In a continuous deployment scenario, for a given service, there can be distinct subsets of instances running different variants of the application binary. These variants are not necessarily different API versions. They could be iterative changes to the same service, deployed in different environments (prod, staging, dev, etc.). Common scenarios where this occurs include A/B testing, canary rollouts, etc. The choice of a particular version can be decided based on various criterion (headers, url, etc.) and/or by weights assigned to each version. Each service has a default version consisting of all its instances.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo apply <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo apply <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/destination-rule-all.yaml
 </code></pre></div><p>We can display the destination rules with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get destinationrules -o yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get destinationrules -o yaml
 </code></pre></div><h2 id="route-traffic-to-one-version-of-a-service">Route traffic to one version of a service</h2>
 <p>To route to one version only, we apply virtual services that set the default version for the microservices. In this case, the virtual services will route all traffic to <code>reviews:v1</code> of the microservice.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-all-v1.yaml
 </code></pre></div><p>We can display the review virtual service with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservices reviews -o yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservices reviews -o yaml
 </code></pre></div><p>The subset is set to v1 for all reviews request.</p>
 <pre><output class="bash">
 spec:
@@ -10694,10 +10732,10 @@ spec:
 <h2 id="route-based-on-user-identity">Route based on user identity</h2>
 <p>Next, we&rsquo;ll change the route configuration so that all traffic from a specific user is routed to a specific service version.</p>
 <p>In this case, all traffic from a user named <!-- raw HTML omitted --><em>Jason</em><!-- raw HTML omitted --> will be routed to the service <code>reviews:v2</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 </code></pre></div><p>We can display the updated virtual service with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservices reviews -o yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservices reviews -o yaml
 </code></pre></div><p>The subset is set to v1 in default and route v2 if the logged user is match with &lsquo;jason&rsquo; for reviews request.</p>
 <pre><output class="bash">
 spec:
@@ -10726,10 +10764,10 @@ spec:
 <p>You will only see <code>reviews:v2</code> all the time. Others will see <code>reviews:v1</code>.</p>
 <h2 id="injecting-an-http-delay-fault">Injecting an HTTP delay fault</h2>
 <p>To test for resiliency, inject a 7s delay between the <code>reviews:v2</code> and ratings microservices for user <strong>jason</strong>. This test will uncover a bug that was intentionally introduced into the Bookinfo app.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-ratings-test-delay.yaml
 </code></pre></div><p>We can display the updated virtual service with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservice ratings -o yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservice ratings -o yaml
 </code></pre></div><p>The subset is set to v1 in default and added 7s delay for all the request if the logged user is match with &lsquo;jason&rsquo; for ratings.</p>
 <pre><output class="bash">
 spec:
@@ -10758,10 +10796,10 @@ spec:
 <p><img src="../../../images/istio/istio_bookinfo_timeout_error.png" alt="istio timeout error"></p>
 <p>The timeout between the <code>productpage</code> and the reviews service is 6 seconds - coded as 3s + 1 retry for 6s total.</p>
 <p>To test for another resiliency, we will introduce an HTTP abort to the ratings microservices for the test user jason. The page will immediately display the “<!-- raw HTML omitted --><em>Ratings service is currently unavailable</em><!-- raw HTML omitted -->”</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml
 </code></pre></div><p>We can display the updated virtual service with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservice ratings -o yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservice ratings -o yaml
 </code></pre></div><p>The subset is set to v1 and by default returns an error message of &ldquo;Ratings service is currently unavailable&rdquo; below the reviewer name if the logged username matches &lsquo;jason&rsquo;.</p>
 <pre><output class="bash">
 spec:
@@ -10793,13 +10831,13 @@ spec:
 <h2 id="traffic-shifting">Traffic Shifting</h2>
 <p>Next, we&rsquo;ll demonstrate how to gradually migrate traffic from one version of a microservice to another. In our example, we&rsquo;ll send <!-- raw HTML omitted -->50% of traffic to reviews:v1<!-- raw HTML omitted --> and <!-- raw HTML omitted -->50% to reviews:v3<!-- raw HTML omitted -->.</p>
 <p>To get started, run this command to route all traffic to the v1 version of each microservice.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-all-v1.yaml
 </code></pre></div><p>Open the <code>Bookinfo </code>site in your browser. Notice that the reviews part of the page displays with no rating stars, no matter how many times you refresh.</p>
 <p>We can now transfer 50% of the traffic from <code>reviews:v1</code> to <code>reviews:v3</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservice reviews -o yaml
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo get virtualservice reviews -o yaml
 </code></pre></div><p>The subset is set to 50% of traffic to v1 and 50% of traffic to v3 for all reviews request.</p>
 <pre><output class="bash">
 spec:
@@ -10819,7 +10857,7 @@ spec:
 
 <p>To test it, refresh your browser over and over, and you&rsquo;ll see only reviews:v1 and reviews:v3.</p>
 <p>Assuming you decide that the <code>reviews:v3</code> microservice is stable, you can route 100% of the traffic to it</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-reviews-v3.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n bookinfo apply -f <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/istio-<span style="color:#e6db74">${</span>ISTIO_VERSION<span style="color:#e6db74">}</span>/samples/bookinfo/networking/virtual-service-reviews-v3.yaml
 </code></pre></div><p>Now when you refresh the <code>/productpage</code> you will always see <code>reviews:v3</code> (red colored star ratings).</p>
 
 
@@ -16651,6 +16689,38 @@ spec:
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18249,19 +18319,19 @@ spec:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../js/learn.js?1636111204"></script>
+    <script src="../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

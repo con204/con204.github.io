@@ -19,6 +19,27 @@ Benefits of using ADOT:
     </item>
     
     <item>
+      <title>Configure Environment</title>
+      <link>/advanced/350_opentelemetry/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/tools/</guid>
+      <description>Amazon EKS clusters require kubectl and kubelet binaries and the aws-cli or aws-iam-authenticator binary to allow IAM authentication for your Kubernetes cluster.
+In this workshop we will give you the commands to download the Linux binaries. If you are running Mac OSX / Windows, please see the official EKS docs for the download links.
+ Open Cloud9 IDE In the AWS Console go to Cloud9 and open the EKSLabIDE environment.</description>
+    </item>
+    
+    <item>
+      <title>Update IAM settings for your Workspace</title>
+      <link>/advanced/350_opentelemetry/workspaceiam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/advanced/350_opentelemetry/workspaceiam/</guid>
+      <description>Cloud9 normally manages IAM credentials dynamically. This isn&amp;rsquo;t currently compatible with the EKS IAM authentication, so we will disable it and rely on the IAM role instead.
+  Return to your Cloud9 workspace and click the gear icon (in top right corner) Select AWS SETTINGS Turn off AWS managed temporary credentials Close the Preferences tab   To ensure temporary credentials aren&amp;rsquo;t already in place we will also remove any existing credentials file:</description>
+    </item>
+    
+    <item>
       <title>Deploy Backend Microservices</title>
       <link>/advanced/350_opentelemetry/deploy_backend_microservices/</link>
       <pubDate>Tue, 12 Oct 2021 14:34:29 +0000</pubDate>

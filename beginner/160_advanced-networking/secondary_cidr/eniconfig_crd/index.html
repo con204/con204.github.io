@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Create CRDs :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10673,7 +10711,7 @@
 <h3 id="create-custom-resources-for-eniconfig-crd">Create custom resources for ENIConfig CRD</h3>
 <p>As next step, we will add custom resources to ENIConfig custom resource definition (CRD). CRDs are extensions of Kubernetes API that stores collection of API objects of certain kind. In this case, we will store VPC Subnet and SecurityGroup configuration information in these CRDs so that Worker nodes can access them to configure VPC CNI plugin.</p>
 <p>You should have ENIConfig CRD already installed with latest CNI version (1.3+). You can check if its installed by running this command.</p>
-<pre tabindex="0"><code>kubectl get crd
+<pre><code>kubectl get crd
 </code></pre><p>You should see a response similar to this
 <pre><output class="bash">
 NAME                               CREATED AT
@@ -10681,10 +10719,10 @@ eniconfigs.crd.k8s.amazonaws.com   2019-03-07T20:06:48Z
 </output></pre>
 
 If you don&rsquo;t have ENIConfig installed, you can install it by using this command</p>
-<pre tabindex="0"><code>kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.7/config/v1.7/aws-k8s-cni.yaml
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.7/config/v1.7/aws-k8s-cni.yaml
 </code></pre><p>Create custom resources for each subnet by replacing <strong>Subnet</strong> and <strong>SecurityGroup IDs</strong>. Since we created three secondary subnets, we need create three custom resources.</p>
 <p>Here is the template for custom resource. Notice the values for Subnet ID and SecurityGroup ID needs to be replaced with appropriate values</p>
-<pre tabindex="0"><code>apiVersion: crd.k8s.amazonaws.com/v1alpha1
+<pre><code>apiVersion: crd.k8s.amazonaws.com/v1alpha1
 kind: ENIConfig
 metadata:
  name: group1-pod-netconfig
@@ -10694,7 +10732,7 @@ spec:
  - $SECURITYGROUPID1
  - $SECURITYGROUPID2
 </code></pre><p>Check the AZs and Subnet IDs for these subnets. Make note of AZ info as you will need this when you apply annotation to Worker nodes using custom network config</p>
-<pre tabindex="0"><code>aws ec2 describe-subnets  --filters &quot;Name=cidr-block,Values=100.64.*&quot; --query 'Subnets[*].[CidrBlock,SubnetId,AvailabilityZone]' --output table
+<pre><code>aws ec2 describe-subnets  --filters &quot;Name=cidr-block,Values=100.64.*&quot; --query 'Subnets[*].[CidrBlock,SubnetId,AvailabilityZone]' --output table
 </code></pre><p><pre><output class="bash">
 --------------------------------------------------------------
 |                       DescribeSubnets                      |
@@ -10706,7 +10744,7 @@ spec:
 </output></pre>
 
 Check your Worker Node SecurityGroup</p>
-<pre tabindex="0"><code>INSTANCE_IDS=(`aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --output text`)
+<pre><code>INSTANCE_IDS=(`aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --output text`)
 for i in &quot;${INSTANCE_IDS[@]}&quot;
 do
   echo &quot;SecurityGroup for EC2 instance $i ...&quot;
@@ -10726,7 +10764,7 @@ sg-06e5cab8e5d6f16ef
 
 Create custom resource <strong>group1-pod-netconfig.yaml</strong> for first subnet (100.64.0.0/19). Replace the SubnetId and SecuritGroupIds with the values from above. Here is how it looks with the configuration values for my environment</p>
 <p>Note: We are using same SecurityGroup for pods as your Worker Nodes but you can change these and use custom SecurityGroups for your Pod Networking</p>
-<pre tabindex="0"><code>apiVersion: crd.k8s.amazonaws.com/v1alpha1
+<pre><code>apiVersion: crd.k8s.amazonaws.com/v1alpha1
 kind: ENIConfig
 metadata:
  name: group1-pod-netconfig
@@ -10738,7 +10776,7 @@ spec:
 </code></pre><p>Create custom resource <strong>group2-pod-netconfig.yaml</strong> for second subnet (100.64.32.0/19). Replace the SubnetId and SecuritGroupIds as above.</p>
 <p>Similarly, create custom resource <strong>group3-pod-netconfig.yaml</strong> for third subnet (100.64.64.0/19). Replace the SubnetId and SecuritGroupIds as above.</p>
 <p>Check the instance details using this command as you will need AZ info when you apply annotation to Worker nodes using custom network config</p>
-<pre tabindex="0"><code>aws ec2 describe-instances --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --query 'Reservations[*].Instances[*].[PrivateDnsName,Tags[?Key==`eks:nodegroup-name`].Value|[0],Placement.AvailabilityZone,PrivateIpAddress,PublicIpAddress]' --output table  
+<pre><code>aws ec2 describe-instances --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --query 'Reservations[*].Instances[*].[PrivateDnsName,Tags[?Key==`eks:nodegroup-name`].Value|[0],Placement.AvailabilityZone,PrivateIpAddress,PublicIpAddress]' --output table  
 </code></pre><pre><output class="bash">
 ------------------------------------------------------------------------------------------------------------------------------------------
 |                                                            DescribeInstances                                                           |
@@ -10750,7 +10788,7 @@ spec:
 </output></pre>
 
 <p>Apply the CRDs</p>
-<pre tabindex="0"><code>kubectl apply -f group1-pod-netconfig.yaml
+<pre><code>kubectl apply -f group1-pod-netconfig.yaml
 kubectl apply -f group2-pod-netconfig.yaml
 kubectl apply -f group3-pod-netconfig.yaml
 </code></pre><p>As last step, we will annotate nodes with custom network configs.</p>
@@ -10758,7 +10796,7 @@ kubectl apply -f group3-pod-netconfig.yaml
 <div class="notices warning" ><p>Be sure to annotate the instance with config that matches correct AZ. For ex, in my environment instance ip-192-168-33-135.us-east-2.compute.internal is in us-east-2b. So, I will apply <strong>group1-pod-netconfig.yaml</strong> to this instance. Similarly, I will apply <strong>group2-pod-netconfig.yaml</strong> to ip-192-168-71-211.us-east-2.compute.internal and <strong>group3-pod-netconfig.yaml</strong> to ip-192-168-9-228.us-east-2.compute.internal</p>
 </div>
 
-<pre tabindex="0"><code>kubectl annotate node &lt;nodename&gt;.&lt;region&gt;.compute.internal k8s.amazonaws.com/eniConfig=group1-pod-netconfig
+<pre><code>kubectl annotate node &lt;nodename&gt;.&lt;region&gt;.compute.internal k8s.amazonaws.com/eniConfig=group1-pod-netconfig
 </code></pre><p>As an example, here is what I would run in my environment
 <pre><output class="bash">
 kubectl annotate node ip-192-168-33-135.us-east-2.compute.internal k8s.amazonaws.com/eniConfig=group1-pod-netconfig
@@ -16621,6 +16659,38 @@ kubectl set env daemonset aws-node -n kube-system ENI_CONFIG_LABEL_DEF=topology.
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18211,19 +18281,19 @@ kubectl set env daemonset aws-node -n kube-system ENI_CONFIG_LABEL_DEF=topology.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../../js/learn.js?1634326732"></script>
-    <script src="../../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../../js/learn.js?1636111206"></script>
+    <script src="../../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

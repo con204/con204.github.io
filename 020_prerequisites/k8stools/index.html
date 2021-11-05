@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Install Kubernetes Tools :: Amazon EKS Workshop</title>
 
     
-    <link href="../../css/nucleus.css?1634326730" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1634326730" rel="stylesheet">
-    <link href="../../css/hybrid.css?1634326730" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1634326730" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1634326730" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1634326730" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1634326730" rel="stylesheet">
-    <link href="../../css/theme.css?1634326730" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1634326730" rel="stylesheet">
+    <link href="../../css/nucleus.css?1636111203" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1636111203" rel="stylesheet">
+    <link href="../../css/hybrid.css?1636111203" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1636111203" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1636111203" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1636111203" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1636111203" rel="stylesheet">
+    <link href="../../css/theme.css?1636111203" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1636111203" rel="stylesheet">
     
-      <link href="../../css/theme-mine.css?1634326730" rel="stylesheet">
+      <link href="../../css/theme-mine.css?1636111203" rel="stylesheet">
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1634326730"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1636111203"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../mermaid/mermaid.css?1634326730" type="text/css" rel="stylesheet" />
-    <link href="../../css/jquery-ui.min.css?1634326730" rel="stylesheet">
-    <script src="../../js/jquery-ui-1.12.1.min.js?1634326730"></script>
-    <script src="../../mermaid/mermaid.min.js?1634326730"></script>
+    <link href="../../mermaid/mermaid.css?1636111203" type="text/css" rel="stylesheet" />
+    <link href="../../css/jquery-ui.min.css?1636111203" rel="stylesheet">
+    <script src="../../js/jquery-ui-1.12.1.min.js?1636111203"></script>
+    <script src="../../mermaid/mermaid.min.js?1636111203"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1634326730"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1634326730"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1636111203"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1636111203"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1634326730"></script>
+<script type="text/javascript" src="../../js/search.js?1636111203"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10667,32 +10705,32 @@ for the download links.</a></p>
 </div>
 
 <h4 id="install-kubectl">Install kubectl</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl --silent --location -o /usr/local/bin/kubectl <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl --silent --location -o /usr/local/bin/kubectl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
 
 sudo chmod +x /usr/local/bin/kubectl
 </code></pre></div><h4 id="update-awscli">Update awscli</h4>
 <p>Upgrade AWS CLI according to guidance in <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html">AWS documentation</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#e6db74">&#34;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip&#34;</span> -o <span style="color:#e6db74">&#34;awscliv2.zip&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#e6db74">&#34;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip&#34;</span> -o <span style="color:#e6db74">&#34;awscliv2.zip&#34;</span>
 unzip awscliv2.zip
 sudo ./aws/install
 </code></pre></div><h4 id="install-jq-envsubst-from-gnu-gettext-utilities-and-bash-completion">Install jq, envsubst (from GNU gettext utilities) and bash-completion</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum -y install jq gettext bash-completion moreutils
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum -y install jq gettext bash-completion moreutils
 </code></pre></div><h4 id="install-yq-for-yaml-processing">Install yq for yaml processing</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;yq() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;yq() {
 </span><span style="color:#e6db74">  docker run --rm -i -v &#34;${PWD}&#34;:/workdir mikefarah/yq &#34;$@&#34;
 </span><span style="color:#e6db74">}&#39;</span> | tee -a ~/.bashrc <span style="color:#f92672">&amp;&amp;</span> source ~/.bashrc
 </code></pre></div><h4 id="verify-the-binaries-are-in-the-path-and-executable">Verify the binaries are in the path and executable</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> command in kubectl jq envsubst aws
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> command in kubectl jq envsubst aws
   <span style="color:#66d9ef">do</span>
     which $command &amp;&gt;/dev/null <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$command<span style="color:#e6db74"> in path&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;</span>$command<span style="color:#e6db74"> NOT FOUND&#34;</span>
   <span style="color:#66d9ef">done</span>
 </code></pre></div><h4 id="enable-kubectl-bash_completion">Enable kubectl bash_completion</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl completion bash &gt;&gt;  ~/.bash_completion
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl completion bash &gt;&gt;  ~/.bash_completion
 . /etc/profile.d/bash_completion.sh
 . ~/.bash_completion
 </code></pre></div><h4 id="set-the-aws-load-balancer-controller-version">set the AWS Load Balancer Controller version</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;export LBC_VERSION=&#34;v2.2.0&#34;&#39;</span> &gt;&gt;  ~/.bash_profile
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;export LBC_VERSION=&#34;v2.2.0&#34;&#39;</span> &gt;&gt;  ~/.bash_profile
 .  ~/.bash_profile
 </code></pre></div>
 
@@ -16528,6 +16566,38 @@ sudo ./aws/install
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18118,19 +18188,19 @@ sudo ./aws/install
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1634326730"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1634326730"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1634326730"></script>
-    <script src="../../js/jquery.sticky.js?1634326730"></script>
-    <script src="../../js/featherlight.min.js?1634326730"></script>
-    <script src="../../js/highlight.pack.js?1634326730"></script>
+    <script src="../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1634326730"></script>
-    <script src="../../js/learn.js?1634326730"></script>
-    <script src="../../js/hugo-learn.js?1634326730"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../js/learn.js?1636111204"></script>
+    <script src="../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../mermaid/mermaid.css?1634326730" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1634326730"></script>
+    <link href="../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

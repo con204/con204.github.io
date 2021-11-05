@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Deploy an Application on Spot :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10688,7 +10726,7 @@
         <ol>
 <li>Add this to your deployment file for the frontend service under spec.template.spec</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">affinity</span>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">affinity</span>:
         <span style="color:#f92672">nodeAffinity</span>:
           <span style="color:#f92672">preferredDuringSchedulingIgnoredDuringExecution</span>:
           - <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">1</span>
@@ -10701,7 +10739,7 @@
 </code></pre></div><ol start="2">
 <li>Add this to your deployment file for the backend services under spec.template.spec</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">affinity</span>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">affinity</span>:
         <span style="color:#f92672">nodeAffinity</span>:
           <span style="color:#f92672">requiredDuringSchedulingIgnoredDuringExecution</span>:
             <span style="color:#f92672">nodeSelectorTerms</span>:
@@ -10762,9 +10800,9 @@
 
 <h4 id="redeploy-the-application---frontend-on-spot-and-backend-on-on-demand">Redeploy the application - Frontend on Spot and Backend on On-Demand</h4>
 <p>First let&rsquo;s take a look at all pods deployed on Spot instances</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> n in <span style="color:#66d9ef">$(</span>kubectl get nodes -l eks.amazonaws.com/capacityType<span style="color:#f92672">=</span>SPOT --no-headers | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Pods on instance </span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">:&#34;</span>;kubectl get pods --all-namespaces  --no-headers --field-selector spec.nodeName<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span> ; echo ; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> n in <span style="color:#66d9ef">$(</span>kubectl get nodes -l eks.amazonaws.com/capacityType<span style="color:#f92672">=</span>SPOT --no-headers | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Pods on instance </span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">:&#34;</span>;kubectl get pods --all-namespaces  --no-headers --field-selector spec.nodeName<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span> ; echo ; <span style="color:#66d9ef">done</span>
 </code></pre></div><p>Now we will redeploy  our microservices with our edited Frontend Manifest</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/ecsdemo-frontend
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/ecsdemo-frontend
 kubectl apply -f kubernetes/service.yaml
 kubectl apply -f kubernetes/deployment.yaml
 
@@ -10776,9 +10814,9 @@ cd ~/environment/ecsdemo-nodejs
 kubectl apply -f kubernetes/service.yaml
 kubectl apply -f kubernetes/deployment.yaml
 </code></pre></div><p>We can again check all pods deployed on Spot Instances and should now see the frontend pods running on Spot instances</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> n in <span style="color:#66d9ef">$(</span>kubectl get nodes -l eks.amazonaws.com/capacityType<span style="color:#f92672">=</span>SPOT --no-headers | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Pods on instance </span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">:&#34;</span>;kubectl get pods --all-namespaces  --no-headers --field-selector spec.nodeName<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span> ; echo ; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> n in <span style="color:#66d9ef">$(</span>kubectl get nodes -l eks.amazonaws.com/capacityType<span style="color:#f92672">=</span>SPOT --no-headers | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Pods on instance </span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">:&#34;</span>;kubectl get pods --all-namespaces  --no-headers --field-selector spec.nodeName<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span> ; echo ; <span style="color:#66d9ef">done</span>
 </code></pre></div><p>Let&rsquo;s check all the pods deployed on On-Demand Instances and should now see all the backend pods running on On-Demand instances</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> n in <span style="color:#66d9ef">$(</span>kubectl get nodes -l eks.amazonaws.com/capacityType<span style="color:#f92672">=</span>ON_DEMAND --no-headers | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Pods on instance </span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">:&#34;</span>;kubectl get pods --all-namespaces  --no-headers --field-selector spec.nodeName<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span> ; echo ; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> n in <span style="color:#66d9ef">$(</span>kubectl get nodes -l eks.amazonaws.com/capacityType<span style="color:#f92672">=</span>ON_DEMAND --no-headers | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Pods on instance </span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">:&#34;</span>;kubectl get pods --all-namespaces  --no-headers --field-selector spec.nodeName<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>n<span style="color:#e6db74">}</span> ; echo ; <span style="color:#66d9ef">done</span>
 </code></pre></div>
 
 <footer class=" footline" >
@@ -16617,6 +16655,38 @@ kubectl apply -f kubernetes/deployment.yaml
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18207,19 +18277,19 @@ kubectl apply -f kubernetes/deployment.yaml
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

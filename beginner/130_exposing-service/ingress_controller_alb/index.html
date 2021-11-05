@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Ingress Controller :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10693,7 +10731,7 @@
 <h3 id="deploy-the-aws-load-balancer-controller">Deploy the AWS Load Balancer Controller</h3>
 <h4 id="prerequisites">Prerequisites</h4>
 <p>We will verify if the AWS Load Balancer Controller version has been set</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -x <span style="color:#e6db74">${</span>LBC_VERSION<span style="color:#e6db74">}</span> <span style="color:#f92672">]</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -x <span style="color:#e6db74">${</span>LBC_VERSION<span style="color:#e6db74">}</span> <span style="color:#f92672">]</span>
   <span style="color:#66d9ef">then</span>
     tput setaf 2; echo <span style="color:#e6db74">&#39;${LBC_VERSION} has been set.&#39;</span>
   <span style="color:#66d9ef">else</span>
@@ -10705,13 +10743,13 @@
 
 <p>We will use <strong>Helm</strong> to install the ALB Ingress Controller.</p>
 <p>Check to see if <code>helm</code> is installed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm version --short
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm version --short
 </code></pre></div>
 <div class="notices info" ><p>If <code>Helm</code> is not found, click <a href="../../../beginner/060_helm/helm_intro/install/index.html">installing Helm CLI</a> for instructions.</p>
 </div>
 
 <h4 id="create-iam-oidc-provider">Create IAM OIDC provider</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl utils associate-iam-oidc-provider <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl utils associate-iam-oidc-provider <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --region <span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --approve
@@ -10721,11 +10759,11 @@
 
 <h4 id="create-an-iam-policy-called">Create an IAM policy called</h4>
 <p>Create a policy called <strong>AWSLoadBalancerControllerIAMPolicy</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws iam create-policy <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws iam create-policy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --policy-name AWSLoadBalancerControllerIAMPolicy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --policy-document https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/install/iam_policy.json
 </code></pre></div><h4 id="create-a-iam-role-and-serviceaccount">Create a IAM role and ServiceAccount</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --namespace kube-system <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name aws-load-balancer-controller <span style="color:#ae81ff">\
@@ -10733,12 +10771,12 @@
 </span><span style="color:#ae81ff"></span>  --override-existing-serviceaccounts <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --approve
 </code></pre></div><h4 id="install-the-targetgroupbinding-crds">Install the TargetGroupBinding CRDs</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -k github.com/aws/eks-charts/stable/aws-load-balancer-controller/crds?ref<span style="color:#f92672">=</span>master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -k github.com/aws/eks-charts/stable/aws-load-balancer-controller/crds?ref<span style="color:#f92672">=</span>master
 
 kubectl get crd
 </code></pre></div><h4 id="deploy-the-helm-chart">Deploy the Helm chart</h4>
 <p>The helm chart will deploy from the eks repo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add eks https://aws.github.io/eks-charts
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add eks https://aws.github.io/eks-charts
 
 helm upgrade -i aws-load-balancer-controller <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    eks/aws-load-balancer-controller <span style="color:#ae81ff">\
@@ -10752,7 +10790,7 @@ kubectl -n kube-system rollout status deployment aws-load-balancer-controller
 </code></pre></div><h3 id="deploy-sample-application">Deploy Sample Application</h3>
 <p>Now let’s deploy a sample <a href="https://gabrielecirulli.github.io/2048/">2048 game</a> into our Kubernetes cluster and use the Ingress resource to expose it to traffic:</p>
 <p>Deploy 2048 game resources:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export EKS_CLUSTER_VERSION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws eks describe-cluster --name eksworkshop-eksctl --query cluster.version --output text<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export EKS_CLUSTER_VERSION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws eks describe-cluster --name eksworkshop-eksctl --query cluster.version --output text<span style="color:#66d9ef">)</span>
 
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;`echo &#34;</span><span style="color:#e6db74">${</span>EKS_CLUSTER_VERSION<span style="color:#e6db74">}</span> &lt; 1.19<span style="color:#e6db74">&#34; | bc`&#34;</span> -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>     
     curl -s https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/examples/2048/2048_full.yaml <span style="color:#ae81ff">\
@@ -10766,7 +10804,7 @@ kubectl -n kube-system rollout status deployment aws-load-balancer-controller
 </span><span style="color:#ae81ff"></span>    | kubectl apply -f -
 <span style="color:#66d9ef">fi</span>
 </code></pre></div><p>After few seconds, verify that the Ingress resource is enabled:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get ingress/ingress-2048 -n game-2048
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get ingress/ingress-2048 -n game-2048
 </code></pre></div><p>You should be able to see the following output</p>
 <pre><output class="bash">
 NAME           HOSTS   ADDRESS                                                                  PORTS   AGE
@@ -10774,7 +10812,7 @@ ingress-2048   *       k8s-game2048-ingress2-8ae3738fd5-251279030.us-east-2.elb.
 </output></pre>
 
 <p>You can find more information on the ingress with this command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GAME_INGRESS_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n game-2048 get targetgroupbindings -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GAME_INGRESS_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n game-2048 get targetgroupbindings -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
 
 kubectl -n game-2048 get targetgroupbindings <span style="color:#e6db74">${</span>GAME_INGRESS_NAME<span style="color:#e6db74">}</span> -o yaml
 </code></pre></div><p>output</p>
@@ -10816,7 +10854,7 @@ status:
 <div class="notices warning" ><p>It could take 2 or 3 minutes for the ALB to be ready.</p>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GAME_2048<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get ingress/ingress-2048 -n game-2048 -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GAME_2048<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get ingress/ingress-2048 -n game-2048 -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span style="color:#66d9ef">)</span>
 
 echo http://<span style="color:#e6db74">${</span>GAME_2048<span style="color:#e6db74">}</span>
 </code></pre></div>
@@ -16657,6 +16695,38 @@ echo http://<span style="color:#e6db74">${</span>GAME_2048<span style="color:#e6
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18247,19 +18317,19 @@ echo http://<span style="color:#e6db74">${</span>GAME_2048<span style="color:#e6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

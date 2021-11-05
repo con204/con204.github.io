@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Pods Deployments :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111205" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111205" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111205" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111205" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111205" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111205" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111205"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111205" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111205"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111205"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111205"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111205"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111205"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10676,7 +10714,7 @@
 <h3 id="kubernetes-secrets">Kubernetes secrets</h3>
 <p>Before deploying our two pods we need to provide them with the RDS endpoint and password.
 We will create a kubernetes secret.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export RDS_PASSWORD<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat ~/environment/sg-per-pod/rds_password<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export RDS_PASSWORD<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat ~/environment/sg-per-pod/rds_password<span style="color:#66d9ef">)</span>
 
 export RDS_ENDPOINT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws rds describe-db-instances <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --db-instance-identifier rds-eksworkshop <span style="color:#ae81ff">\
@@ -10706,7 +10744,7 @@ password:  32 bytes
 
 <h3 id="deployments">Deployments</h3>
 <p>Let&rsquo;s download both pods deployment files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/sg-per-pod
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/sg-per-pod
 
 curl -s -O https://www.eksworkshop.com/beginner/115_sg-per-pod/deployments.files/green-pod.yaml
 curl -s -O https://www.eksworkshop.com/beginner/115_sg-per-pod/deployments.files/red-pod.yaml
@@ -10714,7 +10752,7 @@ curl -s -O https://www.eksworkshop.com/beginner/115_sg-per-pod/deployments.files
 <p><img src="../../../images/sg-per-pod/sg-per-pod_5.png" alt="sg-per-pod_5"></p>
 <h4 id="green-pod">Green Pod</h4>
 <p>Now let&rsquo;s deploy the green pod</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod apply -f ~/environment/sg-per-pod/green-pod.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod apply -f ~/environment/sg-per-pod/green-pod.yaml
 
 kubectl -n sg-per-pod rollout status deployment green-pod
 </code></pre></div><p>The container will try to:</p>
@@ -10723,7 +10761,7 @@ kubectl -n sg-per-pod rollout status deployment green-pod
 <li>If the database connection failed, the error message will also be outputted to <em>STDOUT</em>.</li>
 </ul>
 <p>Let&rsquo;s verify the logs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GREEN_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n sg-per-pod get pods -l app<span style="color:#f92672">=</span>green-pod -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GREEN_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n sg-per-pod get pods -l app<span style="color:#f92672">=</span>green-pod -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
 
 kubectl -n sg-per-pod  logs -f <span style="color:#e6db74">${</span>GREEN_POD_NAME<span style="color:#e6db74">}</span>
 </code></pre></div><p>Output</p>
@@ -10743,7 +10781,7 @@ kubectl -n sg-per-pod  logs -f <span style="color:#e6db74">${</span>GREEN_POD_NA
 <li>And the ENI has the security group POD_SG attached to it.</li>
 </ul>
 <p>We can find the ENI ID in the pod <code>Annotations</code> section using this command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod  describe pod $GREEN_POD_NAME | head -11
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod  describe pod $GREEN_POD_NAME | head -11
 </code></pre></div><p>Output</p>
 <pre><output class="bash">
 Name:         green-pod-5c786d8dff-4kmvc
@@ -10768,11 +10806,11 @@ Status:       Running
 <li>Connect to the database and will output to <em>STDOUT</em> the content of a table.</li>
 <li>If the database connection failed, the error message will also be outputted to <em>STDOUT</em>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod apply -f ~/environment/sg-per-pod/red-pod.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod apply -f ~/environment/sg-per-pod/red-pod.yaml
 
 kubectl -n sg-per-pod rollout status deployment red-pod
 </code></pre></div><p>Let&rsquo;s verify the logs (use <em>CTRL+C</em> to exit the log)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export RED_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n sg-per-pod get pods -l app<span style="color:#f92672">=</span>red-pod -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export RED_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n sg-per-pod get pods -l app<span style="color:#f92672">=</span>red-pod -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span>
 
 kubectl -n sg-per-pod  logs -f <span style="color:#e6db74">${</span>RED_POD_NAME<span style="color:#e6db74">}</span>
 </code></pre></div><p>Output</p>
@@ -10781,7 +10819,7 @@ Database connection failed due to timeout expired
 </output></pre>
 
 <p>Finally let&rsquo;s verify that the pod doesn&rsquo;t have an <em>eniId</em> <code>annotation</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod  describe pod <span style="color:#e6db74">${</span>RED_POD_NAME<span style="color:#e6db74">}</span> | head -11
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n sg-per-pod  describe pod <span style="color:#e6db74">${</span>RED_POD_NAME<span style="color:#e6db74">}</span> | head -11
 </code></pre></div><p>Output</p>
 <pre><output class="bash">
 Name:         red-pod-7f68d78475-vlm77
@@ -16640,6 +16678,38 @@ IPs:
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18230,19 +18300,19 @@ IPs:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

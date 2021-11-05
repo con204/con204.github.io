@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Configure CNI :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10672,21 +10710,21 @@
 
 <p>Before we start making changes to VPC CNI, let&rsquo;s make sure we are using latest CNI version</p>
 <p>Run this command to find CNI version</p>
-<pre tabindex="0"><code>kubectl describe daemonset aws-node --namespace kube-system | grep Image | cut -d &quot;/&quot; -f 2
+<pre><code>kubectl describe daemonset aws-node --namespace kube-system | grep Image | cut -d &quot;/&quot; -f 2
 </code></pre><p>Here is a sample response
 <pre><output class="bash">
 amazon-k8s-cni:1.6.1
 </output></pre>
 
 Upgrade to the latest v1.7 config if you have an older version:</p>
-<pre tabindex="0"><code>kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.7/config/v1.7/aws-k8s-cni.yaml
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.7/config/v1.7/aws-k8s-cni.yaml
 </code></pre><p>Wait until all the pods are recycled. You can check the status of pods by using this command</p>
-<pre tabindex="0"><code>kubectl get pods -n kube-system -w
+<pre><code>kubectl get pods -n kube-system -w
 </code></pre><h3 id="configure-custom-networking">Configure Custom networking</h3>
 <p>Edit aws-node DaemonSet and add AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG environment variable to the node container spec and set it to true</p>
 <p>Note: You only need to set one environment variable in the CNI daemonset configuration:</p>
-<pre tabindex="0"><code>kubectl set env ds aws-node -n kube-system AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG=true
-</code></pre><pre tabindex="0"><code>kubectl describe daemonset aws-node -n kube-system | grep -A5 Environment
+<pre><code>kubectl set env ds aws-node -n kube-system AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG=true
+</code></pre><pre><code>kubectl describe daemonset aws-node -n kube-system | grep -A5 Environment
 </code></pre><pre><output class="bash">
     Environment:
       AWS_VPC_K8S_CNI_LOGLEVEL:  	  DEBUG
@@ -10700,7 +10738,7 @@ Upgrade to the latest v1.7 config if you have an older version:</p>
 <div class="notices warning" ><p>Use caution before you run the next command because it terminates all worker nodes including running pods in your workshop</p>
 </div>
 
-<pre tabindex="0"><code>INSTANCE_IDS=(`aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --output text` )
+<pre><code>INSTANCE_IDS=(`aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --output text` )
 for i in &quot;${INSTANCE_IDS[@]}&quot;
 do
 	echo &quot;Terminating EC2 instance $i ...&quot;
@@ -16545,6 +16583,38 @@ done
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18135,19 +18205,19 @@ done
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../../js/learn.js?1634326732"></script>
-    <script src="../../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../../js/learn.js?1636111206"></script>
+    <script src="../../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

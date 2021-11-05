@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Install Weave Flux :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326733" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326733" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326733" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326733" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326733" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326733" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326733"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326733" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326733" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326733"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326733"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10658,9 +10696,9 @@
 
 <p>Now we will use Helm to install Weave Flux into our cluster and enable it to interact with our Kubernetes configuration GitHub repo.</p>
 <p>First, install the Flux Custom Resource Definition:</p>
-<pre tabindex="0"><code>kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/crds.yaml
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/crds.yaml
 </code></pre><p>Check that Helm is installed.</p>
-<pre tabindex="0"><code>helm list
+<pre><code>helm list
 </code></pre><p>This command should either return a list of helm charts that have already been deployed or nothing.</p>
 
 <div class="notices info" ><p>If you get an error message, see <a href="../../../beginner/060_helm/helm_intro/install/index.html">installing helm</a> for instructions.</p>
@@ -10669,15 +10707,15 @@
 <blockquote>
 <p>In the following steps, your Git user name will be required. Without this information, the resulting pipeline will not function as expected. Set this as an environment variable to reuse in the next commands:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">YOURUSER<span style="color:#f92672">=</span>yourgitusername
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">YOURUSER<span style="color:#f92672">=</span>yourgitusername
 </code></pre></div><p>First, create the flux Kubernetes namespace</p>
-<pre tabindex="0"><code>kubectl create namespace flux
+<pre><code>kubectl create namespace flux
 </code></pre><p>Next, add the Flux chart repository to Helm and install Flux.</p>
 
 <div class="notices info" ><p>Update the Git URL below to match your user name and Kubernetes configuration manifest repository.</p>
 </div>
 
-<pre tabindex="0"><code>helm repo add fluxcd https://charts.fluxcd.io
+<pre><code>helm repo add fluxcd https://charts.fluxcd.io
 
 helm upgrade -i flux fluxcd/flux \
 --set git.url=git@github.com:${YOURUSER}/k8s-config \
@@ -10690,9 +10728,9 @@ helm upgrade -i helm-operator fluxcd/helm-operator \
 --set git.branch=main \
 --namespace flux
 </code></pre><p>Watch the install and confirm everything starts.  There should be 3 pods.</p>
-<pre tabindex="0"><code>kubectl get pods -n flux
+<pre><code>kubectl get pods -n flux
 </code></pre><p>Install fluxctl in order to get the SSH key to allow GitHub write access.  This allows Flux to keep the configuration in GitHub in sync with the configuration deployed in the cluster.</p>
-<pre tabindex="0"><code>sudo wget -O /usr/local/bin/fluxctl $(curl https://api.github.com/repos/fluxcd/flux/releases/latest | jq -r &quot;.assets[] | select(.name | test(\&quot;linux_amd64\&quot;)) | .browser_download_url&quot;)
+<pre><code>sudo wget -O /usr/local/bin/fluxctl $(curl https://api.github.com/repos/fluxcd/flux/releases/latest | jq -r &quot;.assets[] | select(.name | test(\&quot;linux_amd64\&quot;)) | .browser_download_url&quot;)
 sudo chmod 755 /usr/local/bin/fluxctl
 
 fluxctl version
@@ -16545,6 +16583,38 @@ fluxctl identity --k8s-fwd-ns flux
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18135,19 +18205,19 @@ fluxctl identity --k8s-fwd-ns flux
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326733"></script>
-    <script src="../../../js/jquery.sticky.js?1634326733"></script>
-    <script src="../../../js/featherlight.min.js?1634326733"></script>
-    <script src="../../../js/highlight.pack.js?1634326733"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326733"></script>
-    <script src="../../../js/learn.js?1634326733"></script>
-    <script src="../../../js/hugo-learn.js?1634326733"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326733" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

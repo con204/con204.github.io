@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Export to AMP :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10676,10 +10714,10 @@ CloudWatch using the OpenTelemetry collector. In this section we are going to de
 OpenTelemetry Collector pattern, by configuring it to send the Kubernetes Control Plane metrics to an additional
 destination, AWS Managed Service for Prometheus (AMP).</p>
 <p>Let&rsquo;s create an AMP workspace:</p>
-<pre tabindex="0"><code class="language-bash:" data-lang="bash:">aws amp create-workspace --alias eks-workshop --region $AWS_REGION
+<pre><code class="language-bash:" data-lang="bash:">aws amp create-workspace --alias eks-workshop --region $AWS_REGION
 </code></pre><h4 id="iam-policy--iam-role">IAM Policy &amp; IAM Role</h4>
 <p>Now we create a new IAM Policy (<code>AWSManagedPrometheusWriteAccessPolicy</code>) which grants AMP read and write permission:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">read -r -d <span style="color:#e6db74">&#39;&#39;</span> PERMISSION_POLICY <span style="color:#e6db74">&lt;&lt;EOF
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">read -r -d <span style="color:#e6db74">&#39;&#39;</span> PERMISSION_POLICY <span style="color:#e6db74">&lt;&lt;EOF
 </span><span style="color:#e6db74">{
 </span><span style="color:#e6db74">   &#34;Version&#34;:&#34;2012-10-17&#34;,
 </span><span style="color:#e6db74">   &#34;Statement&#34;:[
@@ -10703,7 +10741,7 @@ export SERVICE_ACCOUNT_IAM_POLICY_ARN<span style="color:#f92672">=</span><span s
 aws iam create-policy --policy-name AWSManagedPrometheusWriteAccessPolicy --policy-document file://AMPPolicy.json
 </code></pre></div><p>Then the <code>AWSManagedPrometheusWriteAccessPolicy</code> IAM Policy is attached to the IAM Role (<code>AWSDistroOpenTelemetryRole</code>)
 we previously created for our OpenTelemetry collector.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws iam attach-role-policy --role-name AWSDistroOpenTelemetryRole --policy-arn<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SERVICE_ACCOUNT_IAM_POLICY_ARN<span style="color:#e6db74">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws iam attach-role-policy --role-name AWSDistroOpenTelemetryRole --policy-arn<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SERVICE_ACCOUNT_IAM_POLICY_ARN<span style="color:#e6db74">}</span>
 </code></pre></div><h4 id="exporter">Exporter</h4>
 <p>Open <code>kubernetes/adot/otel-prometheus.yaml</code>, and view lines 63-67. This describes an exporter which sends metrics to an AMP workspace.
 <pre><output class="bash"> exporters:
@@ -10715,7 +10753,7 @@ we previously created for our OpenTelemetry collector.</p>
 </output></pre>
 </p>
 <p>Let&rsquo;s un-comment lines 63-67 with the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#39;63,67 s/#//g&#39;</span> kubernetes/adot/otel-prometheus.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#39;63,67 s/#//g&#39;</span> kubernetes/adot/otel-prometheus.yaml
 </code></pre></div><h3 id="pipeline">Pipeline</h3>
 <p>Now in <code>kubernetes/adot/otel-prometheus.yaml</code> let&rsquo;s view lines 116-119. This outlines a new pipeline, which
 takes in the same prometheus metrics we send to CloudWatch, processes the metrics into batched segments, then exports
@@ -10733,14 +10771,14 @@ the metrics to our AMP workspace.
 </output></pre>
 </p>
 <p>Let&rsquo;s un-comment lines 116-119 with the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#39;116,119 s/#//g&#39;</span> kubernetes/adot/otel-prometheus.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#39;116,119 s/#//g&#39;</span> kubernetes/adot/otel-prometheus.yaml
 </code></pre></div><h4 id="updating-prometheus-metrics-collector">Updating Prometheus Metrics Collector</h4>
 <p>Now that the Prometheus Metrics Collector&rsquo;s configuration was updated to send metrics to Prometheus, let&rsquo;s update our deployment.</p>
 <p>First, let&rsquo;s grab our AMP Workspace ID:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKSPACE_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws amp --region<span style="color:#f92672">=</span>$AWS_REGION list-workspaces --alias eks-workshop | jq .workspaces<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>.workspaceId -r<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKSPACE_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws amp --region<span style="color:#f92672">=</span>$AWS_REGION list-workspaces --alias eks-workshop | jq .workspaces<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>.workspaceId -r<span style="color:#66d9ef">)</span>
 echo <span style="color:#e6db74">&#34;AMP Workspace ID: </span><span style="color:#e6db74">${</span>WORKSPACE_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>Now we&rsquo;ll update the manifest with our environment variables, deploy the new manifest, and like before force-recreate the collector to speed up the rollout.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">envsubst &lt; kubernetes/adot/otel-prometheus.yaml | sponge kubernetes/adot/otel-prometheus.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">envsubst &lt; kubernetes/adot/otel-prometheus.yaml | sponge kubernetes/adot/otel-prometheus.yaml
 kubectl apply -f kubernetes/adot/otel-prometheus.yaml
 kubectl delete pod -n aws-otel-eks -l name<span style="color:#f92672">=</span>aws-otel-eks-prometheus
 </code></pre></div><p>Now our OpenTelemetry Collector is sending Kubernetes Control Plane metrics to both CloudWatch and Prometheus.</p>
@@ -16575,6 +16613,38 @@ kubectl delete pod -n aws-otel-eks -l name<span style="color:#f92672">=</span>aw
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18173,19 +18243,19 @@ kubectl delete pod -n aws-otel-eks -l name<span style="color:#f92672">=</span>aw
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../../js/learn.js?1634326731"></script>
-    <script src="../../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../../js/learn.js?1636111204"></script>
+    <script src="../../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

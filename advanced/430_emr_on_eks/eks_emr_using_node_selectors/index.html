@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Using Node Selectors :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10671,7 +10709,7 @@
 <h3 id="creating-nodegroup">Creating Nodegroup</h3>
 <p>Amazon EKS managed node groups automate the provisioning and lifecycle management of nodes (Amazon EC2 instances) for Amazon EKS Kubernetes clusters. All managed nodes are provisioned as part of an Amazon EC2 Auto Scaling group that&rsquo;s managed for you by Amazon EKS. All resources including the instances and Auto Scaling groups run within your AWS account. Each node group run across multiple Availability Zones that you define.</p>
 <p>We will now create a managed node group for our example, let’s create a config file (addnodegroup-nytaxi.yaml) with details of a new managed node group.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat <span style="color:#e6db74">&lt;&lt; EOF &gt; addnodegroup-nytaxi.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat <span style="color:#e6db74">&lt;&lt; EOF &gt; addnodegroup-nytaxi.yaml
 </span><span style="color:#e6db74">---
 </span><span style="color:#e6db74">apiVersion: eksctl.io/v1alpha5
 </span><span style="color:#e6db74">kind: ClusterConfig
@@ -10690,11 +10728,11 @@
 </span><span style="color:#e6db74">    enableSsm: true
 </span><span style="color:#e6db74">EOF</span>
 </code></pre></div><p>Create the new EKS managed nodegroup. This node group will have 6 EC2s running across three AZs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">eksctl create nodegroup --config-file<span style="color:#f92672">=</span>addnodegroup-nytaxi.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">eksctl create nodegroup --config-file<span style="color:#f92672">=</span>addnodegroup-nytaxi.yaml
 </code></pre></div><h3 id="spark-pod-template">Spark Pod Template</h3>
 <p>Next, you will create a pod template for Spark Executor. Here, we are specifying nodeSelector as eks.amazonaws.com/nodegroup: emr-ny-taxi and topology.kubernetes.io/zone: us-west-2a. This will ensure that spark executors are running in a single AZ (us-west-2 in this example) and are part of nodegroup which we created for analyzing New York taxi dataset.</p>
 <p>We chose us-west-2 as this example was ran in Oregon. If you are running in a different region, make sure that the correct zone is selected.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; spark_executor_nyc_taxi_template.yml <span style="color:#e6db74">&lt;&lt;EOF 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; spark_executor_nyc_taxi_template.yml <span style="color:#e6db74">&lt;&lt;EOF 
 </span><span style="color:#e6db74">apiVersion: v1
 </span><span style="color:#e6db74">kind: Pod
 </span><span style="color:#e6db74">spec:
@@ -10710,7 +10748,7 @@
 </span><span style="color:#e6db74">  - name: spark-kubernetes-executor # This will be interpreted as Spark executor container
 </span><span style="color:#e6db74">EOF</span>
 </code></pre></div><p>Next, you will create a pod template for Spark Driver. Here, we are specifying nodeSelector as eks.amazonaws.com/nodegroup: emr-ny-taxi and topology.kubernetes.io/zone: us-west-2a. The Spark Driver pods will run in the same AZ as Spark executor pods.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; spark_driver_nyc_taxi_template.yml <span style="color:#e6db74">&lt;&lt;EOF 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; spark_driver_nyc_taxi_template.yml <span style="color:#e6db74">&lt;&lt;EOF 
 </span><span style="color:#e6db74">apiVersion: v1
 </span><span style="color:#e6db74">kind: Pod
 </span><span style="color:#e6db74">spec:
@@ -10726,7 +10764,7 @@
 </span><span style="color:#e6db74">  - name: spark-kubernetes-driver # This will be interpreted as Spark driver container
 </span><span style="color:#e6db74">EOF</span>
 </code></pre></div><p>Lets create a nytaxi.py file which will have spark code for analyzing the data set.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat <span style="color:#e6db74">&lt;&lt; EOF &gt; nytaxi.py
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat <span style="color:#e6db74">&lt;&lt; EOF &gt; nytaxi.py
 </span><span style="color:#e6db74">import sys
 </span><span style="color:#e6db74">from time import sleep
 </span><span style="color:#e6db74">from pyspark.sql import SparkSession
@@ -10774,11 +10812,11 @@
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">EOF</span>
 </code></pre></div><p>Let&rsquo;s upload sample pod templates and python script to s3 bucket.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws s3 cp nytaxi.py <span style="color:#e6db74">${</span>s3DemoBucket<span style="color:#e6db74">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws s3 cp nytaxi.py <span style="color:#e6db74">${</span>s3DemoBucket<span style="color:#e6db74">}</span>
 aws s3 cp spark_driver_nyc_taxi_template.yml <span style="color:#e6db74">${</span>s3DemoBucket<span style="color:#e6db74">}</span>/pod_templates/
 aws s3 cp spark_executor_nyc_taxi_template.yml <span style="color:#e6db74">${</span>s3DemoBucket<span style="color:#e6db74">}</span>/pod_templates/
 </code></pre></div><p>Let&rsquo;s create a json input file for emr-container cli.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; request-nytaxi.json <span style="color:#e6db74">&lt;&lt;EOF 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; request-nytaxi.json <span style="color:#e6db74">&lt;&lt;EOF 
 </span><span style="color:#e6db74">{
 </span><span style="color:#e6db74">    &#34;name&#34;: &#34;nytaxi&#34;,
 </span><span style="color:#e6db74">    &#34;virtualClusterId&#34;: &#34;${VIRTUAL_CLUSTER_ID}&#34;,
@@ -10818,9 +10856,9 @@ aws s3 cp spark_executor_nyc_taxi_template.yml <span style="color:#e6db74">${</s
 </span><span style="color:#e6db74">}
 </span><span style="color:#e6db74">EOF</span>
 </code></pre></div><p>Finally, let&rsquo;s trigger the Spark job</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws emr-containers start-job-run --cli-input-json file://request-nytaxi.json
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws emr-containers start-job-run --cli-input-json file://request-nytaxi.json
 </code></pre></div><p>The spark job will run for around 5-7 minutes. You can watch the EKS pods using below command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get pods -n spark
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">watch kubectl get pods -n spark
 </code></pre></div><p>You will be able to see the completed job in EMR console. It should look like below:</p>
 <p><img src="../../../images/emr-on-eks/virtual-cluster2.png" alt="EMR Console of virtual cluster and jobs"></p>
 <h3 id="analyzing-results-of-spark-job">Analyzing Results of Spark Job</h3>
@@ -16662,6 +16700,38 @@ aws s3 cp spark_executor_nyc_taxi_template.yml <span style="color:#e6db74">${</s
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18260,19 +18330,19 @@ aws s3 cp spark_executor_nyc_taxi_template.yml <span style="color:#e6db74">${</s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

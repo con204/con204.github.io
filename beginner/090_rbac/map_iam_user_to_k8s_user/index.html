@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Map an IAM User to K8s :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111205" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111205" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111205" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111205" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111205" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111205" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111205"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111205" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111205"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111205"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111205"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111205"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111205"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10657,16 +10695,16 @@
 
 
 <p>Next, we&rsquo;ll define a k8s user called rbac-user, and map to its IAM user counterpart.  Run the following to get the existing ConfigMap and save into a file called aws-auth.yaml:</p>
-<pre tabindex="0"><code>kubectl get configmap -n kube-system aws-auth -o yaml | grep -v &quot;creationTimestamp\|resourceVersion\|selfLink\|uid&quot; | sed '/^  annotations:/,+2 d' &gt; aws-auth.yaml
+<pre><code>kubectl get configmap -n kube-system aws-auth -o yaml | grep -v &quot;creationTimestamp\|resourceVersion\|selfLink\|uid&quot; | sed '/^  annotations:/,+2 d' &gt; aws-auth.yaml
 </code></pre><p>Next append the rbac-user mapping to the existing configMap</p>
-<pre tabindex="0"><code>cat &lt;&lt; EoF &gt;&gt; aws-auth.yaml
+<pre><code>cat &lt;&lt; EoF &gt;&gt; aws-auth.yaml
 data:
   mapUsers: |
     - userarn: arn:aws:iam::${ACCOUNT_ID}:user/rbac-user
       username: rbac-user
 EoF
 </code></pre><p>Some of the values may be dynamically populated when the file is created.  To verify everything populated and was created correctly, run the following:</p>
-<pre tabindex="0"><code>cat aws-auth.yaml
+<pre><code>cat aws-auth.yaml
 </code></pre><p>And the output should reflect that rolearn and userarn populated, similar to:</p>
 <pre><output class="bash">
 apiVersion: v1
@@ -10681,7 +10719,7 @@ data:
 </output></pre>
 
 <p>Next, apply the ConfigMap to apply this mapping to the system:</p>
-<pre tabindex="0"><code>kubectl apply -f aws-auth.yaml
+<pre><code>kubectl apply -f aws-auth.yaml
 </code></pre>
 
 <footer class=" footline" >
@@ -16520,6 +16558,38 @@ data:
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18110,19 +18180,19 @@ data:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

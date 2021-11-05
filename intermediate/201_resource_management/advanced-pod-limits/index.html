@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Advanced Pod CPU and Memory Management :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10669,14 +10707,14 @@
 
 <p>In the previous section, we created CPU and Memory constraints at the pod level. <code>LimitRange</code> are used to constraint compute, storage or enforce ratio between <code>Request</code> and <code>Limit</code> in a <code>Namespace</code>. In this section, we will separate the compute workloads by <strong>low-usage</strong>, <strong>high-usage</strong> and <strong>unrestricted-usage</strong>.</p>
 <p>We will create three <code>Namespaces</code>:</p>
-<pre tabindex="0"><code>mkdir ~/environment/resource-management
+<pre><code>mkdir ~/environment/resource-management
 
 kubectl create namespace low-usage
 kubectl create namespace high-usage
 kubectl create namespace unrestricted-usage
 </code></pre><h3 id="create-limit-ranges">Create Limit Ranges</h3>
 <p>Create <code>LimitRange</code> specification for <strong>low-usage</strong> and <strong>high-usage</strong> namespace level. The <strong>unrestricted-usage</strong> will not have any limits enforced.</p>
-<pre tabindex="0"><code>cat &lt;&lt;EoF &gt; ~/environment/resource-management/low-usage-limit-range.yml
+<pre><code>cat &lt;&lt;EoF &gt; ~/environment/resource-management/low-usage-limit-range.yml
 apiVersion: v1
 kind: LimitRange
 metadata:
@@ -10716,19 +10754,19 @@ kubectl apply -f ~/environment/resource-management/high-usage-limit-range.yml --
 <p>Next we will deploy the pods to the nodes .</p>
 <h5 id="failed-attempts">Failed Attempts</h5>
 <p>Creating a pod with values outside what is defined in the <code>LimitRange</code> in the namespace will cause an errors</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Error due to higher memory request than defined in low-usage namespace: wanted 1g memory above max of 300m</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Error due to higher memory request than defined in low-usage namespace: wanted 1g memory above max of 300m</span>
 kubectl run --namespace low-usage --requests<span style="color:#f92672">=</span>memory<span style="color:#f92672">=</span>1G,cpu<span style="color:#f92672">=</span>0.5 --image  hande007/stress-ng basic-request-pod --restart<span style="color:#f92672">=</span>Never --  --vm-keep   --vm-bytes 2g --timeout 600s --vm <span style="color:#ae81ff">1</span> --oomable --verbose 
 
 <span style="color:#75715e"># Error due to lower cpu request than defined in high-usage namespace: wanted 0.5 below min of 1</span>
 kubectl run --namespace high-usage --requests<span style="color:#f92672">=</span>memory<span style="color:#f92672">=</span>1G,cpu<span style="color:#f92672">=</span>0.5 --image  hande007/stress-ng basic-request-pod --restart<span style="color:#f92672">=</span>Never --  --vm-keep   --vm-bytes 2g --timeout 600s --vm <span style="color:#ae81ff">1</span> --oomable --verbose 
 </code></pre></div><h5 id="successful-attempts">Successful Attempts</h5>
 <p>Create pods without specifying <code>Requests</code> or <code>Limits</code> will inherit <code>LimitRange</code> values.</p>
-<pre tabindex="0"><code>kubectl run --namespace low-usage --image  hande007/stress-ng low-usage-pod --restart=Never --  --vm-keep   --vm-bytes 200m --timeout 600s --vm 2 --oomable --verbose 
+<pre><code>kubectl run --namespace low-usage --image  hande007/stress-ng low-usage-pod --restart=Never --  --vm-keep   --vm-bytes 200m --timeout 600s --vm 2 --oomable --verbose 
 kubectl run --namespace high-usage  --image  hande007/stress-ng high-usage-pod --restart=Never --  --vm-keep   --vm-bytes 200m --timeout 600s --vm 2 --oomable --verbose 
 kubectl run --namespace unrestricted-usage --image  hande007/stress-ng unrestricted-usage-pod --restart=Never --  --vm-keep   --vm-bytes 200m --timeout 600s --vm 2 --oomable --verbose 
 </code></pre><h3 id="verify-pod-limits">Verify Pod Limits</h3>
 <p>Next we will verify that <code>LimitRange</code> values are being inherited by the pods in each namespace.</p>
-<pre tabindex="0"><code>eval 'kubectl  -n='{low-usage,high-usage,unrestricted-usage}' get pod -o=custom-columns='Name:spec.containers[*].name','Namespace:metadata.namespace','Limits:spec.containers[*].resources.limits';'
+<pre><code>eval 'kubectl  -n='{low-usage,high-usage,unrestricted-usage}' get pod -o=custom-columns='Name:spec.containers[*].name','Namespace:metadata.namespace','Limits:spec.containers[*].resources.limits';'
 </code></pre><p>Output:
 <pre><output class="bash">
 Name            Namespace   Limits
@@ -10741,7 +10779,7 @@ unrestricted-usage-pod   unrestricted-usage   &lt;none&gt;
 </p>
 <h3 id="cleanup">Cleanup</h3>
 <p>Clean up before moving on to free up resources</p>
-<pre tabindex="0"><code>kubectl delete namespace low-usage
+<pre><code>kubectl delete namespace low-usage
 kubectl delete namespace high-usage
 kubectl delete namespace unrestricted-usage
 </code></pre>
@@ -16582,6 +16620,38 @@ kubectl delete namespace unrestricted-usage
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18172,19 +18242,19 @@ kubectl delete namespace unrestricted-usage
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

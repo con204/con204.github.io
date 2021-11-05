@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Test the Application :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10672,7 +10710,7 @@
 
 <h4 id="testing-the-connectivity-between-fargate-and-nodegroup-pods">Testing the Connectivity between Fargate and Nodegroup pods</h4>
 <p>To test if our ported Product Catalog App is working as expected, we&rsquo;ll first exec into the <code>frontend-node</code> container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export FE_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods -n prodcatalog-ns -l app<span style="color:#f92672">=</span>frontend-node -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export FE_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods -n prodcatalog-ns -l app<span style="color:#f92672">=</span>frontend-node -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 
 
 kubectl -n prodcatalog-ns exec -it <span style="color:#e6db74">${</span>FE_POD_NAME<span style="color:#e6db74">}</span> -c frontend-node bash
 </code></pre></div><p>You will see a prompt from within the <code>frontend-node</code> container.</p>
@@ -10681,7 +10719,7 @@ root@frontend-node-9d46cb55-XXX:/usr/src/app#
 </output></pre>
 
 <p>curl to Fargate <code>prodcatalog</code> backend endpoint and you should see the below response</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://prodcatalog.prodcatalog-ns.svc.cluster.local:5000/products/ 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://prodcatalog.prodcatalog-ns.svc.cluster.local:5000/products/ 
 </code></pre></div><pre><output class="bash">
 {
     &#34;products&#34;: {},
@@ -10695,7 +10733,7 @@ root@frontend-node-9d46cb55-XXX:/usr/src/app#
 </output></pre>
 
 <p>Exit from the <code>frontend-node</code> container exec bash. Now, To test the connectivity from Fargate service <code>prodcatalog</code> to Nodegroup service <code>proddetail</code>, we&rsquo;ll first exec into the <code>prodcatalog</code> container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export BE_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods -n prodcatalog-ns -l app<span style="color:#f92672">=</span>prodcatalog -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export BE_POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods -n prodcatalog-ns -l app<span style="color:#f92672">=</span>prodcatalog -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 
 
 kubectl -n prodcatalog-ns exec -it <span style="color:#e6db74">${</span>BE_POD_NAME<span style="color:#e6db74">}</span> -c prodcatalog bash
 </code></pre></div><p>You will see a prompt from within the <code>prodcatalog</code> container.</p>
@@ -10704,7 +10742,7 @@ root@prodcatalog-98f7c5f87-xxxxx:/usr/src/app#
 </output></pre>
 
 curl to Nodegroup <code>proddetail</code> backend endpoint and you should see the below response. You can now exit from <code>prodcatalog</code> exec bash.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://proddetail.prodcatalog-ns.svc.cluster.local:3000/catalogDetail
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://proddetail.prodcatalog-ns.svc.cluster.local:3000/catalogDetail
 </code></pre></div><pre><output class="bash">
 {&#34;version&#34;:&#34;1&#34;,&#34;vendors&#34;:[&#34;ABC.com&#34;]}
 </output></pre>
@@ -16541,6 +16579,38 @@ curl to Nodegroup <code>proddetail</code> backend endpoint and you should see th
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18143,19 +18213,19 @@ curl to Nodegroup <code>proddetail</code> backend endpoint and you should see th
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../../js/learn.js?1634326731"></script>
-    <script src="../../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../../js/learn.js?1636111204"></script>
+    <script src="../../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

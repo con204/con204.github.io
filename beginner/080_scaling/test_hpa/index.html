@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Scale an Application with HPA :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111205" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111205" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111205" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111205" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111205" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111205" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111205"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111205" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111205"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111205"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111205"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111205"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111205"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10665,26 +10703,26 @@
 <h2 id="deploy-a-sample-app">Deploy a Sample App</h2>
 <p>We will deploy an application and expose as a service on TCP port 80.</p>
 <p>The application is a custom-built image based on the php-apache image. The index.php page performs calculations to generate CPU load. More information can be found <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#run-expose-php-apache-server">here</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create deployment php-apache --image<span style="color:#f92672">=</span>us.gcr.io/k8s-artifacts-prod/hpa-example
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create deployment php-apache --image<span style="color:#f92672">=</span>us.gcr.io/k8s-artifacts-prod/hpa-example
 kubectl set resources deploy php-apache --requests<span style="color:#f92672">=</span>cpu<span style="color:#f92672">=</span>200m
 kubectl expose deploy php-apache --port <span style="color:#ae81ff">80</span>
 
 kubectl get pod -l app<span style="color:#f92672">=</span>php-apache
 </code></pre></div><h2 id="create-an-hpa-resource">Create an HPA resource</h2>
 <p>This HPA scales up when CPU exceeds 50% of the allocated container resource.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl autoscale deployment php-apache <span style="color:#e6db74">`</span><span style="color:#75715e">#The target average CPU utilization` \</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl autoscale deployment php-apache <span style="color:#e6db74">`</span><span style="color:#75715e">#The target average CPU utilization` \</span>
     --cpu-percent<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --min<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#e6db74">`</span><span style="color:#75715e">#The lower limit for the number of pods that can be set by the autoscaler` \</span>
     --max<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> <span style="color:#e6db74">`</span><span style="color:#75715e">#The upper limit for the number of pods that can be set by the autoscaler`</span>
 </code></pre></div><p>View the HPA using kubectl. You probably will see <code>&lt;unknown&gt;/50%</code> for 1-2 minutes and then you should be able to see <code>0%/50%</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get hpa
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get hpa
 </code></pre></div><h2 id="generate-load-to-trigger-scaling">Generate load to trigger scaling</h2>
 <p><strong>Open a new terminal</strong> in the Cloud9 Environment and run the following command to drop into a shell on a new container</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl --generator<span style="color:#f92672">=</span>run-pod/v1 run -i --tty load-generator --image<span style="color:#f92672">=</span>busybox /bin/sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl --generator<span style="color:#f92672">=</span>run-pod/v1 run -i --tty load-generator --image<span style="color:#f92672">=</span>busybox /bin/sh
 </code></pre></div><p>Execute a while loop to continue getting http:///php-apache</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> true; <span style="color:#66d9ef">do</span> wget -q -O - http://php-apache; <span style="color:#66d9ef">done</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> true; <span style="color:#66d9ef">do</span> wget -q -O - http://php-apache; <span style="color:#66d9ef">done</span>
 </code></pre></div><p>In the previous tab, watch the HPA with the following command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get hpa -w
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get hpa -w
 </code></pre></div><p>You will see HPA scale the pods from 1 up to our configured maximum (10) until the CPU average is below our target (50%)</p>
 <p><img src="../../../images/scaling-hpa-results.png" alt="Scale Up"></p>
 <p>You can now stop (<em>Ctrl + C</em>) load test that was running in the other terminal. You will notice that HPA will slowly bring the replica count to min number based on its configuration. You should also get out of load testing application by pressing <em>Ctrl + D</em>.</p>
@@ -16526,6 +16564,38 @@ kubectl get pod -l app<span style="color:#f92672">=</span>php-apache
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18116,19 +18186,19 @@ kubectl get pod -l app<span style="color:#f92672">=</span>php-apache
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

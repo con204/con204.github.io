@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Monitor &amp; Visualize :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326730" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326730" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326730" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326730" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326730" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326730" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326730" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326730" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326730" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326730" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326730"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326730" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326730" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326730"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326730"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326730"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326730"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326730"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10667,7 +10705,7 @@
 
 <h2 id="install-grafana-and-prometheus">Install Grafana and Prometheus</h2>
 <p>Istio provides a basic sample installation to quickly get Prometheus and Grafana up and running, bundled with all of the Istio dashboards already installed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ISTIO_RELEASE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $ISTIO_VERSION |cut -d. -f1,2<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ISTIO_RELEASE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $ISTIO_VERSION |cut -d. -f1,2<span style="color:#66d9ef">)</span>
 
 <span style="color:#75715e"># Install Prometheus</span>
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span style="color:#e6db74">${</span>ISTIO_RELEASE<span style="color:#e6db74">}</span>/samples/addons/prometheus.yaml
@@ -10675,7 +10713,7 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span sty
 <span style="color:#75715e"># Install Grafana</span>
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span style="color:#e6db74">${</span>ISTIO_RELEASE<span style="color:#e6db74">}</span>/samples/addons/grafana.yaml
 </code></pre></div><p>We can now verify that they have been installed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system get deploy grafana prometheus
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system get deploy grafana prometheus
 </code></pre></div><pre><output class="bash">
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 grafana      1/1     1            1           63s
@@ -10684,11 +10722,11 @@ prometheus   1/1     1            1           64s
 
 <h2 id="install-jaeger-and-kiali">Install Jaeger and Kiali</h2>
 <p><a href="https://www.jaegertracing.io/">Jaeger</a> is an open source end to end distributed tracing system, allowing users to monitor and troubleshoot complex distributed systems. Jaeger addresses issues with distributed transaction monitoring, performance and latency optimization, root cause and service dependency analysis etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span style="color:#e6db74">${</span>ISTIO_RELEASE<span style="color:#e6db74">}</span>/samples/addons/jaeger.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span style="color:#e6db74">${</span>ISTIO_RELEASE<span style="color:#e6db74">}</span>/samples/addons/jaeger.yaml
 </code></pre></div><p><a href="https://kiali.io/">Kiali</a> is a management console for an Istio-based service mesh. It provides dashboards, observability, and lets you operate your mesh with robust configuration and validation capabilities. It shows the structure of your service mesh by inferring traffic topology and displays the health of your mesh. Kiali provides detailed metrics, powerful validation, Grafana access, and strong integration for distributed tracing with Jaeger. You may visit official site to view <a href="https://kiali.io/documentation/latest/features/">features</a> it offers.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span style="color:#e6db74">${</span>ISTIO_RELEASE<span style="color:#e6db74">}</span>/samples/addons/kiali.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-<span style="color:#e6db74">${</span>ISTIO_RELEASE<span style="color:#e6db74">}</span>/samples/addons/kiali.yaml
 </code></pre></div><p>We can now verify that they have been installed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system get deploy jaeger kiali
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system get deploy jaeger kiali
 </code></pre></div><pre><output class="bash">
 NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 jaeger       1/1     1            1           63s
@@ -10697,13 +10735,13 @@ kiali        1/1     1            1           64s
 
 <h4 id="generate-traffic-to-collect-telemetry-data">Generate traffic to collect telemetry data</h4>
 <p>Open a new terminal tab and use these commands to send a traffic to the mesh</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GATEWAY_URL<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n istio-system get service istio-ingressgateway -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GATEWAY_URL<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n istio-system get service istio-ingressgateway -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span style="color:#66d9ef">)</span>
 
 watch --interval <span style="color:#ae81ff">1</span> curl -s -I -XGET <span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>GATEWAY_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/productpage&#34;</span>
 </code></pre></div><p>Next, we will launch Kiali to visualize application tracing and metrics.</p>
 <h4 id="launch-kiali">Launch Kiali</h4>
 <p>Open a new terminal tab and launch kiali dashboard by executing the following command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system port-forward <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system port-forward <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span><span style="color:#66d9ef">$(</span>kubectl -n istio-system get pod -l app<span style="color:#f92672">=</span>kiali -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 8080:20001
 </code></pre></div><p>Open Kiali dashboard. Click <strong>Preview / Preview Running Application</strong> in Cloud9 environment.</p>
 <p><img src="../../../images/istio/istio_kiali_open.png" alt="Open Kiali"></p>
@@ -10719,7 +10757,7 @@ watch --interval <span style="color:#ae81ff">1</span> curl -s -I -XGET <span sty
 </div>
 
 <p>Next, we will visualize application metrics using Grafana. Open a new terminal tab and setup port-forwarding for Grafana by executing the following command</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system port-forward <span style="color:#66d9ef">$(</span>kubectl -n istio-system get pod -l app<span style="color:#f92672">=</span>grafana -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 8080:3000
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n istio-system port-forward <span style="color:#66d9ef">$(</span>kubectl -n istio-system get pod -l app<span style="color:#f92672">=</span>grafana -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> 8080:3000
 </code></pre></div><p>Open the Istio Dashboard via the Grafana UI</p>
 <ul>
 <li>In your Cloud9 environment, click <strong>Preview / Preview Running Application</strong></li>
@@ -10728,7 +10766,7 @@ watch --interval <span style="color:#ae81ff">1</span> curl -s -I -XGET <span sty
 <ul>
 <li>Scroll to <strong>the end of the URL</strong> and append:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dashboard/db/istio-mesh-dashboard
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dashboard/db/istio-mesh-dashboard
 </code></pre></div><ul>
 <li>Click the &lsquo;Pop Out Into New Window&rsquo; button</li>
 </ul>
@@ -16566,6 +16604,38 @@ watch --interval <span style="color:#ae81ff">1</span> curl -s -I -XGET <span sty
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18164,19 +18234,19 @@ watch --interval <span style="color:#ae81ff">1</span> curl -s -I -XGET <span sty
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../js/learn.js?1636111204"></script>
+    <script src="../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

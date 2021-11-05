@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Deploy Grafana :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10662,7 +10700,7 @@ to gp2, admin password, configuring the datasource to point to Prometheus and cr
 <a href="https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/">external load</a>
 balancer for the service.</p>
 <p>Create YAML file called <code>grafana.yaml</code> with following commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/grafana
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/grafana
 
 cat <span style="color:#e6db74">&lt;&lt; EoF &gt; ${HOME}/environment/grafana/grafana.yaml
 </span><span style="color:#e6db74">datasources:
@@ -10675,7 +10713,7 @@ cat <span style="color:#e6db74">&lt;&lt; EoF &gt; ${HOME}/environment/grafana/gr
 </span><span style="color:#e6db74">      access: proxy
 </span><span style="color:#e6db74">      isDefault: true
 </span><span style="color:#e6db74">EoF</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace grafana
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace grafana
 
 helm install grafana grafana/grafana <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --namespace grafana <span style="color:#ae81ff">\
@@ -10685,7 +10723,7 @@ helm install grafana grafana/grafana <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --values <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/environment/grafana/grafana.yaml <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --set service.type<span style="color:#f92672">=</span>LoadBalancer
 </code></pre></div><p>Run the following command to check if Grafana is deployed properly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get all -n grafana
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get all -n grafana
 </code></pre></div><p>You should see similar results. They should all be Ready and Available</p>
 <pre><output class="bash">
 NAME                          READY   STATUS    RESTARTS   AGE
@@ -10705,11 +10743,11 @@ replicaset.apps/grafana-f64dbbcf4   1         1         1       55s
 </div>
 
 <p>You can get Grafana ELB URL using this command. Copy &amp; Paste the value into browser to access Grafana web UI.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ELB<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get svc -n grafana grafana -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export ELB<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get svc -n grafana grafana -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.status.loadBalancer.ingress[0].hostname}&#39;</span><span style="color:#66d9ef">)</span>
 
 echo <span style="color:#e6db74">&#34;http://</span>$ELB<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>When logging in, use the username <strong>admin</strong> and get the password hash by running the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get secret --namespace grafana grafana -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.data.admin-password}&#34;</span> | base64 --decode ; echo
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get secret --namespace grafana grafana -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.data.admin-password}&#34;</span> | base64 --decode ; echo
 </code></pre></div>
 
 <footer class=" footline" >
@@ -16548,6 +16586,38 @@ echo <span style="color:#e6db74">&#34;http://</span>$ELB<span style="color:#e6db
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18138,19 +18208,19 @@ echo <span style="color:#e6db74">&#34;http://</span>$ELB<span style="color:#e6db
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

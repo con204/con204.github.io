@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Prerequisites :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10677,11 +10715,11 @@
 </div>
 
 <p>You can use below commands to add 100.64.0.0/16 to your EKS cluster VPC. Please note to change the Values parameter to EKS cluster name if you used different name than eksctl-eksworkshop</p>
-<pre tabindex="0"><code>VPC_ID=$(aws ec2 describe-vpcs --filters Name=tag:Name,Values=eksctl-eksworkshop* --query 'Vpcs[].VpcId' --output text)
+<pre><code>VPC_ID=$(aws ec2 describe-vpcs --filters Name=tag:Name,Values=eksctl-eksworkshop* --query 'Vpcs[].VpcId' --output text)
 
 aws ec2 associate-vpc-cidr-block --vpc-id $VPC_ID --cidr-block 100.64.0.0/16
 </code></pre><p>Next step is to create subnets. Before we do this step, let&rsquo;s check how many subnets we are consuming. You can run this command to see EC2 instance and AZ details</p>
-<pre tabindex="0"><code>aws ec2 describe-instances --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --query 'Reservations[*].Instances[*].[PrivateDnsName,Tags[?Key==`eks:nodegroup-name`].Value|[0],Placement.AvailabilityZone,PrivateIpAddress,PublicIpAddress]' --output table   
+<pre><code>aws ec2 describe-instances --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --query 'Reservations[*].Instances[*].[PrivateDnsName,Tags[?Key==`eks:nodegroup-name`].Value|[0],Placement.AvailabilityZone,PrivateIpAddress,PublicIpAddress]' --output table   
 </code></pre><pre><output class="bash">
 ------------------------------------------------------------------------------------------------------------------------------------------
 |                                                            DescribeInstances                                                           |
@@ -10693,14 +10731,14 @@ aws ec2 associate-vpc-cidr-block --vpc-id $VPC_ID --cidr-block 100.64.0.0/16
 </output></pre>
 
 <p>I have 3 instances and using 3 subnets in my environment. For simplicity, we will use the same AZ&rsquo;s and create 3 secondary CIDR subnets but you can certainly customize according to your networking requirements. Remember to change the AZ names according to your environment</p>
-<pre tabindex="0"><code>export AZ1=us-east-2a
+<pre><code>export AZ1=us-east-2a
 export AZ2=us-east-2b
 export AZ3=us-east-2c
 CGNAT_SNET1=$(aws ec2 create-subnet --cidr-block 100.64.0.0/19 --vpc-id $VPC_ID --availability-zone $AZ1 --query 'Subnet.SubnetId' --output text)
 CGNAT_SNET2=$(aws ec2 create-subnet --cidr-block 100.64.32.0/19 --vpc-id $VPC_ID --availability-zone $AZ2 --query 'Subnet.SubnetId' --output text)
 CGNAT_SNET3=$(aws ec2 create-subnet --cidr-block 100.64.64.0/19 --vpc-id $VPC_ID --availability-zone $AZ3 --query 'Subnet.SubnetId' --output text)
 </code></pre><p>Next step is to add Kubernetes tags on newer Subnets. You can check these tags by querying your current subnets</p>
-<pre tabindex="0"><code>aws ec2 describe-subnets --filters Name=cidr-block,Values=192.168.0.0/19 --output text
+<pre><code>aws ec2 describe-subnets --filters Name=cidr-block,Values=192.168.0.0/19 --output text
 </code></pre><p>Output shows similar to this
 <pre><output class="bash">
 TAGS    aws:cloudformation:logical-id   SubnetPublicUSEAST2C
@@ -10713,7 +10751,7 @@ TAGS    aws:cloudformation:stack-id     arn:aws:cloudformation:us-east-2:0123456
 </output></pre>
 
 Here are the commands to add tags to both the subnets</p>
-<pre tabindex="0"><code>aws ec2 create-tags --resources $CGNAT_SNET1 --tags Key=eksctl.cluster.k8s.io/v1alpha1/cluster-name,Value=eksworkshop-eksctl
+<pre><code>aws ec2 create-tags --resources $CGNAT_SNET1 --tags Key=eksctl.cluster.k8s.io/v1alpha1/cluster-name,Value=eksworkshop-eksctl
 aws ec2 create-tags --resources $CGNAT_SNET1 --tags Key=kubernetes.io/cluster/eksworkshop-eksctl,Value=shared
 aws ec2 create-tags --resources $CGNAT_SNET1 --tags Key=kubernetes.io/role/elb,Value=1
 aws ec2 create-tags --resources $CGNAT_SNET2 --tags Key=eksctl.cluster.k8s.io/v1alpha1/cluster-name,Value=eksworkshop-eksctl
@@ -10723,7 +10761,7 @@ aws ec2 create-tags --resources $CGNAT_SNET3 --tags Key=eksctl.cluster.k8s.io/v1
 aws ec2 create-tags --resources $CGNAT_SNET3 --tags Key=kubernetes.io/cluster/eksworkshop-eksctl,Value=shared
 aws ec2 create-tags --resources $CGNAT_SNET3 --tags Key=kubernetes.io/role/elb,Value=1
 </code></pre><p>As next step, we need to associate three new subnets into a route table. Again for simplicity, we chose to add new subnets to the Public route table that has connectivity to Internet Gateway</p>
-<pre tabindex="0"><code>SNET1=$(aws ec2 describe-subnets --filters Name=cidr-block,Values=192.168.0.0/19 --query 'Subnets[].SubnetId' --output text)
+<pre><code>SNET1=$(aws ec2 describe-subnets --filters Name=cidr-block,Values=192.168.0.0/19 --query 'Subnets[].SubnetId' --output text)
 RTASSOC_ID=$(aws ec2 describe-route-tables --filters Name=association.subnet-id,Values=$SNET1 --query 'RouteTables[].RouteTableId' --output text)
 aws ec2 associate-route-table --route-table-id $RTASSOC_ID --subnet-id $CGNAT_SNET1
 aws ec2 associate-route-table --route-table-id $RTASSOC_ID --subnet-id $CGNAT_SNET2
@@ -16564,6 +16602,38 @@ aws ec2 associate-route-table --route-table-id $RTASSOC_ID --subnet-id $CGNAT_SN
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18154,19 +18224,19 @@ aws ec2 associate-route-table --route-table-id $RTASSOC_ID --subnet-id $CGNAT_SN
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../../js/learn.js?1634326732"></script>
-    <script src="../../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../../js/learn.js?1636111206"></script>
+    <script src="../../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

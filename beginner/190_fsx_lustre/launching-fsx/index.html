@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Creating an Fsx Lustre File System :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10686,7 +10724,7 @@ For detailed descriptions of the available parameters and complete examples that
 </li>
 </ul>
 <p>Now let&rsquo;s setup these variables needed for the module:</p>
-<pre tabindex="0"><code>ACCOUNT_ID=$(aws sts get-caller-identity --query &quot;Account&quot; --output text)
+<pre><code>ACCOUNT_ID=$(aws sts get-caller-identity --query &quot;Account&quot; --output text)
 CLUSTER_NAME=eksworkshop-eksctl
 VPC_ID=$(aws eks describe-cluster --name $CLUSTER_NAME --query &quot;cluster.resourcesVpcConfig.vpcId&quot; --output text)
 SUBNET_ID=$(aws eks describe-cluster --name $CLUSTER_NAME --query &quot;cluster.resourcesVpcConfig.subnetIds[0]&quot; --output text)
@@ -10698,14 +10736,14 @@ SECURITY_GROUP_ID=$(aws eks describe-cluster --name $CLUSTER_NAME --query &quot;
 <ol>
 <li>
 <p>Create an AWS Identity and Access Management OIDC provider and associate it with your cluster.</p>
-<pre tabindex="0"><code>eksctl utils associate-iam-oidc-provider \
+<pre><code>eksctl utils associate-iam-oidc-provider \
     --region $AWS_REGION \
     --cluster $CLUSTER_NAME \
     --approve
 </code></pre></li>
 <li>
 <p>Create an IAM policy and service account that allows the driver to make calls to AWS APIs on your behalf.</p>
-<pre tabindex="0"><code>cat &lt;&lt; EOF &gt;  fsx-csi-driver.json
+<pre><code>cat &lt;&lt; EOF &gt;  fsx-csi-driver.json
 {
     &quot;Version&quot;:&quot;2012-10-17&quot;,
     &quot;Statement&quot;:[
@@ -10750,13 +10788,13 @@ EOF
 <p>Create the policy.</p>
 </li>
 </ol>
-<pre tabindex="0"><code>    aws iam create-policy \
+<pre><code>    aws iam create-policy \
         --policy-name Amazon_FSx_Lustre_CSI_Driver \
         --policy-document file://fsx-csi-driver.json
 </code></pre><ol start="4">
 <li>
 <p>Create a Kubernetes service account for the driver and attach the policy to the service account. Replacing the ARN of the policy with the ARN returned in the previous step.</p>
-<pre tabindex="0"><code>eksctl create iamserviceaccount \
+<pre><code>eksctl create iamserviceaccount \
     --region $AWS_REGION \
     --name fsx-csi-controller-sa \
     --namespace kube-system \
@@ -10765,17 +10803,17 @@ EOF
     --approve
 </code></pre><p><strong>Output:</strong></p>
 <p>You&rsquo;ll see several lines of output as the service account is created. The last line of output is similar to the following example line.</p>
-<pre tabindex="0"><code>[ℹ]  created serviceaccount &quot;kube-system/fsx-csi-controller-sa&quot;
+<pre><code>[ℹ]  created serviceaccount &quot;kube-system/fsx-csi-controller-sa&quot;
 </code></pre></li>
 <li>
 <p>Save the Role ARN that was created via CloudFormation into a variable.</p>
-<pre tabindex="0"><code>export ROLE_ARN=$(aws cloudformation describe-stacks --stack-name eksctl-eksworkshop-eksctl-addon-iamserviceaccount-kube-system-fsx-csi-controller-sa --query &quot;Stacks[0].Outputs[0].OutputValue&quot; --output text)
+<pre><code>export ROLE_ARN=$(aws cloudformation describe-stacks --stack-name eksctl-eksworkshop-eksctl-addon-iamserviceaccount-kube-system-fsx-csi-controller-sa --query &quot;Stacks[0].Outputs[0].OutputValue&quot; --output text)
 </code></pre></li>
 <li>
 <p>Deploy the driver with the following command.</p>
-<pre tabindex="0"><code>kubectl apply -k &quot;github.com/kubernetes-sigs/aws-fsx-csi-driver/deploy/kubernetes/overlays/stable/?ref=master&quot;
+<pre><code>kubectl apply -k &quot;github.com/kubernetes-sigs/aws-fsx-csi-driver/deploy/kubernetes/overlays/stable/?ref=master&quot;
 </code></pre><p><strong>Output:</strong></p>
-<pre tabindex="0"><code>Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+<pre><code>Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
 serviceaccount/fsx-csi-controller-sa configured
 clusterrole.rbac.authorization.k8s.io/fsx-csi-external-provisioner-role created
 clusterrolebinding.rbac.authorization.k8s.io/fsx-csi-external-provisioner-binding created
@@ -10787,7 +10825,7 @@ csidriver.storage.k8s.io/fsx.csi.aws.com created
 <p>Patch the driver deployment to add the service account that you created in step 3, replacing the ARN with the ARN that you saved in step 4.</p>
 </li>
 </ol>
-<pre tabindex="0"><code>kubectl annotate serviceaccount -n kube-system fsx-csi-controller-sa \
+<pre><code>kubectl annotate serviceaccount -n kube-system fsx-csi-controller-sa \
  eks.amazonaws.com/role-arn=$ROLE_ARN --overwrite=true
 </code></pre>
 
@@ -16624,6 +16662,38 @@ csidriver.storage.k8s.io/fsx.csi.aws.com created
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18214,19 +18284,19 @@ csidriver.storage.k8s.io/fsx.csi.aws.com created
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

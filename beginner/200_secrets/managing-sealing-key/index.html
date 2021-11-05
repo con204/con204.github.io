@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Managing the Sealing Key :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10658,14 +10696,14 @@
 
 <p>Without the private key that is managed by the controller, there is no way to decrypt the encrypted data within a SealedSecret. In the event that you are trying to restore the original state of a cluster after a disaster or you want to leverage GitOps workflow to deploy the Kubernetes resources, including SealedSecrets, from a Git repository and stand up a separate instance of an EKS cluster, the controller deployed in the new cluster must use the same private key to be able to unseal the SealedSecrets.</p>
 <p>Run the following command in order to retrieve the private key from the cluster. In a production environment, you will typically make use of Kubernetes RBAC to grant the permissions required to perform this operation to restricted set of clients.</p>
-<pre tabindex="0"><code>kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml &gt; master.yaml
+<pre><code>kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml &gt; master.yaml
 </code></pre><p>To test how this works, let&rsquo;s first delete the installation of the controller, the Secret that it created which contains the private key, the SealedSecret resource named <strong>database-credentials</strong> as well as the Secret that was unsealed from it.</p>
-<pre tabindex="0"><code>kubectl delete secret database-credentials -n octank
+<pre><code>kubectl delete secret database-credentials -n octank
 kubectl delete sealedsecret database-credentials -n octank
 kubectl delete secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key
 kubectl delete -f controller.yaml 
 </code></pre><p>Now, put the Secret containing the private key back into the cluster using the <strong>master.yaml</strong> file.</p>
-<pre tabindex="0"><code>kubectl apply -f master.yaml 
+<pre><code>kubectl apply -f master.yaml 
 kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key
 </code></pre><p>Output:
 <pre><output class="bash">
@@ -10674,7 +10712,7 @@ sealed-secrets-keydw62x   kubernetes.io/tls   2      13s
 </output></pre>
 </p>
 <p>Next, redeploy the SealedSecret CRD, controller and RBAC artifacts on your EKS.</p>
-<pre tabindex="0"><code>kubectl apply -f controller.yaml
+<pre><code>kubectl apply -f controller.yaml
 kubectl get pods -n kube-system | grep sealed-secrets-controller
 </code></pre><p>Output:
 <pre><output class="bash">
@@ -10682,7 +10720,7 @@ sealed-secrets-controller-84fcdcd5fd-gznc2            0/1     ContainerCreating 
 </output></pre>
 </p>
 <p>View the logs of the newly launched controller pod. Note that the name of the controller pod will be different in your cluster.</p>
-<pre tabindex="0"><code>kubectl logs sealed-secrets-controller-84fcdcd5fd-ds5t6 -n kube-system
+<pre><code>kubectl logs sealed-secrets-controller-84fcdcd5fd-ds5t6 -n kube-system
 </code></pre><p>Output:
 <pre><output class="bash">
 2021/07/15 13:55:56 Starting sealed-secrets controller version: v0.16.0
@@ -10693,7 +10731,7 @@ controller version: v0.16.0
 </output></pre>
 </p>
 <p>As you can see from the logs, the controller was able to find the existing Secret <strong>sealed-secrets-keyvk4pr</strong> in the <em>kube-system</em> namespace and therefore does not create a new key pair. Now, let&rsquo;s redeploy the SealedSecret and verify that the controller is able to successfully unseal it.</p>
-<pre tabindex="0"><code>kubectl apply -f sealed-secret.yaml 
+<pre><code>kubectl apply -f sealed-secret.yaml 
 kubectl logs sealed-secrets-controller-84fcdcd5fd-ds5t6 -n kube-system
 </code></pre><p>Output:
 <pre><output class="bash">
@@ -16546,6 +16584,38 @@ kubectl logs sealed-secrets-controller-84fcdcd5fd-ds5t6 -n kube-system
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18136,19 +18206,19 @@ kubectl logs sealed-secrets-controller-84fcdcd5fd-ds5t6 -n kube-system
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

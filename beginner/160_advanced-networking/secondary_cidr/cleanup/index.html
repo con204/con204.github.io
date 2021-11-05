@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Cleanup :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10663,11 +10701,11 @@
 
 
 <p>Let&rsquo;s cleanup this tutorial</p>
-<pre tabindex="0"><code>kubectl delete deployments --all
+<pre><code>kubectl delete deployments --all
 kubectl delete service  nginx
 </code></pre><p>Edit aws-node configmap and comment AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG and its value</p>
-<pre tabindex="0"><code>kubectl edit daemonset -n kube-system aws-node
-</code></pre><pre tabindex="0"><code>...
+<pre><code>kubectl edit daemonset -n kube-system aws-node
+</code></pre><pre><code>...
     spec:
       containers:
       - env:
@@ -10678,7 +10716,7 @@ kubectl delete service  nginx
         - name: MY_NODE_NAME
 ...
 </code></pre><p>Delete custom resource objects from ENIConfig CRD</p>
-<pre tabindex="0"><code>kubectl delete eniconfig/group1-pod-netconfig
+<pre><code>kubectl delete eniconfig/group1-pod-netconfig
 kubectl delete eniconfig/group2-pod-netconfig
 kubectl delete eniconfig/group3-pod-netconfig
 </code></pre><p>Terminate EC2 instances so that fresh instances are launched with default CNI configuration</p>
@@ -10686,14 +10724,14 @@ kubectl delete eniconfig/group3-pod-netconfig
 <div class="notices warning" ><p>Use caution before you run the next command because it terminates all worker nodes including running pods in your workshop</p>
 </div>
 
-<pre tabindex="0"><code>INSTANCE_IDS=(`aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --output text` )
+<pre><code>INSTANCE_IDS=(`aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --filters &quot;Name=tag-key,Values=eks:cluster-name&quot; &quot;Name=tag-value,Values=eksworkshop*&quot; --output text` )
 for i in &quot;${INSTANCE_IDS[@]}&quot;
 do
 	echo &quot;Terminating EC2 instance $i ...&quot;
 	aws ec2 terminate-instances --instance-ids $i
 done
 </code></pre><p>Delete secondary CIDR from your VPC</p>
-<pre tabindex="0"><code>VPC_ID=$(aws ec2 describe-vpcs --filters Name=tag:Name,Values=eksctl-eksworkshop* | jq -r '.Vpcs[].VpcId')
+<pre><code>VPC_ID=$(aws ec2 describe-vpcs --filters Name=tag:Name,Values=eksctl-eksworkshop* | jq -r '.Vpcs[].VpcId')
 ASSOCIATION_ID=$(aws ec2 describe-vpcs --vpc-id $VPC_ID | jq -r '.Vpcs[].CidrBlockAssociationSet[] | select(.CidrBlock == &quot;100.64.0.0/16&quot;) | .AssociationId')
 aws ec2 delete-subnet --subnet-id $CGNAT_SNET1
 aws ec2 delete-subnet --subnet-id $CGNAT_SNET2
@@ -16538,6 +16576,38 @@ aws ec2 disassociate-vpc-cidr-block --association-id $ASSOCIATION_ID
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18128,19 +18198,19 @@ aws ec2 disassociate-vpc-cidr-block --association-id $ASSOCIATION_ID
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../../js/learn.js?1634326732"></script>
-    <script src="../../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../../js/learn.js?1636111206"></script>
+    <script src="../../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

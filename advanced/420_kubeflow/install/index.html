@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Install :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10669,7 +10707,7 @@
 <h3 id="increase-cluster-size">Increase cluster size</h3>
 <p>We need more resources for completing the Kubeflow chapter of the EKS Workshop.
 First, we&rsquo;ll increase the size of our cluster to 6 nodes</p>
-<pre tabindex="0"><code>export NODEGROUP_NAME=$(eksctl get nodegroups --cluster eksworkshop-eksctl -o json | jq -r '.[0].Name')
+<pre><code>export NODEGROUP_NAME=$(eksctl get nodegroups --cluster eksworkshop-eksctl -o json | jq -r '.[0].Name')
 eksctl scale nodegroup --cluster eksworkshop-eksctl --name $NODEGROUP_NAME --nodes 6 --nodes-max 6
 </code></pre>
 <div class="notices info" ><p>Scaling the nodegroup will take 2 - 3 minutes.</p>
@@ -10677,7 +10715,7 @@ eksctl scale nodegroup --cluster eksworkshop-eksctl --name $NODEGROUP_NAME --nod
 
 <h3 id="install-kubeflow-on-amazon-eks">Install Kubeflow on Amazon EKS</h3>
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code>curl --silent --location &quot;https://github.com/kubeflow/kfctl/releases/download/v1.0.1/kfctl_v1.0.1-0-gf3edb9b_linux.tar.gz&quot; | tar xz -C /tmp
+<pre><code>curl --silent --location &quot;https://github.com/kubeflow/kfctl/releases/download/v1.0.1/kfctl_v1.0.1-0-gf3edb9b_linux.tar.gz&quot; | tar xz -C /tmp
 sudo mv -v /tmp/kfctl /usr/local/bin
 </code></pre><h4 id="setup-your-configuration">Setup your configuration</h4>
 <p>Next step is to export environment variables needed for Kubeflow install.
@@ -10685,7 +10723,7 @@ sudo mv -v /tmp/kfctl /usr/local/bin
 <div class="notices note" ><p>We chose default kfctl configuration file for simplicity of workshop experience. However, we recommend to install Cognito configuration and add authentication and SSL (via ACM) for production. For additional steps needed to enable Cognito, please follow <a href="https://www.kubeflow.org/docs/aws/deploy/install-kubeflow/">Kubeflow documentation</a></p>
 </div>
 </p>
-<pre tabindex="0"><code>cat &lt;&lt; EoF &gt; kf-install.sh
+<pre><code>cat &lt;&lt; EoF &gt; kf-install.sh
 export AWS_CLUSTER_NAME=eksworkshop-eksctl
 export KF_NAME=\${AWS_CLUSTER_NAME}
 
@@ -10700,12 +10738,12 @@ EoF
 
 source kf-install.sh
 </code></pre><p>Create Kubeflow setup directory</p>
-<pre tabindex="0"><code>mkdir -p ${KF_DIR}
+<pre><code>mkdir -p ${KF_DIR}
 cd ${KF_DIR}
 </code></pre><p>Download configuration file</p>
-<pre tabindex="0"><code>wget -O kfctl_aws.yaml $CONFIG_URI
+<pre><code>wget -O kfctl_aws.yaml $CONFIG_URI
 </code></pre><p>We will use <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IAM Roles for Service Account</a> in our configuration. IAM Roles for Service Account offers fine grained access control so that when Kubeflow interacts with AWS resources (such as ALB creation), it will use roles that are pre-defined by kfctl. kfctl will setup OIDC Identity Provider for your EKS cluster and create two IAM roles (<strong>kf-admin-${AWS_CLUSTER_NAME}</strong> and <strong>kf-user-${AWS_CLUSTER_NAME}</strong>) in your account. kfctl will then build trust relationship between OIDC endpoint and Kubernetes Service Accounts (SA) so that only SA can perform actions that are defined in the IAM role. Because we are using this feature, we will disable using IAM roles defined at the Worker nodes. In addition, we will replace EKS Cluster Name and AWS Region in your $(CONFIG_FILE).</p>
-<pre tabindex="0"><code>sed -i '/region: us-west-2/ a \      enablePodIamPolicy: true' ${CONFIG_FILE}
+<pre><code>sed -i '/region: us-west-2/ a \      enablePodIamPolicy: true' ${CONFIG_FILE}
 
 sed -i -e 's/kubeflow-aws/'&quot;$AWS_CLUSTER_NAME&quot;'/' ${CONFIG_FILE}
 sed -i &quot;s@us-west-2@$AWS_REGION@&quot; ${CONFIG_FILE}
@@ -10713,15 +10751,15 @@ sed -i &quot;s@us-west-2@$AWS_REGION@&quot; ${CONFIG_FILE}
 sed -i &quot;s@roles:@#roles:@&quot; ${CONFIG_FILE}
 sed -i &quot;s@- eksctl-eksworkshop-eksctl-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@#- eksctl-eksworkshop-eksctl-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@&quot; ${CONFIG_FILE}
 </code></pre><p>Until <a href="https://github.com/kubeflow/kubeflow/issues/3827">https://github.com/kubeflow/kubeflow/issues/3827</a> is fixed, install aws-iam-authenticator</p>
-<pre tabindex="0"><code>curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
+<pre><code>curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
 chmod +x aws-iam-authenticator
 sudo mv aws-iam-authenticator /usr/local/bin
 </code></pre><h4 id="deploy-kubeflow">Deploy Kubeflow</h4>
 <p>Apply configuration and deploy Kubeflow on your cluster:</p>
-<pre tabindex="0"><code>cd ${KF_DIR}
+<pre><code>cd ${KF_DIR}
 kfctl apply -V -f ${CONFIG_FILE}
 </code></pre><p>Run below command to check the status</p>
-<pre tabindex="0"><code>kubectl -n kubeflow get all
+<pre><code>kubectl -n kubeflow get all
 </code></pre>
 <div class="notices info" ><p>Installing Kubeflow and its toolset may take 2 - 3 minutes. Few pods may initially give Error or CrashLoopBackOff status. Give it some time, they will auto-heal and will come to Running state</p>
 </div>
@@ -10738,7 +10776,7 @@ kfctl apply -V -f ${CONFIG_FILE}
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <pre tabindex="0"><code>$ kubectl -n kubeflow get all                         
+        <pre><code>$ kubectl -n kubeflow get all                         
 NAME                                                               READY   STATUS      RESTARTS   AGE
 pod/admission-webhook-bootstrap-stateful-set-0                     1/1     Running     0          5m50s
 pod/admission-webhook-deployment-64cb96ddbf-x2zfm                  1/1     Running     0          5m12s
@@ -16721,6 +16759,38 @@ job.batch/spark-operatorcrd-cleanup   1/1           42s        5m50s
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18316,19 +18386,19 @@ job.batch/spark-operatorcrd-cleanup   1/1           42s        5m50s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

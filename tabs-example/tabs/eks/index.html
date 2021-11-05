@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Embedded tab content :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326733" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326733" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326733" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326733" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326733" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111208" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111208" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111208" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111208" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111208" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111208" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111208" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111208" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111208" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326733" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111208" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326733"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111208"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326733" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326733" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326733"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111208" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111208" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111208"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111208"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326733"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111208"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111208"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111208"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10650,23 +10688,23 @@
 <p>To build the EKS cluster, we need to tell the EKS service which IAM Service role
 to use, and which Subnets and Security Group to use. We can gather this information
 from our previous labs where we built the IAM role and VPC:</p>
-<pre tabindex="0"><code>export SERVICE_ROLE=$(aws iam get-role --role-name &quot;eks-service-role-workshop&quot; --query Role.Arn --output text)
+<pre><code>export SERVICE_ROLE=$(aws iam get-role --role-name &quot;eks-service-role-workshop&quot; --query Role.Arn --output text)
 
 export SECURITY_GROUP=$(aws cloudformation describe-stacks --stack-name &quot;eksworkshop-cf&quot; --query &quot;Stacks[0].Outputs[?OutputKey=='SecurityGroups'].OutputValue&quot; --output text)
 
 export SUBNET_IDS=$( aws cloudformation describe-stacks --stack-name &quot;eksworkshop-cf&quot; --query &quot;Stacks[0].Outputs[?OutputKey=='SubnetIds'].OutputValue&quot; --output text)
 </code></pre><p>Let&rsquo;s confirm the variables are now set in our environment:</p>
-<pre tabindex="0"><code>echo SERVICE_ROLE=${SERVICE_ROLE}
+<pre><code>echo SERVICE_ROLE=${SERVICE_ROLE}
 echo SECURITY_GROUP=${SECURITY_GROUP}
 echo SUBNET_IDS=${SUBNET_IDS}
 </code></pre><p>Now we can create the EKS cluster:</p>
-<pre tabindex="0"><code>aws eks create-cluster --name eksworkshop-cf --role-arn &quot;${SERVICE_ROLE}&quot; --resources-vpc-config subnetIds=&quot;${SUBNET_IDS}&quot;,securityGroupIds=&quot;${SECURITY_GROUP}&quot;
+<pre><code>aws eks create-cluster --name eksworkshop-cf --role-arn &quot;${SERVICE_ROLE}&quot; --resources-vpc-config subnetIds=&quot;${SUBNET_IDS}&quot;,securityGroupIds=&quot;${SECURITY_GROUP}&quot;
 </code></pre>
 <div class="notices info" ><p>Cluster provisioning usually takes less than 10 minutes.</p>
 </div>
 
 <p>You can query the status of your cluster with the following command:</p>
-<pre tabindex="0"><code>aws eks describe-cluster --name &quot;eksworkshop-cf&quot; --query cluster.status --output text
+<pre><code>aws eks describe-cluster --name &quot;eksworkshop-cf&quot; --query cluster.status --output text
 </code></pre><p>When your cluster status is <strong>ACTIVE</strong> you can proceed.</p>
 
 
@@ -16494,6 +16532,38 @@ echo SUBNET_IDS=${SUBNET_IDS}
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18082,19 +18152,19 @@ echo SUBNET_IDS=${SUBNET_IDS}
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326733"></script>
-    <script src="../../../js/jquery.sticky.js?1634326733"></script>
-    <script src="../../../js/featherlight.min.js?1634326733"></script>
-    <script src="../../../js/highlight.pack.js?1634326733"></script>
+    <script src="../../../js/clipboard.min.js?1636111208"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111208"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111208"></script>
+    <script src="../../../js/jquery.sticky.js?1636111208"></script>
+    <script src="../../../js/featherlight.min.js?1636111208"></script>
+    <script src="../../../js/highlight.pack.js?1636111208"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326733"></script>
-    <script src="../../../js/learn.js?1634326733"></script>
-    <script src="../../../js/hugo-learn.js?1634326733"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111208"></script>
+    <script src="../../../js/learn.js?1636111208"></script>
+    <script src="../../../js/hugo-learn.js?1636111208"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326733" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111208" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111208"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Configure EKS cluster :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10661,7 +10699,7 @@ For Postgres persistent storage we&rsquo;re going to use a host path for the sak
 If the Postgres pod moves availability zones data will still be available.
 If you&rsquo;d like to do it manually you can follow the <a href="https://www.eksworkshop.com/beginner/190_efs/">EFS workshop here</a>.</p>
 <p>To let traffic cross between EKS and Cloud9 we need to create a VPC peer between our Cloud9 instance and our EKS cluster.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export EKS_VPC<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws eks describe-cluster <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export EKS_VPC<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws eks describe-cluster <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name <span style="color:#e6db74">${</span>CLUSTER<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --query <span style="color:#e6db74">&#34;cluster.resourcesVpcConfig.vpcId&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --output text<span style="color:#66d9ef">)</span>
@@ -10679,7 +10717,7 @@ aws ec2 modify-vpc-peering-connection-options <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --requester-peering-connection-options <span style="color:#e6db74">&#39;{&#34;AllowDnsResolutionFromRemoteVpc&#34;:true}&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --accepter-peering-connection-options <span style="color:#e6db74">&#39;{&#34;AllowDnsResolutionFromRemoteVpc&#34;:true}&#39;</span>
 </code></pre></div><p>Allow traffic from the EKS from the EKS VPC and Security group to our Cloud9 instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export EKS_SECURITY_GROUP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws cloudformation list-exports <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export EKS_SECURITY_GROUP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws cloudformation list-exports <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --query <span style="color:#e6db74">&#34;Exports[*]|[?Name==&#39;eksctl-</span>$CLUSTER<span style="color:#e6db74">-cluster::SharedNodeSecurityGroup&#39;].Value&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --output text<span style="color:#66d9ef">)</span>
 
@@ -10705,7 +10743,7 @@ export CIDR_RANGES<span style="color:#f92672">=</span><span style="color:#66d9ef
 </span><span style="color:#ae81ff"></span>        --ip-permissions IpProtocol<span style="color:#f92672">=</span>tcp,FromPort<span style="color:#f92672">=</span>1024,ToPort<span style="color:#f92672">=</span>65535,IpRanges<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[{CidrIp=</span>$CIDR<span style="color:#e6db74">}]&#34;</span>
 <span style="color:#66d9ef">done</span>
 </code></pre></div><p>Finally create routes in both VPCs to route traffic</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export CIDR_BLOCK_1<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 describe-vpc-peering-connections <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export CIDR_BLOCK_1<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 describe-vpc-peering-connections <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --query <span style="color:#e6db74">&#34;VpcPeeringConnections[?VpcPeeringConnectionId==&#39;</span>$PEERING_ID<span style="color:#e6db74">&#39;].AccepterVpcInfo.CidrBlock&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --output text<span style="color:#66d9ef">)</span>
 
@@ -16568,6 +16606,38 @@ aws ec2 create-route <span style="color:#ae81ff">\
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18158,19 +18228,19 @@ aws ec2 create-route <span style="color:#ae81ff">\
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

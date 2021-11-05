@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Test Scaling :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10661,14 +10699,14 @@
 
 
 <p>More followers can be added to the MySQL Cluster to increase read capacity. This can be done by running the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql scale statefulset mysql --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql scale statefulset mysql --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
 </code></pre></div><p>You can see the message that <code>StatefulSet</code> &ldquo;mysql&rdquo; scaled.
 <pre><output class="bash">
 statefulset &#34;mysql&#34; scaled
 </output></pre>
 </p>
 <p>Watch the progress of ordered and graceful scaling.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql rollout status statefulset mysql
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql rollout status statefulset mysql
 </code></pre></div><pre><output class="bash">
 Waiting for 1 pods to be ready...
 partitioned roll out complete: 3 new pods have been updated...
@@ -10679,7 +10717,7 @@ partitioned roll out complete: 3 new pods have been updated...
 </div>
 
 <p>Open another terminal to check loop if you closed it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql run mysql-client-loop --image<span style="color:#f92672">=</span>mysql:5.7 -i -t --rm --restart<span style="color:#f92672">=</span>Never --<span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql run mysql-client-loop --image<span style="color:#f92672">=</span>mysql:5.7 -i -t --rm --restart<span style="color:#f92672">=</span>Never --<span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   bash -ic <span style="color:#e6db74">&#34;while sleep 1; do mysql -h mysql-read -e &#39;SELECT @@server_id,NOW()&#39;; done&#34;</span>
 </code></pre></div><p>You will see 3 servers are running.
 <pre><output class="bash">
@@ -10701,7 +10739,7 @@ partitioned roll out complete: 3 new pods have been updated...
 </output></pre>
 </p>
 <p>Verify if the newly deployed follower (mysql-2) have the same data set by following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql run mysql-client --image<span style="color:#f92672">=</span>mysql:5.7 -i -t --rm --restart<span style="color:#f92672">=</span>Never --<span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql run mysql-client --image<span style="color:#f92672">=</span>mysql:5.7 -i -t --rm --restart<span style="color:#f92672">=</span>Never --<span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span> mysql -h mysql-2.mysql -e <span style="color:#e6db74">&#34;SELECT * FROM test.messages&#34;</span>
 </code></pre></div><p>It will show the same data that the leader has.
 <pre><output class="bash">
@@ -10713,7 +10751,7 @@ partitioned roll out complete: 3 new pods have been updated...
 </output></pre>
 </p>
 <p>Scale down replicas to 2 by running the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql  scale statefulset mysql --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql  scale statefulset mysql --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 </code></pre></div><p>You can see StatefulSet &ldquo;mysql&rdquo; scaled
 <pre><output class="bash">
 statefulset &#34;mysql&#34; scaled
@@ -10724,7 +10762,7 @@ statefulset &#34;mysql&#34; scaled
 </div>
 
 Check scale in is completed by following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql get pods -l app<span style="color:#f92672">=</span>mysql
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql get pods -l app<span style="color:#f92672">=</span>mysql
 </code></pre></div><pre><output class="bash">
 NAME      READY     STATUS    RESTARTS   AGE
 mysql-0   2/2       Running   0          1d
@@ -10732,7 +10770,7 @@ mysql-1   2/2       Running   0          1d
 </output></pre>
 
 <p>Check <code>data-mysql-2</code>  PVCs still exist by following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql  get pvc -l app<span style="color:#f92672">=</span>mysql
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql  get pvc -l app<span style="color:#f92672">=</span>mysql
 </code></pre></div><pre><output class="bash">
 NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 data-mysql-0   Bound    pvc-fdb74a5e-ba51-4ccf-925b-e64761575059   10Gi       RWO            mysql-gp2      18m
@@ -10757,23 +10795,23 @@ data-mysql-2   Bound    pvc-12c304e4-2b3e-4621-8521-0dc17f41d107   10Gi       RW
     <div class="expand-content" style="display: none;">
         <p>Change the reclaim policy:</p>
 <p>Find the PersistentVolume attached to the PersistentVolumeClaim <code>data-mysql-2</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export pv<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n mysql  get pvc data-mysql-2 -o json | jq --raw-output <span style="color:#e6db74">&#39;.spec.volumeName&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export pv<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl -n mysql  get pvc data-mysql-2 -o json | jq --raw-output <span style="color:#e6db74">&#39;.spec.volumeName&#39;</span><span style="color:#66d9ef">)</span>
 echo data-mysql-2 PersistentVolume name: <span style="color:#e6db74">${</span>pv<span style="color:#e6db74">}</span>
 </code></pre></div><p>Now update the ReclaimPolicy</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql patch pv <span style="color:#e6db74">${</span>pv<span style="color:#e6db74">}</span> -p <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;persistentVolumeReclaimPolicy&#34;:&#34;Retain&#34;}}&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql patch pv <span style="color:#e6db74">${</span>pv<span style="color:#e6db74">}</span> -p <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;persistentVolumeReclaimPolicy&#34;:&#34;Retain&#34;}}&#39;</span>
 </code></pre></div><p>Verify the ReclaimPolicy with this command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl get persistentvolume
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl get persistentvolume
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Now, if you delete the PersistentVolumeClaim data-mysql-2, you can still see the EBS volume in your AWS EC2 console, with its state as &ldquo;available&rdquo;.</p>
 <p>Let&rsquo;s change the reclaim policy back to &ldquo;Delete&rdquo; to avoid orphaned volumes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl patch pv <span style="color:#e6db74">${</span>pv<span style="color:#e6db74">}</span> -p <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;persistentVolumeReclaimPolicy&#34;:&#34;Delete&#34;}}&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl patch pv <span style="color:#e6db74">${</span>pv<span style="color:#e6db74">}</span> -p <span style="color:#e6db74">&#39;{&#34;spec&#34;:{&#34;persistentVolumeReclaimPolicy&#34;:&#34;Delete&#34;}}&#39;</span>
 unset pv
 </code></pre></div>
     </div>
 </div>
 <p>Delete <code>data-mysql-2</code> with following commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql delete pvc data-mysql-2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl -n mysql delete pvc data-mysql-2
 </code></pre></div><pre><output class="bash">
 persistentvolumeclaim &#34;data-mysql-2&#34; deleted
 </output></pre>
@@ -16616,6 +16654,38 @@ persistentvolumeclaim &#34;data-mysql-2&#34; deleted
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18206,19 +18276,19 @@ persistentvolumeclaim &#34;data-mysql-2&#34; deleted
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

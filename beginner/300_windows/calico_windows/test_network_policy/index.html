@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Test Network Policies :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10663,7 +10701,7 @@
 
 
 <p>We to define the Windows and Linux deployments by running the following command.</p>
-<pre tabindex="0"><code>cat &lt;&lt; EOF &gt; ~/environment/windows/sample-deployments.yaml
+<pre><code>cat &lt;&lt; EOF &gt; ~/environment/windows/sample-deployments.yaml
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -10689,9 +10727,9 @@ spec:
                 beta.kubernetes.io/os: linux
 EOF
 </code></pre><p>We can now deploy those pods in our cluster.</p>
-<pre tabindex="0"><code>kubectl apply -f ~/environment/windows/sample-deployments.yaml
+<pre><code>kubectl apply -f ~/environment/windows/sample-deployments.yaml
 </code></pre><p>Verify that the pods are in ‘Running’ state.</p>
-<pre tabindex="0"><code>kubectl get pods -o wide --watch -n windows
+<pre><code>kubectl get pods -o wide --watch -n windows
 </code></pre><p>Output:</p>
 <pre><output class="bash">
 NAME                                  READY   STATUS    RESTARTS   AGE   IP                NODE                                           NOMINATED NODE   READINESS GATES
@@ -10701,11 +10739,11 @@ windows-server-iis-7cff879775-zmrj6   1/1     Running   0          63m   192.168
 
 <p>Test ping connectivity between pods</p>
 <p>We would start by verifying that there is network connectivity among all pods. Inside each pod, ping the other two pods’ IP. Update the <!-- raw HTML omitted --> below with the pod name that you see in the cluster.</p>
-<pre tabindex="0"><code>kubectl -n windows exec -it &lt;nginx-pod-name&gt; -- /bin/bash
+<pre><code>kubectl -n windows exec -it &lt;nginx-pod-name&gt; -- /bin/bash
 </code></pre><p>Now ping the IP of the Windows pod</p>
-<pre tabindex="0"><code>ping &lt;windows-pod-ip&gt;
+<pre><code>ping &lt;windows-pod-ip&gt;
 </code></pre><p>Output: (Note: Control + C to stop the ping test):</p>
-<pre tabindex="0"><code>root@nginx-deployment-54b55f86cd-7x6jm:/# ping 192.168.18.152 
+<pre><code>root@nginx-deployment-54b55f86cd-7x6jm:/# ping 192.168.18.152 
 PING 192.168.18.152 (192.168.18.152): 48 data bytes                                                                                                                                                                            
 56 bytes from 192.168.18.152: icmp_seq=0 ttl=127 time=1.480 ms                                                                                                                                                                 
 56 bytes from 192.168.18.152: icmp_seq=1 ttl=127 time=1.599 ms                                                                                                                                                                 
@@ -10716,11 +10754,11 @@ PING 192.168.18.152 (192.168.18.152): 48 data bytes
 round-trip min/avg/max/stddev = 1.480/2.654/6.054/1.964 ms
 </code></pre><p>Now we will exit the Nginx pod by typing &ldquo;exit&rdquo; and pressing enter</p>
 <p>Similarly, ‘exec’ into one of the Windows pods as well. Update the <!-- raw HTML omitted --> below with the pod names that you see in the cluster.</p>
-<pre tabindex="0"><code>kubectl -n windows exec -it &lt;windows-pod-name&gt; -- powershell
+<pre><code>kubectl -n windows exec -it &lt;windows-pod-name&gt; -- powershell
 </code></pre><p>Now ping the IP of the Nginx pod</p>
-<pre tabindex="0"><code>ping &lt;nginx-pod-ip&gt;
+<pre><code>ping &lt;nginx-pod-ip&gt;
 </code></pre><p>Output:</p>
-<pre tabindex="0"><code>PS C:\&gt; ping 192.168.177.232                                                                                                                                                                                                   
+<pre><code>PS C:\&gt; ping 192.168.177.232                                                                                                                                                                                                   
                                                                                                                                                                                                                                
 Pinging 192.168.177.232 with 32 bytes of data:                                                                                                                                                                                 
 Reply from 192.168.177.232: bytes=32 time=1ms TTL=254                                                                                                                                                                          
@@ -10737,10 +10775,10 @@ PS C:\&gt; exit
 <p>Now that we have established basic connectivity accross pods, let&rsquo;s enforce a network policy to restrict ping connectivity.</p>
 <p>We could use Kubectl to apply the the network policies but Calico has a CLI that offers policy validation and will protect the cluster from malformed policies.</p>
 <p>Install the Calicoctl pod and create an alias to access this functionality</p>
-<pre tabindex="0"><code>kubectl apply -f https://docs.projectcalico.org/archive/v3.15/manifests/calicoctl.yaml 
+<pre><code>kubectl apply -f https://docs.projectcalico.org/archive/v3.15/manifests/calicoctl.yaml 
 alias calicoctl=&quot;kubectl exec -i -n kube-system calicoctl -- /calicoctl&quot;
 </code></pre><p>Create and apply the network policy specification to deny ping traffic to all pods.</p>
-<pre tabindex="0"><code>cat &lt;&lt; EOF &gt; ~/environment/windows/deny_icmp.yaml
+<pre><code>cat &lt;&lt; EOF &gt; ~/environment/windows/deny_icmp.yaml
 ---
 kind: GlobalNetworkPolicy
 apiVersion: projectcalico.org/v3
@@ -10767,9 +10805,9 @@ EOF
 calicoctl apply -f - &lt; ~/environment/windows/deny_icmp.yaml
 </code></pre><p>Now we will test ping connectivity between pods just like we did above.</p>
 <p>We can exec into the <!-- raw HTML omitted --> and when we try to ping the windows machine we will see 100% packet loss.</p>
-<pre tabindex="0"><code>kubectl exec -it &lt;nginx-pod-name&gt; /bin/bash
+<pre><code>kubectl exec -it &lt;nginx-pod-name&gt; /bin/bash
 </code></pre><p>Now ping the IP of the Windows pod</p>
-<pre tabindex="0"><code>ping &lt;windows-pod-ip&gt;
+<pre><code>ping &lt;windows-pod-ip&gt;
 </code></pre><p>Output:</p>
 <pre><output class="bash">
 root@nginx-deployment-54b55f86cd-jr662:/# ping 192.168.18.1
@@ -16623,6 +16661,38 @@ PING 192.168.18.1 (192.168.18.1): 48 data bytes
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18213,19 +18283,19 @@ PING 192.168.18.1 (192.168.18.1): 48 data bytes
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../../js/learn.js?1634326732"></script>
-    <script src="../../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../../js/learn.js?1636111206"></script>
+    <script src="../../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

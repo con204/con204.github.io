@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Creating an EFS File System :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10658,21 +10696,21 @@
 
 <p>An EFS file system may be created and configured either from the AWS Management Console or using AWS CLI. An EFS file system may be accessed concurrently by worker nodes (EC2 instances) running inside the EKS cluster VPC. Instances connect to a file system by using a network interface called a mount target.</p>
 <p>First, let&rsquo;s define a set of environment variables pertaining to the name of your EKS cluster, VPC where it is deployed and the IPv4 CIDR block associated with that VPC.</p>
-<pre tabindex="0"><code>CLUSTER_NAME=eksworkshop-eksctl
+<pre><code>CLUSTER_NAME=eksworkshop-eksctl
 VPC_ID=$(aws eks describe-cluster --name $CLUSTER_NAME --query &quot;cluster.resourcesVpcConfig.vpcId&quot; --output text)
 CIDR_BLOCK=$(aws ec2 describe-vpcs --vpc-ids $VPC_ID --query &quot;Vpcs[].CidrBlock&quot; --output text)
 </code></pre><p>Next, create a security group to be associated with the mount targets. Then, add an ingress rule to this security group that allows all inbound traffic using NFS protocol on port 2049 from IP addresses that belong to the CIDR block of the EKS cluster VPC. This rule will allow NFS access to the file system from all worker nodes in the EKS cluster.</p>
-<pre tabindex="0"><code>MOUNT_TARGET_GROUP_NAME=&quot;eks-efs-group&quot;
+<pre><code>MOUNT_TARGET_GROUP_NAME=&quot;eks-efs-group&quot;
 MOUNT_TARGET_GROUP_DESC=&quot;NFS access to EFS from EKS worker nodes&quot;
 MOUNT_TARGET_GROUP_ID=$(aws ec2 create-security-group --group-name $MOUNT_TARGET_GROUP_NAME --description &quot;$MOUNT_TARGET_GROUP_DESC&quot; --vpc-id $VPC_ID | jq --raw-output '.GroupId')
 aws ec2 authorize-security-group-ingress --group-id $MOUNT_TARGET_GROUP_ID --protocol tcp --port 2049 --cidr $CIDR_BLOCK
 </code></pre><p>Now, create an EFS file system.</p>
-<pre tabindex="0"><code>FILE_SYSTEM_ID=$(aws efs create-file-system | jq --raw-output '.FileSystemId')
+<pre><code>FILE_SYSTEM_ID=$(aws efs create-file-system | jq --raw-output '.FileSystemId')
 </code></pre><p>Check the <strong>LifeCycleState</strong> of the file system using the following command and wait until it changes from <strong>creating</strong> to <strong>available</strong> before you proceed to the next step.</p>
-<pre tabindex="0"><code>aws efs describe-file-systems --file-system-id $FILE_SYSTEM_ID
+<pre><code>aws efs describe-file-systems --file-system-id $FILE_SYSTEM_ID
 </code></pre><p>The EKS cluster that you created comprises worker nodes that are resident in the public subnets of the cluster VPC. Each public subnet resides in a different Availability Zone. As mentioned earlier, worker nodes connect to an EFS file system by using a mount target. It is best to create a mount target in each of the EKS cluster VPC&rsquo;s Availability Zones so that worker nodes across your EKS cluster can all have access to the file system.</p>
 <p>The following set of commands identifies the public subnets in your cluster VPC and creates a mount target in each one of them as well as associate that mount target with the security group you created above.</p>
-<pre tabindex="0"><code>TAG1=tag:alpha.eksctl.io/cluster-name
+<pre><code>TAG1=tag:alpha.eksctl.io/cluster-name
 TAG2=tag:kubernetes.io/role/elb
 subnets=($(aws ec2 describe-subnets --filters &quot;Name=$TAG1,Values=$CLUSTER_NAME&quot; &quot;Name=$TAG2,Values=1&quot; | jq --raw-output '.Subnets[].SubnetId'))
 for subnet in ${subnets[@]}
@@ -10687,7 +10725,7 @@ done
 </div>
 
 <p>Check the <!-- raw HTML omitted -->LifeCycleState<!-- raw HTML omitted --> of the mount targets using the following command and wait until it changes from <!-- raw HTML omitted -->creating<!-- raw HTML omitted --> to <!-- raw HTML omitted -->available<!-- raw HTML omitted --> before you proceed to the next step. It will take a few minutes for all the mount targets to transition to <strong>available</strong> state. You may also check on the status of mount targets from the EFS Dashboard on the AWS Management Console. Select the file system you just created and then click on <strong>Manage network access</strong> to see the mount targets.</p>
-<pre tabindex="0"><code>aws efs describe-mount-targets --file-system-id $FILE_SYSTEM_ID | jq --raw-output '.MountTargets[].LifeCycleState'
+<pre><code>aws efs describe-mount-targets --file-system-id $FILE_SYSTEM_ID | jq --raw-output '.MountTargets[].LifeCycleState'
 </code></pre><p><img src="../../../images/efs-provisioner/efs-dashboard.png" alt="ConfigMap"></p>
 
 
@@ -16524,6 +16562,38 @@ done
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18114,19 +18184,19 @@ done
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

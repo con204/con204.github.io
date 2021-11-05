@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Test EKS access :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111205" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111205" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111205" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111205" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111205" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111205" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111205" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111205" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111205"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111205" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111205"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111205"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111205"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111205"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111205"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10675,7 +10713,7 @@
 <p>It is possible to automate the retrieval of temporary credentials for the assumed role by configuring the AWS CLI in the files <code>~/.aws/config</code> and <code>~/.aws/credentials</code>.
 As an example, we will define three profiles.</p>
 <h4 id="add-in-awsconfig">Add in <code>~/.aws/config</code>:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.aws
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p ~/.aws
 
 cat <span style="color:#e6db74">&lt;&lt; EoF &gt;&gt; ~/.aws/config
 </span><span style="color:#e6db74">[profile admin]
@@ -10692,7 +10730,7 @@ cat <span style="color:#e6db74">&lt;&lt; EoF &gt;&gt; ~/.aws/config
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">EoF</span>
 </code></pre></div><h4 id="add-in-awscredentials">Add in <code>~/.aws/credentials</code>:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; EoF &gt;&gt; ~/.aws/credentials
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; EoF &gt;&gt; ~/.aws/credentials
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">[eksAdmin]
 </span><span style="color:#e6db74">aws_access_key_id=$(jq -r .AccessKey.AccessKeyId /tmp/PaulAdmin.json)
@@ -10708,7 +10746,7 @@ cat <span style="color:#e6db74">&lt;&lt; EoF &gt;&gt; ~/.aws/config
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">EoF</span>
 </code></pre></div><h4 id="test-this-with-the-dev-profile">Test this with the dev profile:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws sts get-caller-identity --profile dev
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws sts get-caller-identity --profile dev
 </code></pre></div><pre><output class="bash">
 {
     &#34;UserId&#34;: &#34;AROAUD5VMKW75WJEHFU4X:botocore-session-1581687024&#34;,
@@ -10721,7 +10759,7 @@ cat <span style="color:#e6db74">&lt;&lt; EoF &gt;&gt; ~/.aws/config
 <p>When specifying the <strong>&ndash;profile dev</strong> parameter we automatically ask for temporary credentials for the role k8sDev.
 You can test this with <strong>integ</strong> and <strong>admin</strong> also.</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws sts get-caller-identity --profile admin
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws sts get-caller-identity --profile admin
 </code></pre></div><pre><output class="bash">
 {
     &#34;UserId&#34;: &#34;AROAUD5VMKW77KXQAL7ZX:botocore-session-1582022121&#34;,
@@ -10738,7 +10776,7 @@ You can test this with <strong>integ</strong> and <strong>admin</strong> also.</
 <p>It is also possible to specify the AWS_PROFILE to use with the aws-iam-authenticator in the <code>~/.kube/config</code> file, so that it will use the appropriate profile.</p>
 <h3 id="with-dev-profile">With dev profile</h3>
 <p>Create a new KUBECONFIG file to test this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-dev <span style="color:#f92672">&amp;&amp;</span> eksctl utils write-kubeconfig eksworkshop-eksctl
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-dev <span style="color:#f92672">&amp;&amp;</span> eksctl utils write-kubeconfig eksworkshop-eksctl
 cat $KUBECONFIG | yq e <span style="color:#e6db74">&#39;.users.[].user.exec.args += [&#34;--profile&#34;, &#34;dev&#34;]&#39;</span> - -- | sed <span style="color:#e6db74">&#39;s/eksworkshop-eksctl./eksworkshop-eksctl-dev./g&#39;</span> | sponge $KUBECONFIG
 </code></pre></div><blockquote>
 <p>Note: this assume you uses yq &gt;= version 4. you can reference to <a href="https://mikefarah.gitbook.io/yq/upgrading-from-v3">this page</a> to adapt this command for another version.</p>
@@ -10746,58 +10784,58 @@ cat $KUBECONFIG | yq e <span style="color:#e6db74">&#39;.users.[].user.exec.args
 <p>We added the <code>--profile dev</code> parameter to our kubectl config file, so that this will ask kubectl to use our IAM role associated to our dev profile, and we rename the context using suffix <strong>-dev</strong>.</p>
 <p>With this configuration we should be able to interact with the <strong>development</strong> namespace, because it has our RBAC role defined.</p>
 <p>Let&rsquo;s create a pod:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --generator<span style="color:#f92672">=</span>run-pod/v1 nginx-dev --image<span style="color:#f92672">=</span>nginx -n development
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --generator<span style="color:#f92672">=</span>run-pod/v1 nginx-dev --image<span style="color:#f92672">=</span>nginx -n development
 </code></pre></div><p>We can list the pods:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n development
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n development
 </code></pre></div><pre><output class="bash">
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-dev   1/1     Running   0          28h
 </output></pre>
 
 <p>&hellip; but not in other namespaces:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n integration
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n integration
 </code></pre></div><pre><output class="bash">
 Error from server (Forbidden): pods is forbidden: User &#34;dev-user&#34; cannot list resource &#34;pods&#34; in API group &#34;&#34; in the namespace &#34;integration&#34;
 </output></pre>
 
 <h4 id="test-with-integ-profile">Test with integ profile</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-integ <span style="color:#f92672">&amp;&amp;</span> eksctl utils write-kubeconfig eksworkshop-eksctl
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-integ <span style="color:#f92672">&amp;&amp;</span> eksctl utils write-kubeconfig eksworkshop-eksctl
 cat $KUBECONFIG | yq e <span style="color:#e6db74">&#39;.users.[].user.exec.args += [&#34;--profile&#34;, &#34;integ&#34;]&#39;</span> - -- | sed <span style="color:#e6db74">&#39;s/eksworkshop-eksctl./eksworkshop-eksctl-integ./g&#39;</span> | sponge $KUBECONFIG
 </code></pre></div><blockquote>
 <p>Note: this assume you uses yq &gt;= version 4. you can reference to <a href="https://mikefarah.gitbook.io/yq/upgrading-from-v3">this page</a> to adapt this command for another version.</p>
 </blockquote>
 <p>Let&rsquo;s create a pod:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --generator<span style="color:#f92672">=</span>run-pod/v1 nginx-integ --image<span style="color:#f92672">=</span>nginx -n integration
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --generator<span style="color:#f92672">=</span>run-pod/v1 nginx-integ --image<span style="color:#f92672">=</span>nginx -n integration
 </code></pre></div><p>We can list the pods:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n integration
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n integration
 </code></pre></div><pre><output class="bash">
 NAME          READY   STATUS    RESTARTS   AGE
 nginx-integ   1/1     Running   0          43s
 </output></pre>
 
 <p>&hellip; but not in other namespaces:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n development
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n development
 </code></pre></div><pre><output class="bash">
 Error from server (Forbidden): pods is forbidden: User &#34;integ-user&#34; cannot list resource &#34;pods&#34; in API group &#34;&#34; in the namespace &#34;development&#34;
 </output></pre>
 
 <h4 id="test-with-admin-profile">Test with admin profile</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-admin <span style="color:#f92672">&amp;&amp;</span> eksctl utils write-kubeconfig eksworkshop-eksctl
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-admin <span style="color:#f92672">&amp;&amp;</span> eksctl utils write-kubeconfig eksworkshop-eksctl
 cat $KUBECONFIG | yq e <span style="color:#e6db74">&#39;.users.[].user.exec.args += [&#34;--profile&#34;, &#34;admin&#34;]&#39;</span> - -- | sed <span style="color:#e6db74">&#39;s/eksworkshop-eksctl./eksworkshop-eksctl-admin./g&#39;</span> | sponge $KUBECONFIG
 </code></pre></div><blockquote>
 <p>Note: this assume you uses yq &gt;= version 4. you can reference to <a href="https://mikefarah.gitbook.io/yq/upgrading-from-v3">this page</a> to adapt this command for another version.</p>
 </blockquote>
 <p>Let&rsquo;s create a pod in the default namespace:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --generator<span style="color:#f92672">=</span>run-pod/v1 nginx-admin --image<span style="color:#f92672">=</span>nginx
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl run --generator<span style="color:#f92672">=</span>run-pod/v1 nginx-admin --image<span style="color:#f92672">=</span>nginx
 </code></pre></div><p>We can list the pods:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods
 </code></pre></div><pre><output class="bash">
 NAME          READY   STATUS    RESTARTS   AGE
 nginx-integ   1/1     Running   0          43s
 </output></pre>
 
 <p>We can list ALL pods in all namespaces:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -A
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -A
 </code></pre></div><pre><output class="bash">
 NAMESPACE     NAME                       READY   STATUS    RESTARTS   AGE
 default       nginx-admin                1/1     Running   0          15s
@@ -10815,11 +10853,11 @@ kube-system   kube-proxy-pr7k7           1/1     Running   0          100m
 
 <h2 id="switching-between-different-contexts">Switching between different contexts</h2>
 <p>It is possible to configure several Kubernetes API access keys in the same KUBECONFIG file, or just tell Kubectl to lookup several files:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-dev:/tmp/kubeconfig-integ:/tmp/kubeconfig-admin
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG<span style="color:#f92672">=</span>/tmp/kubeconfig-dev:/tmp/kubeconfig-integ:/tmp/kubeconfig-admin
 </code></pre></div><p>There is a tool <a href="https://github.com/ahmetb/kubectx">kubectx / kubens</a> that will help manage KUBECONFIG files with several contexts:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sSLO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx <span style="color:#f92672">&amp;&amp;</span> chmod <span style="color:#ae81ff">755</span> kubectx <span style="color:#f92672">&amp;&amp;</span> sudo mv kubectx /usr/local/bin
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sSLO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx <span style="color:#f92672">&amp;&amp;</span> chmod <span style="color:#ae81ff">755</span> kubectx <span style="color:#f92672">&amp;&amp;</span> sudo mv kubectx /usr/local/bin
 </code></pre></div><p>I can use kubectx to quickly list or switch Kubernetes contexts:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectx
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectx
 </code></pre></div><pre><output class="bash">
 i-0397aa1339e238a99@eksworkshop-eksctl-admin.eu-west-2.eksctl.io
 i-0397aa1339e238a99@eksworkshop-eksctl-dev.eu-west-2.eksctl.io
@@ -16668,6 +16706,38 @@ You can create different groups depending on your needs, configure their associa
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18258,19 +18328,19 @@ You can create different groups depending on your needs, configure their associa
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../js/clipboard.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111205"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111205"></script>
+    <script src="../../../js/jquery.sticky.js?1636111205"></script>
+    <script src="../../../js/featherlight.min.js?1636111205"></script>
+    <script src="../../../js/highlight.pack.js?1636111205"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../js/learn.js?1634326731"></script>
-    <script src="../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111205"></script>
+    <script src="../../../js/learn.js?1636111205"></script>
+    <script src="../../../js/hugo-learn.js?1636111205"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../mermaid/mermaid.css?1636111205" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111205"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

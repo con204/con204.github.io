@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Install AWS App Mesh Controller :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326731" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326731" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326731" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326731"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326731" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326731"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326731"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326731"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10672,7 +10710,7 @@
 
 <h4 id="install-app-mesh-helm-chart">Install App Mesh Helm Chart</h4>
 <p>Check that Helm is installed.</p>
-<pre tabindex="0"><code>helm list
+<pre><code>helm list
 </code></pre><p>This command should either return a list of helm charts that have already been deployed or nothing.</p>
 
 <div class="notices info" ><p>If you get an error message, see <a href="../../../../beginner/060_helm/helm_intro/install/index.html">installing helm</a> for instructions.</p>
@@ -10680,14 +10718,14 @@
 
 <p>Add EKS Helm Repo
 The AWS App Mesh Controller for Kubernetes is easily installed using Helm. To get started, add the EKS Charts repository.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add eks https://aws.github.io/eks-charts
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add eks https://aws.github.io/eks-charts
 </code></pre></div><pre><output class="bash">
 &#34;eks&#34; has been added to your repositories
 </output></pre>
 
 <h4 id="install-app-mesh-controller">Install App Mesh Controller</h4>
 <p>Create the namespace <code>appmesh-system</code>, enable OIDC and create IRSA (IAM for Service Account) for AWS App Mesh installation</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create the namespace</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create the namespace</span>
 kubectl create ns appmesh-system
 
 <span style="color:#75715e"># Install the App Mesh CRDs</span>
@@ -10714,7 +10752,7 @@ eksctl create iamserviceaccount --cluster eksworkshop-eksctl <span style="color:
 </span><span style="color:#ae81ff"></span>    --override-existing-serviceaccounts <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --approve
 </code></pre></div><p>Install App Mesh Controller into the appmesh-system namespace</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm upgrade -i appmesh-controller eks/appmesh-controller <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm upgrade -i appmesh-controller eks/appmesh-controller <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --namespace appmesh-system <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --set region<span style="color:#f92672">=</span>$AWS_REGION <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --set serviceAccount.create<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
@@ -10735,7 +10773,7 @@ AWS App Mesh controller installed!
 </output></pre>
 
 <p>Confirm that the controller version is v1.0.0 or later.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment appmesh-controller <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployment appmesh-controller <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    -n appmesh-system <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    -o json  | jq -r <span style="color:#e6db74">&#34;.spec.template.spec.containers[].image&#34;</span> | cut -f2 -d <span style="color:#e6db74">&#39;:&#39;</span>
 </code></pre></div><pre><output class="bash"> 
@@ -10743,7 +10781,7 @@ v1.3.0
 </output></pre>
 
 <p>Confirm all the App Mesh CRDs are created in the Cluster</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get crds | grep appmesh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get crds | grep appmesh
 </code></pre></div><pre><output class="bash">
 gatewayroutes.appmesh.k8s.aws                2020-11-02T16:02:14Z
 meshes.appmesh.k8s.aws                       2020-11-02T16:02:15Z
@@ -10754,7 +10792,7 @@ virtualservices.appmesh.k8s.aws              2020-11-02T16:02:15Z
 </output></pre>
 
 <p>Get all the resources created in appmesh-system Namespace</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n appmesh-system get all          
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n appmesh-system get all          
 </code></pre></div><pre><output class="bash">  
 NAME                                     READY   STATUS    RESTARTS   AGE     
 pod/appmesh-controller-fcc7c4ffc-mldhk   1/1     Running   0          47s 
@@ -16597,6 +16635,38 @@ replicaset.apps/appmesh-controller-fcc7c4ffc    1         1         1       47s
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18196,19 +18266,19 @@ replicaset.apps/appmesh-controller-fcc7c4ffc    1         1         1       47s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../../js/learn.js?1634326731"></script>
-    <script src="../../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../../js/learn.js?1636111204"></script>
+    <script src="../../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

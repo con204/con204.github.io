@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Create Custom Objects :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326733" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326733" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326733" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326733" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326733" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326733" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326733"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326733" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326733" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326733"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326733"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10658,7 +10696,7 @@
 
 <p>After the CustomResourceDefinition object has been created, you can create custom objects. Custom objects can contain custom fields. These fields can contain arbitrary JSON. In the following example, the cronSpec and image custom fields are set in a custom object of kind CronTab. The kind CronTab comes from the spec of the CustomResourceDefinition object you created above.</p>
 <p>If you save the following YAML to my-crontab.yaml:</p>
-<pre tabindex="0"><code>cat &lt;&lt;EoF &gt; ~/environment/my-crontab.yaml
+<pre><code>cat &lt;&lt;EoF &gt; ~/environment/my-crontab.yaml
 apiVersion: &quot;stable.example.com/v1&quot;
 kind: CronTab
 metadata:
@@ -10668,17 +10706,17 @@ spec:
   image: my-awesome-cron-image
 EoF
 </code></pre><p>and create it:</p>
-<pre tabindex="0"><code>kubectl apply -f my-crontab.yaml
+<pre><code>kubectl apply -f my-crontab.yaml
 </code></pre><p>You can then manage your CronTab objects using kubectl. For example:</p>
-<pre tabindex="0"><code>kubectl get crontab
+<pre><code>kubectl get crontab
 </code></pre><p>Should print a list like this:</p>
-<pre tabindex="0"><code>NAME                 AGE
+<pre><code>NAME                 AGE
 my-new-cron-object   6s
 </code></pre><p>Resource names are not case-sensitive when using kubectl, and you can use either the singular or plural forms defined in the CRD, as well as any short names.</p>
 <p>You can also view the raw YAML data:</p>
-<pre tabindex="0"><code>kubectl get ct -o yaml
+<pre><code>kubectl get ct -o yaml
 </code></pre><p>You should see that it contains the custom cronSpec and image fields from the yaml you used to create it:</p>
-<pre tabindex="0"><code>apiVersion: v1
+<pre><code>apiVersion: v1
 items:
 - apiVersion: stable.example.com/v1
   kind: CronTab
@@ -10698,9 +10736,9 @@ metadata:
   resourceVersion: &quot;&quot;
   selfLink: &quot;&quot;
 </code></pre><p>We can also describe the custom object with kubectl:</p>
-<pre tabindex="0"><code>kubectl describe crontab
+<pre><code>kubectl describe crontab
 </code></pre><p>The output being something like this:</p>
-<pre tabindex="0"><code>Name:         my-new-cron-object
+<pre><code>Name:         my-new-cron-object
 Namespace:    default
 Labels:       &lt;none&gt;
 Annotations:  kubectl.kubernetes.io/last-applied-configuration={&quot;apiVersion&quot;:&quot;stable.example.com/v1&quot;,&quot;kind&quot;:&quot;CronTab&quot;,&quot;metadata&quot;:{&quot;annotations&quot;:{},&quot;name&quot;:&quot;my-new-cron-object&quot;,&quot;namespace&quot;:&quot;default&quot;},&quot;spec&quot;:{&quot;cronSpe...
@@ -10717,11 +10755,11 @@ Spec:
   Image:      my-awesome-cron-image
 Events:       &lt;none&gt;
 </code></pre><p>Or we can check the resource directly from the Kubernetes API. First, we start the proxy in one tab of the Cloud9 environment:</p>
-<pre tabindex="0"><code>kubectl proxy --port=8080 --address='0.0.0.0' --disable-filter=true
+<pre><code>kubectl proxy --port=8080 --address='0.0.0.0' --disable-filter=true
 </code></pre><p>And in another tab we check the existance of the Custom Resource</p>
-<pre tabindex="0"><code>curl -i 127.0.0.1:8080/apis/stable.example.com/v1/namespaces/default/crontabs/my-new-cron-object
+<pre><code>curl -i 127.0.0.1:8080/apis/stable.example.com/v1/namespaces/default/crontabs/my-new-cron-object
 </code></pre><p>With the output:</p>
-<pre tabindex="0"><code>HTTP/1.1 200 OK
+<pre><code>HTTP/1.1 200 OK
 Audit-Id: 04c5ce6e-5a45-4064-8139-6c2b848bc467
 Content-Length: 707
 Content-Type: application/json
@@ -16566,6 +16604,38 @@ Date: Thu, 09 May 2019 18:18:21 GMT
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18156,19 +18226,19 @@ Date: Thu, 09 May 2019 18:18:21 GMT
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326733"></script>
-    <script src="../../../js/jquery.sticky.js?1634326733"></script>
-    <script src="../../../js/featherlight.min.js?1634326733"></script>
-    <script src="../../../js/highlight.pack.js?1634326733"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326733"></script>
-    <script src="../../../js/learn.js?1634326733"></script>
-    <script src="../../../js/hugo-learn.js?1634326733"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326733" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

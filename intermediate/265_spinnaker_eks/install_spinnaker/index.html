@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Install Spinnaker :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326733" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326733" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326733" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326733" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326733" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326733" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326733" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111207" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111207" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111207" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111207" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111207" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111207" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111207" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326733" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111207" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326733"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326733" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326733" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326733"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111207" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111207"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111207"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326733"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111207"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111207"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326733"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111207"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10751,7 +10789,7 @@ spec:
 
 <h4 id="install-spinnaker-service">Install Spinnaker Service</h4>
 <p>Confirm if all the environment variables is set correctly</p>
-<pre tabindex="0"><code>echo $ACCOUNT_ID
+<pre><code>echo $ACCOUNT_ID
 echo $AWS_REGION
 echo $SPINNAKER_VERSION
 echo $GITHUB_USER
@@ -10764,7 +10802,7 @@ echo $ECR_REPOSITORY
 <div class="notices info" ><p>If you do not see output from the above command for all the Environment Variables, do not proceed to next step</p>
 </div>
 
-<pre tabindex="0"><code>cd ~/environment/spinnaker-operator/
+<pre><code>cd ~/environment/spinnaker-operator/
 envsubst &lt; deploy/spinnaker/basic/spinnakerservice.yml | kubectl -n spinnaker apply -f -
 </code></pre><pre><output class="bash">
 spinnakerservice.spinnaker.io/spinnaker created
@@ -10774,7 +10812,7 @@ spinnakerservice.spinnaker.io/spinnaker created
 <div class="notices tip" ><p>It will take some time to bring up all the pods, so wait for few minutes..</p>
 </div>
 
-<pre tabindex="0"><code> # Get all the resources created
+<pre><code> # Get all the resources created
 kubectl get svc,pod -n spinnaker
 </code></pre><pre><output class="bash">
 NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)        AGE
@@ -10800,7 +10838,7 @@ pod/spin-redis-7f7d9659bf-whkf7         1/1     Running   0          8d
 pod/spin-rosco-7c6f77c64c-2qztw         1/1     Running   0          8d
  </output></pre>
 
-<pre tabindex="0"><code># Watch the install progress.
+<pre><code># Watch the install progress.
 kubectl -n spinnaker get spinsvc spinnaker -w
 </code></pre><pre><output class="bash">
 NAME        VERSION   LASTCONFIGURED   STATUS   SERVICES   URL
@@ -10818,7 +10856,7 @@ spinnaker   1.24.0    3h8m             OK       9          http://ae33c1a7185b14
 <p>Click on <code>Pipelines</code> under <code>test-application</code> and click on <code>Configure a new pipeline</code> and add the name.
 <img src="../../../images/spinnnaker/pipeline.png" alt="Spinnaker"></p>
 <p>Click on <code>Add Stage</code> and select <code>Deploy (Manifest)</code> from the dropdown for <strong>Type</strong>, select <code>spinnaker-workshop</code> from the dropdown for <strong>Account</strong> and put the below yaml into the Manifest text area and click on &ldquo;Save Changes&rdquo;.</p>
-<pre tabindex="0"><code>apiVersion: apps/v1
+<pre><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
@@ -10853,7 +10891,7 @@ spec:
 <img src="../../../images/spinnnaker/deploy1.png" alt="Spinnaker">
 <img src="../../../images/spinnnaker/deploy2.png" alt="Spinnaker"></p>
 <p>You can also go to Cloud9 terminal and verify the deployment</p>
-<pre tabindex="0"><code>kubectl get deployment nginx-deployment -n spinnaker
+<pre><code>kubectl get deployment nginx-deployment -n spinnaker
 
 kubectl get pods -l app=nginx -n spinnaker
 </code></pre><pre><output class="bash">
@@ -16703,6 +16741,38 @@ nginx-deployment-6dc677db6-jchq8   1/1     Running   0          3m25s
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18293,19 +18363,19 @@ nginx-deployment-6dc677db6-jchq8   1/1     Running   0          3m25s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326733"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326733"></script>
-    <script src="../../../js/jquery.sticky.js?1634326733"></script>
-    <script src="../../../js/featherlight.min.js?1634326733"></script>
-    <script src="../../../js/highlight.pack.js?1634326733"></script>
+    <script src="../../../js/clipboard.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111207"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111207"></script>
+    <script src="../../../js/jquery.sticky.js?1636111207"></script>
+    <script src="../../../js/featherlight.min.js?1636111207"></script>
+    <script src="../../../js/highlight.pack.js?1636111207"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326733"></script>
-    <script src="../../../js/learn.js?1634326733"></script>
-    <script src="../../../js/hugo-learn.js?1634326733"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111207"></script>
+    <script src="../../../js/learn.js?1636111207"></script>
+    <script src="../../../js/hugo-learn.js?1636111207"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326733" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326733"></script>
+    <link href="../../../mermaid/mermaid.css?1636111207" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111207"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

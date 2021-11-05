@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Deploying the Stateful Services :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10669,13 +10707,13 @@
 <ol>
 <li>
 <p>Create an Amazon S3 bucket and a folder within it named export by creating and copying a file to the bucket.</p>
-<pre tabindex="0"><code>aws s3 mb s3://$S3_LOGS_BUCKET
+<pre><code>aws s3 mb s3://$S3_LOGS_BUCKET
 echo test-file &gt;&gt; testfile
 aws s3 cp testfile s3://$S3_LOGS_BUCKET/export/testfile
 </code></pre></li>
 <li>
 <p>Create the storageclass definition that should interpolate variables from your shell variables that we defined in on the previous page.</p>
-<pre tabindex="0"><code>cat &lt;&lt; EOF &gt; storageclass.yaml
+<pre><code>cat &lt;&lt; EOF &gt; storageclass.yaml
 ---
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
@@ -10714,13 +10752,13 @@ EOF
 </li>
 <li>
 <p>Create the storageclass.</p>
-<pre tabindex="0"><code>kubectl apply -f storageclass.yaml
+<pre><code>kubectl apply -f storageclass.yaml
 </code></pre></li>
 <li>
 <p>Download the persistent volume claim manifest.</p>
-<pre tabindex="0"><code>curl -o claim.yaml https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/examples/kubernetes/dynamic_provisioning_s3/specs/claim.yaml
+<pre><code>curl -o claim.yaml https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/examples/kubernetes/dynamic_provisioning_s3/specs/claim.yaml
 </code></pre><p><strong>(Optional)</strong> Edit the claim.yaml file. Change the following <!-- raw HTML omitted --> to one of the increment values listed below, based on your storage requirements and the deploymentType that you selected in a previous step.</p>
-<pre tabindex="0"><code>storage: &lt;1200Gi&gt;
+<pre><code>storage: &lt;1200Gi&gt;
 </code></pre><pre><code> - SCRATCH_2 and PERSISTENT – 1.2 TiB, 2.4 TiB, or increments of 2.4 TiB over 2.4 TiB.
 
  - SCRATCH_1 – 1.2 TiB, 2.4 TiB, 3.6 TiB, or increments of 3.6 TiB over 3.6 TiB.
@@ -10728,26 +10766,26 @@ EOF
 </li>
 <li>
 <p>Create the persistent volume claim.</p>
-<pre tabindex="0"><code>kubectl apply -f claim.yaml
+<pre><code>kubectl apply -f claim.yaml
 </code></pre></li>
 <li>
 <p>Confirm that the file system is provisioned.</p>
-<pre tabindex="0"><code>kubectl get pvc
+<pre><code>kubectl get pvc
 </code></pre><p><strong>Output:</strong></p>
-<pre tabindex="0"><code>NAME        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+<pre><code>NAME        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 fsx-claim   Bound    pvc-15dad3c1-2365-11ea-a836-02468c18769e   1200Gi     RWX            fsx-sc         7m37s
 </code></pre><p><em>The STATUS may show as Pending for 5-10 minutes, before changing to Bound. Don&rsquo;t continue with the next step until the STATUS is Bound.</em></p>
 </li>
 <li>
 <p>Deploy the sample application.</p>
-<pre tabindex="0"><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/examples/kubernetes/dynamic_provisioning_s3/specs/pod.yaml
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/examples/kubernetes/dynamic_provisioning_s3/specs/pod.yaml
 </code></pre></li>
 <li>
 <p>Verify that the sample application is running.</p>
-<pre tabindex="0"><code>    kubectl get pods
+<pre><code>    kubectl get pods
 </code></pre><pre><code> **Output:**
 </code></pre>
-<pre tabindex="0"><code>    NAME      READY   STATUS              RESTARTS   AGE
+<pre><code>    NAME      READY   STATUS              RESTARTS   AGE
     fsx-app   1/1     Running             0          8s
 </code></pre></li>
 </ol>
@@ -10755,24 +10793,24 @@ fsx-claim   Bound    pvc-15dad3c1-2365-11ea-a836-02468c18769e   1200Gi     RWX  
 <ol>
 <li>
 <p>If you only want to import data and read it without any modification and creation, then you don&rsquo;t need a value for s3ExportPath in your storageclass.yaml file. Verify that data was written to the Amazon FSx for Lustre file system by the sample app.</p>
-<pre tabindex="0"><code>kubectl exec fsx-app -- ls /data
+<pre><code>kubectl exec fsx-app -- ls /data
 </code></pre><p><strong>Output:</strong></p>
 <p>The sample app wrote the out.txt file to the file system.</p>
-<pre tabindex="0"><code>export  
+<pre><code>export  
 out.txt
 </code></pre></li>
 <li>
 <p>Archive files to the s3ExportPath. For new files and modified files, you can use the Lustre user space tool to archive the data back to Amazon S3 using the value that you specified for s3ExportPath.</p>
 <p>Export the file back to Amazon S3.</p>
-<pre tabindex="0"><code>kubectl exec -ti fsx-app -- lfs hsm_archive /data/out.txt
+<pre><code>kubectl exec -ti fsx-app -- lfs hsm_archive /data/out.txt
 </code></pre><p>New files aren&rsquo;t synced back to Amazon S3 automatically. In order to sync files to the s3ExportPath, you need to install the Lustre client in your container image and manually run the lfs hsm_archive command. The container should run in privileged mode with the CAP_SYS_ADMIN capability.
 This example uses a lifecycle hook to install the Lustre client for demonstration purpose. A normal approach is building a container image with the Lustre client.</p>
 </li>
 <li>
 <p>Confirm that the out.txt file was written to the s3ExportPath folder in Amazon S3.</p>
-<pre tabindex="0"><code>aws s3 ls s3://$S3_LOGS_BUCKET/export/
+<pre><code>aws s3 ls s3://$S3_LOGS_BUCKET/export/
 </code></pre><p><strong>Output:</strong></p>
-<pre tabindex="0"><code>2021-08-10 12:11:35       4553 out.txt
+<pre><code>2021-08-10 12:11:35       4553 out.txt
 2021-08-10 11:41:21         10 testfile
 </code></pre></li>
 </ol>
@@ -16614,6 +16652,38 @@ This example uses a lifecycle hook to install the Lustre client for demonstratio
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18204,19 +18274,19 @@ This example uses a lifecycle hook to install the Lustre client for demonstratio
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

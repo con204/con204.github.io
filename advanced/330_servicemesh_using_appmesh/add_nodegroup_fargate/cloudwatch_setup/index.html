@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Observability Setup :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/theme.css?1634326730" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1634326730" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/theme.css?1636111204" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1636111204" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1634326730" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1636111204" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1634326730"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1636111204"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1634326730" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1634326730" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1634326730"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1634326730"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1636111204" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636111204"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1636111204"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1634326730"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1634326730"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1636111204"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1636111204"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1634326730"></script>
+<script type="text/javascript" src="../../../../js/search.js?1636111204"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10672,7 +10710,7 @@
 
 <h4 id="enable-amazon-cloudwatch-container-insights">Enable Amazon Cloudwatch Container Insights</h4>
 <p>Create an IAM role for the cloudwatch-agent service account</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --namespace amazon-cloudwatch <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name cloudwatch-agent <span style="color:#ae81ff">\
@@ -10694,7 +10732,7 @@
 </output></pre>
 
 <p>Create an IAM role for the fluent service account</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --namespace amazon-cloudwatch <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name fluentd <span style="color:#ae81ff">\
@@ -10715,7 +10753,7 @@
 </output></pre>
 
 <p>Now, Deploy Container Insights for Managed Nodegroup</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluentd-quickstart.yaml | sed <span style="color:#e6db74">&#34;s/{{cluster_name}}/eksworkshop-eksctl/;s/{{region_name}}/</span><span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#34;</span> | kubectl apply -f -    
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/quickstart/cwagent-fluentd-quickstart.yaml | sed <span style="color:#e6db74">&#34;s/{{cluster_name}}/eksworkshop-eksctl/;s/{{region_name}}/</span><span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#34;</span> | kubectl apply -f -    
 </code></pre></div><pre><output class="bash">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                 Dload  Upload   Total   Spent    Left  Speed
@@ -10752,7 +10790,7 @@ configmap/fluentd-config created
 </div>
 
 <p>You can verify all the <code>DaemonSets</code> have been deployed by running the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n amazon-cloudwatch get daemonsets
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n amazon-cloudwatch get daemonsets
 </code></pre></div><pre><output class="bash">
 NAME                 DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
 cloudwatch-agent     3         3         3       3            3           &lt;none&gt;          2m43s
@@ -10763,7 +10801,7 @@ fluentd-cloudwatch   3         3         3       3            3           &lt;no
 <img src="../../../../images/app_mesh_fargate/cloudwatchd.png" alt="DaemonSets"></p>
 <h4 id="enable-prometheus-metrics-in-cloudwatch">Enable Prometheus Metrics in CloudWatch</h4>
 <p>Create an IAM role for the prometheus service account</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamserviceaccount <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --namespace amazon-cloudwatch <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name cwagent-prometheus <span style="color:#ae81ff">\
@@ -10784,7 +10822,7 @@ fluentd-cloudwatch   3         3         3       3            3           &lt;no
 </output></pre>
 
 <p>Install Prometheus Agent</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/service/cwagent-prometheus/prometheus-eks.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/service/cwagent-prometheus/prometheus-eks.yaml
 </code></pre></div><pre><output class="bash">
 namespace/amazon-cloudwatch unchanged
 configmap/prometheus-cwagentconfig created
@@ -10796,7 +10834,7 @@ deployment.apps/cwagent-prometheus created
 </output></pre>
 
 <p>Confirm that the agent is running</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pod -l <span style="color:#e6db74">&#34;app=cwagent-prometheus&#34;</span> -n amazon-cloudwatch
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pod -l <span style="color:#e6db74">&#34;app=cwagent-prometheus&#34;</span> -n amazon-cloudwatch
 </code></pre></div><pre><output class="bash">
 NAME                                 READY   STATUS    RESTARTS   AGE
 cwagent-prometheus-95896694d-99pwb   1/1     Running   0          2m33s
@@ -10807,7 +10845,7 @@ cwagent-prometheus-95896694d-99pwb   1/1     Running   0          2m33s
 This logging ConfigMap has to be used in a fixed namespace called aws-observability has a cluster-wide effect, meaning that you can send application-level logs from any application in any namespace.</p>
 <p>In this workshop, we will show you how to use cloudwatch_logs to send logs from a workload running in an EKS on Fargate cluster to CloudWatch.</p>
 <p>First, create the dedicated aws-observability namespace and the ConfigMap for Fluent Bit</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd eks-app-mesh-polyglot-demo
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd eks-app-mesh-polyglot-demo
 envsubst &lt; ./deployment/fluentbit-config.yaml | kubectl apply -f -
 </code></pre></div><pre><output class="bash">
 namespace/aws-observability created
@@ -10815,14 +10853,14 @@ configmap/aws-logging created
 </output></pre>
 
 <p>Next, verify if the Fluent Bit ConfigMap is deployed correctly</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n aws-observability get cm
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl -n aws-observability get cm
 </code></pre></div><pre><output class="bash">
 NAME          DATA   AGE
 aws-logging   1      18s
 </output></pre>
 
 <p>With Fluent Bit set up we next need to give it the permission to write to CloudWatch. We do that by first downloading the policy locally:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -o permissions.json <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -o permissions.json <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>     https://raw.githubusercontent.com/aws-samples/amazon-eks-fluent-logging-examples/mainline/examples/fargate/cloudwatchlogs/permissions.json
 </code></pre></div><p><pre><output class="bash">
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -10831,7 +10869,7 @@ aws-logging   1      18s
 </output></pre>
 
 And next we create the policy:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws iam create-policy <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws iam create-policy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        --policy-name FluentBitEKSFargate <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        --policy-document file://permissions.json 
 </code></pre></div><pre><output class="bash">
@@ -10852,7 +10890,7 @@ And next we create the policy:</p>
 </output></pre>
 
 <p>And then, Attach the Policy to the Pod Execution Role of our EKS on Fargate cluster</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PodRole<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws eks describe-fargate-profile --cluster-name eksworkshop-eksctl --fargate-profile-name fargate-productcatalog --query <span style="color:#e6db74">&#39;fargateProfile.podExecutionRoleArn&#39;</span> | sed -n <span style="color:#e6db74">&#39;s/^.*role\/\(.*\)&#34;.*$/\1/ p&#39;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PodRole<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws eks describe-fargate-profile --cluster-name eksworkshop-eksctl --fargate-profile-name fargate-productcatalog --query <span style="color:#e6db74">&#39;fargateProfile.podExecutionRoleArn&#39;</span> | sed -n <span style="color:#e6db74">&#39;s/^.*role\/\(.*\)&#34;.*$/\1/ p&#39;</span><span style="color:#66d9ef">)</span>
 aws iam attach-role-policy <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        --policy-arn arn:aws:iam::<span style="color:#e6db74">${</span>ACCOUNT_ID<span style="color:#e6db74">}</span>:policy/FluentBitEKSFargate <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>        --role-name <span style="color:#e6db74">${</span>PodRole<span style="color:#e6db74">}</span>
@@ -10867,7 +10905,7 @@ echo $PodRole
 </div>
 
 <p>CloudWatch logging for EKS control plane is not enabled by default due to data ingestion and storage costs. You can enable using below command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl utils update-cluster-logging <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl utils update-cluster-logging <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --enable-types all <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --region <span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --cluster eksworkshop-eksctl <span style="color:#ae81ff">\
@@ -16711,6 +16749,38 @@ echo $PodRole
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18310,19 +18380,19 @@ echo $PodRole
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1634326731"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1634326731"></script>
-    <script src="../../../../js/jquery.sticky.js?1634326731"></script>
-    <script src="../../../../js/featherlight.min.js?1634326731"></script>
-    <script src="../../../../js/highlight.pack.js?1634326731"></script>
+    <script src="../../../../js/clipboard.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1636111204"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636111204"></script>
+    <script src="../../../../js/jquery.sticky.js?1636111204"></script>
+    <script src="../../../../js/featherlight.min.js?1636111204"></script>
+    <script src="../../../../js/highlight.pack.js?1636111204"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1634326731"></script>
-    <script src="../../../../js/learn.js?1634326731"></script>
-    <script src="../../../../js/hugo-learn.js?1634326731"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1636111204"></script>
+    <script src="../../../../js/learn.js?1636111204"></script>
+    <script src="../../../../js/hugo-learn.js?1636111204"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1634326731" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1634326731"></script>
+    <link href="../../../../mermaid/mermaid.css?1636111204" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1636111204"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

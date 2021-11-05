@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="Amazon EKS Workshop">
 <meta name="author" content="Brent Langston">
 
@@ -13,20 +13,20 @@
     <title>Basic Pod CPU and Memory Management :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1634326732" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1634326732" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1634326732" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1634326732" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1634326732" rel="stylesheet">
-    <link href="../../../css/theme.css?1634326732" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1634326732" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1636111206" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1636111206" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1636111206" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1636111206" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1636111206" rel="stylesheet">
+    <link href="../../../css/theme.css?1636111206" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1636111206" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1634326732" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1636111206" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1634326732"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1636111206"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1634326732" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1634326732" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1634326732"></script>
-    <script src="../../../mermaid/mermaid.min.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1636111206" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1636111206"></script>
+    <script src="../../../mermaid/mermaid.min.js?1636111206"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1634326732"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1636111206"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1636111206"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1634326732"></script>
+<script type="text/javascript" src="../../../js/search.js?1636111206"></script>
 
     
   </div>
@@ -8180,6 +8180,44 @@
  
   
     
+      <li data-nav-id="/advanced/350_opentelemetry/tools/" title="Configure Environment" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/tools/">
+        Configure Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced/350_opentelemetry/workspaceiam/" title="Update IAM settings for your Workspace" class="dd-item ">
+        <a href="../../../advanced/350_opentelemetry/workspaceiam/">
+        Update IAM settings for your Workspace
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/advanced/350_opentelemetry/deploy_backend_microservices/" title="Deploy Backend Microservices" class="dd-item ">
         <a href="../../../advanced/350_opentelemetry/deploy_backend_microservices/">
         Deploy Backend Microservices
@@ -10677,7 +10715,7 @@
 <h3 id="deploy-metrics-server">Deploy Metrics Server</h3>
 <p>Follow the instructions in the module <a href="../../../beginner/080_scaling/deploy_hpa/#deploy-the-metrics-server">Deploy the Metrics Server</a> to enable the Kubernetes Metrics Server.</p>
 <p>Verify that the metrics-server deployment is running the desired number of pods with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl get deployment metrics-server -n kube-system
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl get deployment metrics-server -n kube-system
 </code></pre></div><p>Output:
 <pre><output class="bash">
 NAME             READY   UP-TO-DATE   AVAILABLE   AGE
@@ -10698,7 +10736,7 @@ metrics-server   1/1     1            1           19s
 <li><strong>verbose:</strong> show all information output</li>
 <li><strong>timeout:</strong> length of test</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Deploy Limits pod with hard limit on cpu at 500m but wants 1000m</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Deploy Limits pod with hard limit on cpu at 500m but wants 1000m</span>
 kubectl run --limits<span style="color:#f92672">=</span>memory<span style="color:#f92672">=</span>1G,cpu<span style="color:#f92672">=</span>0.5 --image  hande007/stress-ng basic-limit-cpu-pod --restart<span style="color:#f92672">=</span>Never --  --vm-keep --vm-bytes 512m --timeout 600s --vm <span style="color:#ae81ff">1</span> --oomable --verbose 
 
 <span style="color:#75715e"># Deploy Request pod with soft limit on memory </span>
@@ -10711,7 +10749,7 @@ kubectl run --requests<span style="color:#f92672">=</span>cpu<span style="color:
 kubectl run --limits<span style="color:#f92672">=</span>memory<span style="color:#f92672">=</span>1G,cpu<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --image  hande007/stress-ng basic-limit-memory-pod --restart<span style="color:#f92672">=</span>Never --  --vm-keep  --vm-bytes 2g --timeout 600s --vm <span style="color:#ae81ff">1</span> --oomable --verbose 
 </code></pre></div><h3 id="verify-current-resource-usage">Verify Current Resource Usage</h3>
 <p>Check if pods are running properly. It is expected that <strong>basic-limit-memory-pod</strong> is not not running due to it asking for 2G of memory when it is assigned a <code>Limit</code> of 1G.</p>
-<pre tabindex="0"><code>kubectl get pod
+<pre><code>kubectl get pod
 </code></pre><p>Output:
 <pre><output class="bash">
 NAME                     READY   STATUS      RESTARTS   AGE
@@ -10722,7 +10760,7 @@ basic-restricted-pod     1/1     Running     0          67s
 </output></pre>
 </p>
 <p>Next we check the current utilization</p>
-<pre tabindex="0"><code># After at least 60 seconds of generating metrics
+<pre><code># After at least 60 seconds of generating metrics
 kubectl top pod
 </code></pre><p>Output:
 <pre><output class="bash">
@@ -10749,7 +10787,7 @@ basic-restricted-pod   1795m        1029Mi
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <pre tabindex="0"><code>apiVersion: apps/v1
+        <pre><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -10790,7 +10828,7 @@ spec:
 </div></p>
 <h3 id="cleanup">Cleanup</h3>
 <p>Clean up the pods before moving on to free up resources</p>
-<pre tabindex="0"><code>kubectl delete pod basic-request-pod
+<pre><code>kubectl delete pod basic-request-pod
 kubectl delete pod basic-limit-memory-pod
 kubectl delete pod basic-limit-cpu-pod
 kubectl delete pod basic-restricted-pod
@@ -16629,6 +16667,38 @@ kubectl delete pod basic-restricted-pod
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -18219,19 +18289,19 @@ kubectl delete pod basic-restricted-pod
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1634326732"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1634326732"></script>
-    <script src="../../../js/jquery.sticky.js?1634326732"></script>
-    <script src="../../../js/featherlight.min.js?1634326732"></script>
-    <script src="../../../js/highlight.pack.js?1634326732"></script>
+    <script src="../../../js/clipboard.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1636111206"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636111206"></script>
+    <script src="../../../js/jquery.sticky.js?1636111206"></script>
+    <script src="../../../js/featherlight.min.js?1636111206"></script>
+    <script src="../../../js/highlight.pack.js?1636111206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1634326732"></script>
-    <script src="../../../js/learn.js?1634326732"></script>
-    <script src="../../../js/hugo-learn.js?1634326732"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1636111206"></script>
+    <script src="../../../js/learn.js?1636111206"></script>
+    <script src="../../../js/hugo-learn.js?1636111206"></script>
 
-    <link href="../../../mermaid/mermaid.css?1634326732" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1634326732"></script>
+    <link href="../../../mermaid/mermaid.css?1636111206" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1636111206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
