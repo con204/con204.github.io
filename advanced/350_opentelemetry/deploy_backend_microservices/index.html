@@ -13,20 +13,20 @@
     <title>Deploy Backend Microservices :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1636113073" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1636113073" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1636113073" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1636113073" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1636113073" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1636113073" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1636113073" rel="stylesheet">
-    <link href="../../../css/theme.css?1636113073" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1636113073" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1638150502" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1638150502" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1638150502" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1638150502" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1638150502" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1638150502" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1638150502" rel="stylesheet">
+    <link href="../../../css/theme.css?1638150502" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1638150502" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1636113073" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1638150502" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1636113073"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1638150502"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../mermaid/mermaid.css?1636113073" type="text/css" rel="stylesheet" />
-    <link href="../../../css/jquery-ui.min.css?1636113073" rel="stylesheet">
-    <script src="../../../js/jquery-ui-1.12.1.min.js?1636113073"></script>
-    <script src="../../../mermaid/mermaid.min.js?1636113073"></script>
+    <link href="../../../mermaid/mermaid.css?1638150502" type="text/css" rel="stylesheet" />
+    <link href="../../../css/jquery-ui.min.css?1638150502" rel="stylesheet">
+    <script src="../../../js/jquery-ui-1.12.1.min.js?1638150502"></script>
+    <script src="../../../mermaid/mermaid.min.js?1638150502"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1636113073"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1636113073"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1638150502"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1638150502"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1636113073"></script>
+<script type="text/javascript" src="../../../js/search.js?1638150502"></script>
 
     
   </div>
@@ -10706,22 +10706,24 @@
 cd adot-demo
 </code></pre></div><p>Deploy the microservice&rsquo;s databases into your EKS Cluster:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f kubernetes/databases/
-</code></pre></div><p>Quickly, check all the database services are deployed and ready to receive requests:
-<pre><output class="bash">$ kubectl get pods
+</code></pre></div><p>Quickly, check all the database services are deployed and ready to receive requests:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods
+</code></pre></div><pre><output class="bash">
 NAME                                                 READY   STATUS    RESTARTS   AGE
 employee-mongo-67cd95c7d9-jdhfb                      1/1     Running   0          13s
 jaeger-tracing-salaryamount-mysql-76cf744c75-t9q85   1/1     Running   0          13s
 salary-grade-postgres-database-6df4676bb-j59lp       1/1     Running   0          13s
 </output></pre>
-</p>
+
 <p>Deploy the backend services:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f kubernetes/backend/
-</code></pre></div><p>In the backend service manifest, we specified an ingress with ELB Load Balancer. Let’s wait until the ELB is fully deployed:
-<pre><output class="bash">$ kubectl get svc jaeger-tracing-nodejs-service
+</code></pre></div><p>In the backend service manifest, we specified an ingress with ELB Load Balancer. Let’s wait until the ELB is fully deployed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get svc jaeger-tracing-nodejs-service
+</code></pre></div><pre><output class="bash"> 
 NAME                            TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)          AGE
 jaeger-tracing-nodejs-service   LoadBalancer   10.100.104.173   a814b34247f984307ac5d078b6e3f1b0-1991136339.us-west-2.elb.amazonaws.com   8081:32521/TCP   13s
 </output></pre>
-</p>
+
 
 <div class="notices info" ><p>If you do not see an External-IP, re-run the command and wait till it shows (this can take a minute or two)</p>
 </div>
@@ -18183,19 +18185,19 @@ jaeger-tracing-nodejs-service   LoadBalancer   10.100.104.173   a814b34247f98430
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1636113073"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1636113073"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1636113073"></script>
-    <script src="../../../js/jquery.sticky.js?1636113073"></script>
-    <script src="../../../js/featherlight.min.js?1636113073"></script>
-    <script src="../../../js/highlight.pack.js?1636113073"></script>
+    <script src="../../../js/clipboard.min.js?1638150502"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1638150502"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1638150502"></script>
+    <script src="../../../js/jquery.sticky.js?1638150502"></script>
+    <script src="../../../js/featherlight.min.js?1638150502"></script>
+    <script src="../../../js/highlight.pack.js?1638150502"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1636113073"></script>
-    <script src="../../../js/learn.js?1636113073"></script>
-    <script src="../../../js/hugo-learn.js?1636113073"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1638150502"></script>
+    <script src="../../../js/learn.js?1638150502"></script>
+    <script src="../../../js/hugo-learn.js?1638150502"></script>
 
-    <link href="../../../mermaid/mermaid.css?1636113073" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1636113073"></script>
+    <link href="../../../mermaid/mermaid.css?1638150502" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1638150502"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

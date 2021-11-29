@@ -13,20 +13,20 @@
     <title>Deploying the Collector :: Amazon EKS Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/theme.css?1636113073" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1636113073" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/theme.css?1638150502" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1638150502" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1636113073" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1638150502" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1636113073"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1638150502"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,10 +73,10 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
 
-    <link href="../../../../mermaid/mermaid.css?1636113073" type="text/css" rel="stylesheet" />
-    <link href="../../../../css/jquery-ui.min.css?1636113073" rel="stylesheet">
-    <script src="../../../../js/jquery-ui-1.12.1.min.js?1636113073"></script>
-    <script src="../../../../mermaid/mermaid.min.js?1636113073"></script>
+    <link href="../../../../mermaid/mermaid.css?1638150502" type="text/css" rel="stylesheet" />
+    <link href="../../../../css/jquery-ui.min.css?1638150502" rel="stylesheet">
+    <script src="../../../../js/jquery-ui-1.12.1.min.js?1638150502"></script>
+    <script src="../../../../mermaid/mermaid.min.js?1638150502"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -105,14 +105,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1636113073"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1636113073"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1638150502"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1638150502"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1636113073"></script>
+<script type="text/javascript" src="../../../../js/search.js?1638150502"></script>
 
     
   </div>
@@ -10713,23 +10713,26 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">envsubst &lt; kubernetes/adot/otel-container-insights-infra.yaml | sponge kubernetes/adot/otel-container-insights-infra.yaml
 </code></pre></div><p>Install the OTEL collector to the EKS Cluster as a DaemonSet:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f kubernetes/adot/otel-container-insights-infra.yaml
-</code></pre></div><p>Check to see that the OTEL collector’s DaemonSet is running on each node:
-<pre><output class="bash">$ kubectl get nodes
+</code></pre></div><p>Check to see that the OTEL collector’s DaemonSet is running on each node:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get nodes
+</code></pre></div><pre><output class="bash"> 
 NAME                                           STATUS   ROLES    AGE    VERSION
 ip-192-168-29-122.us-west-2.compute.internal   Ready    &lt;none&gt;   2d6h   v1.21.2-eks-55daa9d
 ip-192-168-43-204.us-west-2.compute.internal   Ready    &lt;none&gt;   2d6h   v1.21.2-eks-55daa9d
 ip-192-168-70-26.us-west-2.compute.internal    Ready    &lt;none&gt;   2d6h   v1.21.2-eks-55daa9d
+</output></pre>
 
-$ kubectl get pods -n aws-otel-eks -o wide
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get pods -n aws-otel-eks -o wide
+</code></pre></div><pre><output class="bash"> 
 NAME                    READY   STATUS    RESTARTS   AGE     IP               NODE                                           NOMINATED NODE   READINESS GATES
 aws-otel-eks-ci-47x6x   1/1     Running   0          9m26s   192.168.39.13    ip-192-168-43-204.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;
 aws-otel-eks-ci-hj8vs   1/1     Running   0          9m26s   192.168.13.246   ip-192-168-29-122.us-west-2.compute.internal   &lt;none&gt;           &lt;none&gt;
 aws-otel-eks-ci-vhcrs   1/1     Running   0          9m26s   192.168.78.46    ip-192-168-70-26.us-west-2.compute.internal    &lt;none&gt;           &lt;none&gt;
 </output></pre>
-</p>
-<p>At this point the OTEL collector is installed and sending CloudWatch Insights metrics to CloudWatch.
-Open your CloudWatch console, and head to Metrics &gt; All Metrics.
-<img src="../../../../images/observability-with-adot/cloudwatch-container-insights-nav.png" alt="Cloudwatch nav screenshot"></p>
+
+<p>At this point the OTEL collector is installed and sending CloudWatch Insights metrics to CloudWatch. We can get Cloudwatch metrics URL by running following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;https://</span><span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span><span style="color:#e6db74">.console.aws.amazon.com/cloudwatch/home?region=</span><span style="color:#e6db74">${</span>AWS_REGION<span style="color:#e6db74">}</span><span style="color:#e6db74">#metricsV2:graph=~()&#34;</span>
+</code></pre></div><p><img src="../../../../images/observability-with-adot/cloudwatch-container-insights-nav.png" alt="Cloudwatch nav screenshot"></p>
 <p>Then select the Pod level metrics:
 <img src="../../../../images/observability-with-adot/cloudwatch-container-insights-metrics.png" alt="Cloudwatch metrics screenshot"></p>
 <p>Filter to just CPU Utilization, and change the visualization to be of type Number. And you&rsquo;ll have a dashboard of the deployed Pod&rsquo;s CPU Utilization:
@@ -18195,19 +18198,19 @@ Open your CloudWatch console, and head to Metrics &gt; All Metrics.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1636113074"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1636113074"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1636113074"></script>
-    <script src="../../../../js/jquery.sticky.js?1636113074"></script>
-    <script src="../../../../js/featherlight.min.js?1636113074"></script>
-    <script src="../../../../js/highlight.pack.js?1636113074"></script>
+    <script src="../../../../js/clipboard.min.js?1638150502"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1638150502"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1638150502"></script>
+    <script src="../../../../js/jquery.sticky.js?1638150502"></script>
+    <script src="../../../../js/featherlight.min.js?1638150502"></script>
+    <script src="../../../../js/highlight.pack.js?1638150502"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1636113074"></script>
-    <script src="../../../../js/learn.js?1636113074"></script>
-    <script src="../../../../js/hugo-learn.js?1636113074"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1638150502"></script>
+    <script src="../../../../js/learn.js?1638150502"></script>
+    <script src="../../../../js/hugo-learn.js?1638150502"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1636113074" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.js?1636113074"></script>
+    <link href="../../../../mermaid/mermaid.css?1638150502" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1638150502"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
